@@ -12,7 +12,7 @@ export default function registerPage () {
         <h1 className='
       font-montserrat font-extrabold text-4xl text-adivinaGreen
       '
-        >Login
+        >Registro
         </h1>
         <form className='
       flex flex-col gap-4'
