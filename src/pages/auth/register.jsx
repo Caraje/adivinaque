@@ -1,33 +1,51 @@
+import { useForm } from 'react-hook-form'
 import Link from 'next/link'
 
-export default function registerPage () {
+export default function RegisterPage () {
+  const { register, handleSubmit, formState: { errors } } = useForm()
+
+  const handleForm = async (data) => {
+    const { name, email, pass } = data
+    console.log({ name, email, pass })
+  }
+
   return (
-    <main className='
-    w-screen h-screen flex justify-center items-center
-    bg-adivinaDark
-    text-white font-montserrat
-    '
-    >
+    <main className='w-screen h-screen flex justify-center items-center bg-adivinaDark text-white font-montserrat'>
       <section className='w-1/2 h-full flex flex-col justify-center items-center '>
-        <h1 className='
-      font-montserrat font-extrabold text-4xl text-adivinaGreen
-      '
-        >Registro
+        <h1 className='font-montserrat font-extrabold text-4xl text-adivinaGreen'>Registro
         </h1>
-        <form className='
-      flex flex-col gap-4'
+        <form
+          onSubmit={handleSubmit(handleForm)}
+          className='flex flex-col gap-4'
         >
+          <label className='flex flex-col text-xs gap-2'>
+            Nombre:
+            <input
+              className='w-80 p-2 border-2 border-[#03fea4] rounded-lg bg-transparent text-white text-base font-normal'
+              type='text'
+              placeholder='nombre de usuario'
+              {...register('name', {
+                required: 'El campo es requerido'
+              })}
+            />
+            {errors.name?.type === 'required' && <p role='alert'>El nombre de usuario es requerido</p>}
+          </label>
+
           <label className='flex flex-col text-xs gap-2'>
             Email:
             <input
               className='
             w-80 p-2
-            border-2 border-[#03fea4] rounded-lg bg-transparent
-            text-white text-base font-normal'
+            border-2 border-[#03fea4] rounded-lg bg-transparent text-white  text-base font-normal'
               type='email'
-              placeholder='carlos@carlos.com'
+              placeholder='user@advinaque.com'
+              {...register('email', {
+                required: 'Introduce un email Valido'
+              })}
             />
+            {errors.email?.type === 'required' && <p role='alert'>Introduce un email Valido</p>}
           </label>
+
           <label className='flex flex-col text-xs gap-2'>
             Password:
             <input
@@ -37,8 +55,14 @@ export default function registerPage () {
             text-white text-base font-normal'
               type='password'
               placeholder='Password'
+              {...register('pass', {
+                required: 'Este campo es obligatorio',
+                minLength: { value: 6, message: 'Minimo debe contener 6 caracteres' }
+              })}
             />
+            {(errors.pass?.type === 'required' || errors.pass?.type === 'minLength') && <p role='alert'>Debe contener al menos 6 caracteres</p>}
           </label>
+
           <button
             className='
           rounded-lg bg-[#03fea4] py-2
