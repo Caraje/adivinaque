@@ -70,9 +70,15 @@ export async function createUserWithEmail (userName, email, password) {
 }
 
 export const loginWithEmail = async (email, password) => {
-  const user = await supabase.auth.signInWithPassword({
+  console.log('test')
+  const data = await supabase.auth.signInWithPassword({
     email,
     password
   })
-  return user
+  return (data)
+}
+export const getUser = async () => {
+  const { data: { user } } = await supabase.auth.getUser()
+
+  return (user)
 }
