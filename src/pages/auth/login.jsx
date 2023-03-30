@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
 import { loginWithEmail } from '@/services/supabase'
@@ -8,6 +8,9 @@ export default function LoginPage () {
   const { register, handleSubmit, formState: { errors } } = useForm()
   const dispatch = useDispatch()
 
+  const state = useSelector(state => state.auth)
+  console.log('login => ', { state })
+
   const handleLoginForm = async (data) => {
     const { email, password } = data
     const user = await loginWithEmail(email, password)
@@ -16,6 +19,11 @@ export default function LoginPage () {
 
   return (
     <main className='w-screen h-screen flex justify-center items-center bg-adivinaDark text-white font-montserrat'>
+      <Link
+        className='absolute top-4 right-4 bg-red-600'
+        href='/'
+      >X
+      </Link>
       <section className='w-1/2 h-full flex justify-center items-center '>
         <img
           className='w-full h-full object-cover object-top border-r-2 border-adivinaGreen'

@@ -1,10 +1,12 @@
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
 import { createUserWithEmail } from '@/services/supabase'
+import { useSelector } from 'react-redux'
 
 export default function RegisterPage () {
   const { register, handleSubmit, formState: { errors } } = useForm()
-
+  const state = useSelector(state => state.auth)
+  console.log('register => ', { state })
   const handleForm = async (data) => {
     const { name, email, password } = data
     await createUserWithEmail(name, email, password)
@@ -12,6 +14,11 @@ export default function RegisterPage () {
 
   return (
     <main className='w-screen h-screen flex justify-center items-center bg-adivinaDark text-white font-montserrat'>
+      <Link
+        className='absolute top-4 right-4 bg-red-600'
+        href='/'
+      >X
+      </Link>
       <section className='w-1/2 h-full flex flex-col justify-center items-center '>
         <h1 className='font-montserrat font-extrabold text-4xl text-adivinaGreen'>Registro
         </h1>
