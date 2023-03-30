@@ -1,12 +1,13 @@
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
+import { createUserWithEmail } from '@/services/supabase'
 
 export default function RegisterPage () {
   const { register, handleSubmit, formState: { errors } } = useForm()
 
   const handleForm = async (data) => {
-    const { name, email, pass } = data
-    console.log({ name, email, pass })
+    const { name, email, password } = data
+    await createUserWithEmail(name, email, password)
   }
 
   return (
@@ -55,7 +56,7 @@ export default function RegisterPage () {
             text-white text-base font-normal'
               type='password'
               placeholder='Password'
-              {...register('pass', {
+              {...register('password', {
                 required: 'Este campo es obligatorio',
                 minLength: { value: 6, message: 'Minimo debe contener 6 caracteres' }
               })}
