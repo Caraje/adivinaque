@@ -1,6 +1,19 @@
+import { useDispatch } from 'react-redux'
+import { useForm } from 'react-hook-form'
 import Link from 'next/link'
+import { loginWithEmail } from '@/services/supabase'
+import { loginState } from '@/store/auth/thunks'
 
-export default function loginPage () {
+export default function LoginPage () {
+  const { register, handleSubmit, formState: { errors } } = useForm()
+  const dispatch = useDispatch()
+
+  const handleLoginForm = async (data) => {
+    const { email, password } = data
+    const user = await loginWithEmail(email, password)
+    dispatch(loginState(user))
+  }
+
   return (
     <main className='w-screen h-screen flex justify-center items-center bg-adivinaDark text-white font-montserrat'>
       <section className='w-1/2 h-full flex justify-center items-center '>
@@ -16,8 +29,9 @@ export default function loginPage () {
         '
         >Login
         </h1>
-        <form className='
-        flex flex-col gap-4'
+        <form
+          onSubmit={handleSubmit(handleLoginForm)}
+          className='flex flex-col gap-4'
         >
           <label className='flex flex-col text-xs gap-2'>
             Email:
@@ -28,7 +42,11 @@ export default function loginPage () {
               text-white text-base font-normal'
               type='email'
               placeholder='carlos@carlos.com'
+              {...register('email', {
+                required: 'Introduce un email Valido'
+              })}
             />
+            {errors.email?.type === 'required' && <p role='alert'>Introduce un email Valido</p>}
           </label>
           <label className='flex flex-col text-xs gap-2'>
             Password:
@@ -39,7 +57,12 @@ export default function loginPage () {
               text-white text-base font-normal'
               type='password'
               placeholder='Password'
+              {...register('password', {
+                required: 'Este campo es obligatorio',
+                minLength: { value: 6, message: 'Minimo debe contener 6 caracteres' }
+              })}
             />
+            {(errors.pass?.type === 'required' || errors.pass?.type === 'minLength') && <p role='alert'>Debe contener al menos 6 caracteres</p>}
           </label>
           <button
             className='
