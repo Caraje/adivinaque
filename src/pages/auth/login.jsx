@@ -2,12 +2,7 @@ import Link from 'next/link'
 
 export default function loginPage () {
   return (
-    <main className='
-      w-screen h-screen flex justify-center items-center
-      bg-adivinaDark
-      text-white font-montserrat
-      '
-    >
+    <main className='w-screen h-screen flex justify-center items-center bg-adivinaDark text-white font-montserrat'>
       <section className='w-1/2 h-full flex justify-center items-center '>
         <img
           className='w-full h-full object-cover object-top border-r-2 border-adivinaGreen'
