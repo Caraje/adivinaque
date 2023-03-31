@@ -1,13 +1,14 @@
 import Link from 'next/link'
-import React from 'react'
+import { useSelector } from 'react-redux'
 
-const UserCard = ({ user }) => {
-  console.log('user Card=>', { user })
+const UserCard = () => {
+  const user = useSelector(store => store.user)
+  console.log(user)
   return (
-    <Link className='hover:scale-105 transition-all' href='/caraje'>
+    <Link className='hover:scale-105 transition-all' href={user.url}>
       <article className=' flex  flex-col gap-4 justify-center items-center overflow-hidden border border-adivinaGreen/50 rounded-xl p-4 bg-adivinaBlack/25'>
         <header>
-          <img className='rounded-full' src={user.imgAvatar || './imgs/no-avatar.webp'} alt='Imagen de avatar de Caraje' width={100} height={100} />
+          <img className='rounded-full' src={user.avatar || './imgs/no-avatar.webp'} alt='Imagen de avatar de Caraje' width={100} height={100} />
         </header>
         <footer className='flex flex-col justify-center items-center gap-4  text-2xl'>
           <h2>{user.userName}</h2>
