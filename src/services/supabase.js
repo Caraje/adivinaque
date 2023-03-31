@@ -83,3 +83,8 @@ export const getUser = async () => {
 
   return (user)
 }
+
+export async function getUserList () {
+  const { data: { users }, error } = await supabase.auth.admin.listUsers()
+  return (users)
+}
