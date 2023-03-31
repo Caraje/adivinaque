@@ -2,6 +2,6 @@ import { login } from './authSlice'
 
 export const loginState = (user) => {
   return async (dispatch) => {
-    dispatch(login(user.data.user))
+    dispatch(login(user))
   }
 }
