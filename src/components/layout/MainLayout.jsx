@@ -1,7 +1,24 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useDispatch, useSelector } from 'react-redux'
+import UserAutenticated from '../ui/UserAutenticated'
+import LoginButton from '../ui/LoginButton'
+import { useEffect } from 'react'
+import { getUser } from '@/services/supabase'
+import { loginState } from '@/store/auth/thunks'
 
 const MainLayout = ({ children }) => {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    const isLogin = async () => {
+      const user = await getUser()
+      user && dispatch(loginState(user))
+    }
+    console.log('en layout user =>', isLogin())
+  }, [])
+
+  const user = useSelector(store => store.auth)
+
   return (
     <>
 
@@ -41,11 +58,11 @@ const MainLayout = ({ children }) => {
               <Link className='hover:scale-110 hover:text-adivinaGreen hover:shadow-adivinaGreen transition-all' href='/series'>series</Link>
               <Link className='hover:scale-110 hover:text-adivinaGreen hover:shadow-adivinaGreen transition-all' href='/videogames'>Juegos</Link>
             </nav>
-
-            <Link href='/auth/login' className='flex items-center gap-4 hover:text-adivinaGreen hover:shadow-adivinaGreen '>
-              <h5 className='font-semibold text-lg' href='/caraje'>Caraje</h5>
-              <img className='rounded-full' src='./imgs/avatar_caraje.webp' alt='Imagen de avatar de Caraje' width={40} height={40} />
-            </Link>
+            {
+              user.status === 'authenticated'
+                ? <UserAutenticated user={user} />
+                : <LoginButton />
+            }
           </div>
         </div>
         {children}
