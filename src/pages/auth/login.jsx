@@ -14,7 +14,7 @@ export default function LoginPage () {
   const handleLoginForm = async (data) => {
     const { email, password } = data
     const user = await loginWithEmail(email, password)
-    dispatch(loginState(user))
+    dispatch(loginState(user.data.user))
   }
 
   return (
