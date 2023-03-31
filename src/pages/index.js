@@ -3,8 +3,13 @@ import NewsCard from '@/components/home/NewsCard'
 import SelectCategory from '@/components/home/SelectCategory'
 import MainLayout from '@/components/layout/MainLayout'
 import UserCard from '@/components/ui/UserCard'
+import { getUserList } from '@/services/supabase'
+import { useSelector } from 'react-redux'
 
-export default function Home () {
+export default function Home ({ usersList }) {
+  const { id, status } = useSelector(store => store.auth)
+  const actualUser = usersList.filter(user => user.id === id)
+
   return (
     <>
       <div className='w-screen min-h-screen  flex flex-col items-center justify-betwee text-white font-montserrat  bg-slate-950'>
@@ -16,7 +21,10 @@ export default function Home () {
             <SelectCategory />
             <aside className='w-80 flex flex-col gap-10  '>
               {/* USER CARD */}
-              <UserCard />
+              {
+                status && <UserCard user={actualUser[0].user_metadata} />
+
+              }
               {/* NEWS CARD */}
               <NewsCard />
             </aside>
@@ -30,4 +38,14 @@ export default function Home () {
     </>
 
   )
+}
+
+export const getStaticProps = async (ctx) => {
+  const usersList = await getUserList()
+
+  return {
+    props: {
+      usersList
+    }
+  }
 }
