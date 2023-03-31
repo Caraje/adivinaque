@@ -75,6 +75,7 @@ export const loginWithEmail = async (email, password) => {
     email,
     password
   })
+  window.history.back()
   return (data)
 }
 export const getUser = async () => {
