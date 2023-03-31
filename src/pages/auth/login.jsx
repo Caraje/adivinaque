@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
 import { loginWithEmail } from '@/services/supabase'
@@ -7,10 +7,6 @@ import { loginState } from '@/store/auth/thunks'
 export default function LoginPage () {
   const { register, handleSubmit, formState: { errors } } = useForm()
   const dispatch = useDispatch()
-
-  const state = useSelector(state => state.auth)
-  console.log('login => ', { state })
-
   const handleLoginForm = async (data) => {
     const { email, password } = data
     const user = await loginWithEmail(email, password)
