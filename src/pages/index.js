@@ -7,8 +7,7 @@ import { getUserList } from '@/services/supabase'
 import { useSelector } from 'react-redux'
 
 export default function Home ({ usersList }) {
-  const { id, status } = useSelector(store => store.auth)
-  const actualUser = usersList.filter(user => user.id === id)
+  const { status } = useSelector(store => store.auth)
 
   return (
     <>
@@ -22,7 +21,7 @@ export default function Home ({ usersList }) {
             <aside className='w-80 flex flex-col gap-10  '>
               {/* USER CARD */}
               {
-                status && <UserCard user={actualUser[0].user_metadata} />
+                status && <UserCard />
 
               }
               {/* NEWS CARD */}
