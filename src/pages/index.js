@@ -1,3 +1,5 @@
+
+import CategoryCard from '@/components/ui/CategoryCard'
 import Link from 'next/link'
 
 export default function Home () {
@@ -31,20 +33,32 @@ export default function Home () {
             <h1 className='font-extrabold text-3xl text-adivinaGreen'>
               Selecciona una categoria
             </h1>
-            <div className='flex flex-col gap-8 justify-center items-center'>
-              <article className='relative max-w-2xl w-full h-60 bg-slate-500 rounded-xl overflow-hidden border border-adivinaGreen/50'>
-                <h2 className='absolute bottom-4 left-8 z-10 font-bold text-3xl'>Cine</h2>
-                <img className='w-full h-full object-cover' src='./imgs/cinema.webp' alt='' width={300} height={600} />
-              </article>
+            <div className='flex flex-col gap-8 justify-center items-center '>
+
+              <div className='flex justify-center max-w-2xl w-full'>
+
+                <CategoryCard
+                  category='cinema'
+                  name='Cine'
+                  image='./imgs/cinema.webp'
+                  wide
+                />
+              </div>
+
               <div className='flex justify-between max-w-2xl w-full'>
-                <article className='relative  max-w-xs w-full bg-red-700 rounded-xl overflow-hidden border border-adivinaGreen/50'>
-                  <h2 className='absolute bottom-4 left-8 z-10 font-bold text-3xl'>Series</h2>
-                  <img className='w-full h-full object-cover' src='./imgs/series.webp' alt='' width={300} height={600} />
-                </article>
-                <article className='relative  max-w-xs w-full bg-red-700 rounded-xl overflow-hidden border border-adivinaGreen/50'>
-                  <h2 className='absolute bottom-4 left-8 z-10 font-bold text-3xl'>Juegos</h2>
-                  <img className='w-full h-full object-cover' src='./imgs/game.webp' alt='' width={300} height={600} />
-                </article>
+                <CategoryCard
+                  category='series'
+                  name='Series'
+                  image='./imgs/series.webp'
+                  wide={false}
+                />
+                <CategoryCard
+                  category='videogames'
+                  name='Juegos'
+                  image='./imgs/game.webp'
+                  wide={false}
+                />
+
               </div>
             </div>
           </section>
