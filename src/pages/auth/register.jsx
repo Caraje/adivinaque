@@ -13,7 +13,7 @@ export default function RegisterPage () {
     const { name, email, password } = data
     await createUserWithEmail(name, email, password)
     const user = await loginWithEmail(email, password)
-    dispatch(loginState(user))
+    dispatch(loginState(user.data.user))
   }
 
   return (
