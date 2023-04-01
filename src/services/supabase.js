@@ -41,24 +41,24 @@ export async function createUserWithEmail (userName, email, password) {
           ],
           categories: {
             cinema: {
-              corrects: 0,
-              errors: 0,
-              totalPoints: 0,
-              positionRank: 0,
+              corrects: 1,
+              errors: 2,
+              totalPoints: 3,
+              positionRank: 40,
               levels_completed: []
             },
             series: {
-              corrects: 0,
-              errors: 0,
-              totalPoints: 0,
-              positionRank: 0,
+              corrects: 10,
+              errors: 20,
+              totalPoints: 30,
+              positionRank: 40,
               levels_completed: []
             },
             videogames: {
-              corrects: 0,
-              errors: 0,
-              totalPoints: 0,
-              positionRank: 0,
+              corrects: 100,
+              errors: 200,
+              totalPoints: 300,
+              positionRank: 400,
               levels_completed: []
             }
           }
