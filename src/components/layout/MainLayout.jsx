@@ -15,8 +15,6 @@ const MainLayout = ({ children }) => {
   useEffect(() => {
     const isLogin = async () => {
       const activeUser = await getUser()
-      // const { id } = await getUser()
-
       const userList = await getUserList()
       activeUser && dispatch(loginState(activeUser))
       if (activeUser) {
