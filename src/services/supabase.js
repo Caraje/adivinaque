@@ -75,7 +75,7 @@ export const loginWithEmail = async (email, password) => {
     email,
     password
   })
-  window.history.back()
+  window.location.replace('/')
   return (data)
 }
 export const getUser = async () => {
