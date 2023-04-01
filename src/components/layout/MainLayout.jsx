@@ -56,7 +56,7 @@ const MainLayout = ({ children }) => {
         <div className='w-full  max-w-6xl'>
           <div className='w-full flex items-center justify-between p-4'>
             <Link href='/'>
-              <img src='./imgs/logo.webp' alt='Logotipo de Adivina Que' height={100} width={100} />
+              <img src='/imgs/logo.webp' alt='Logotipo de Adivina Que' height={100} width={100} />
 
             </Link>
             <nav className='flex gap-8 font-semibold px-20 py-1 rounded-full border border-adivinaGreen/40  text-2xl'>
