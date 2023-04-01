@@ -5,7 +5,7 @@ const UserCard = () => {
   const user = useSelector(store => store.user)
   console.log(user)
   return (
-    <Link className='hover:scale-105 transition-all' href={user.url}>
+    <Link className='hover:scale-105 transition-all' href={`/users/${user.url}`}>
       <article className=' flex  flex-col gap-4 justify-center items-center overflow-hidden border border-adivinaGreen/50 rounded-xl p-4 bg-adivinaBlack/25'>
         <header>
           <img className='rounded-full' src={user.avatar || './imgs/no-avatar.webp'} alt='Imagen de avatar de Caraje' width={100} height={100} />
