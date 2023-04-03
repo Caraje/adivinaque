@@ -15,10 +15,15 @@ export const authSlice = createSlice({
       state.status = action.payload.aud
       state.id = action.payload.id
       state.userName = action.payload.user_metadata.userName
+    },
+    logout: (state, action) => {
+      state.status = ''
+      state.id = ''
+      state.userName = ''
     }
   }
 })
 
-export const { login } = authSlice.actions
+export const { login, logout } = authSlice.actions
 
 export default authSlice.reducer
