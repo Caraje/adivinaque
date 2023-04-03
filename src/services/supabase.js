@@ -91,6 +91,7 @@ export const getUser = async () => {
 
 export async function getUserList () {
   const { data: { users }, error } = await supabase.auth.admin.listUsers()
+  error && console.log(error)
   return (users)
 }
 
@@ -132,10 +133,17 @@ export async function updateUserSocials (user) {
     }
   })
   window.location.reload()
+  return data
 }
 
 export async function deleteUser (id) {
   const data = await supabase.auth.admin.deleteUser(id)
   window.location.replace('/')
   return data
+}
+
+export async function logoutUser () {
+  const { error } = await supabase.auth.signOut()
+  window.location.replace('/')
+  return error
 }
