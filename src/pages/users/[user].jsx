@@ -1,13 +1,11 @@
 import MainLayout from '@/components/layout/MainLayout'
 import CategoryCard from '@/components/ui/CategoryCard'
-import { UserCardSocial } from '@/components/user/userCardSocial'
+import { UserCardSocial } from '@/components/user/UserCardSocial'
 import { getUserList } from '@/services/supabase'
 
 const UserPage = ({ user }) => {
   const actualUser = user[0].user_metadata
 
-  // console.log({ actualUser })
-  // console.log(actualUser.socials)
   return (
     <MainLayout>
       <div className='flex flex-col w-full gap-10 p-4 max-w-6xl '>
