@@ -22,10 +22,16 @@ export const userSlice = createSlice({
       state.url = payload.user_metadata.url
       state.categories = payload.user_metadata.categories
       state.socials = payload.user_metadata.socials
+    },
+    updateUser: (state, action) => {
+      const { payload } = action
+      console.log({ payload })
+      // state.avatar = payload.avatarForm
+      state.socials = payload.socials
     }
   }
 })
 
-export const { getUser } = userSlice.actions
+export const { getUser, updateUser } = userSlice.actions
 
 export default userSlice.reducer
