@@ -2,7 +2,6 @@ import MainLayout from '@/components/layout/MainLayout'
 import CategoryCardUser from '@/components/user/CategoryCardUser'
 import FormUpdateSocial from '@/components/user/FormUpdateSocial'
 import { UserCardSocial } from '@/components/user/UserCardSocial'
-
 import { getUserList } from '@/services/supabase'
 import { useSelector } from 'react-redux'
 
@@ -25,7 +24,7 @@ const UserPage = ({ user }) => {
             {
               (id === userId) &&
                 <article className='flex  flex-col gap-4 justify-center items-center overflow-hidden border border-adivinaGreen/50 rounded-xl p-4 bg-adivinaBlack/25'>
-                  <FormUpdateSocial />
+                  <FormUpdateSocial user={actualUser} />
                 </article>
             }
           </section>
