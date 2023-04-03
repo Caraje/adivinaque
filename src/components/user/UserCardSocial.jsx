@@ -1,12 +1,13 @@
 
 export const UserCardSocial = ({ user }) => {
-  const validSocials = user.socials.filter(soc => soc.user !== true)
+  const validSocials = user.socials.filter(soc => soc.user !== '')
+
   return (
     <article className=' flex  flex-col gap-4 justify-center items-center overflow-hidden border border-adivinaGreen/50 rounded-xl p-8 bg-adivinaBlack/25'>
       <header className='flex flex-col justify-center items-center gap-2'>
         <img
           className='rounded-full'
-          src={user.imgAvatar || '/imgs/no-avatar.webp'}
+          src={user.imgAvatar ? `https://res.cloudinary.com/caraje/image/upload/v1679717935/${user.imgAvatar}` : '/imgs/no-avatar.webp'}
           alt='Imagen del avatar de Caraje'
           width={125}
           height={125}
@@ -21,7 +22,7 @@ export const UserCardSocial = ({ user }) => {
             validSocials.map(soc => (
               <a
                 className='hover:scale-125 transition-all hover:bg-adivinaGreen rounded-full p-1'
-                href={soc.user}
+                href={(soc.name === 'web') ? `${soc.url}` : `${soc.url}${soc.user}`}
                 target='_blank'
                 rel='noreferrer'
                 key={soc.name}
