@@ -22,7 +22,6 @@ export default function Home ({ usersList }) {
               {/* USER CARD */}
               {
                 status && <UserCard />
-
               }
               {/* NEWS CARD */}
               <NewsCard />
