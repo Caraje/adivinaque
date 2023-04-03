@@ -1,19 +1,18 @@
 
-export const UserCardSocial = ({ social }) => {
-  const validSocials = social.filter(soc => soc.user === true)
-
+export const UserCardSocial = ({ user }) => {
+  const validSocials = user.socials.filter(soc => soc.user !== true)
   return (
     <article className=' flex  flex-col gap-4 justify-center items-center overflow-hidden border border-adivinaGreen/50 rounded-xl p-8 bg-adivinaBlack/25'>
-      <header className='flex flex-col justify-center items-center gap-4'>
+      <header className='flex flex-col justify-center items-center gap-2'>
         <img
           className='rounded-full'
-          src='/imgs/avatar_caraje.webp'
+          src={user.imgAvatar || '/imgs/no-avatar.webp'}
           alt='Imagen del avatar de Caraje'
           width={125}
           height={125}
         />
         <h2 className='font-montserrat font-bold text-2xl'>
-          Caraje
+          {user.userName}
         </h2>
       </header>
       <footer>
@@ -21,13 +20,13 @@ export const UserCardSocial = ({ social }) => {
           {
             validSocials.map(soc => (
               <a
-                className='hover:scale-125 transition-all hover:bg-adivinaGreen rounded-full p-2'
+                className='hover:scale-125 transition-all hover:bg-adivinaGreen rounded-full p-1'
                 href={soc.user}
                 target='_blank'
                 rel='noreferrer'
                 key={soc.name}
               >
-                <img src={`/icons/${soc.name}-icon.svg`} alt={`Imagen del icono de ${soc.name}`} width={35} height={35} />
+                <img src={`/icons/${soc.name}-icon.svg`} alt={`Imagen del icono de ${soc.name}`} width={30} height={30} />
               </a>
 
             ))
