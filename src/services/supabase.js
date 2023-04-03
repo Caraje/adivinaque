@@ -15,7 +15,7 @@ export async function createUserWithEmail (userName, email, password) {
         data: {
           userName,
           imgAvatar: '',
-          url: `/${userName}`,
+          url: `/${userName.toLowerCase().trim().replace(' ', '-')}`,
           isActive: true,
           socials: [
             {
