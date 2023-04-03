@@ -1,39 +1,20 @@
 import MainLayout from '@/components/layout/MainLayout'
 import CategoryCard from '@/components/ui/CategoryCard'
+import { UserCardSocial } from '@/components/user/userCardSocial'
 import { getUserList } from '@/services/supabase'
 
 const UserPage = ({ user }) => {
   const actualUser = user[0].user_metadata
 
-  console.log({ actualUser })
+  // console.log({ actualUser })
+  // console.log(actualUser.socials)
   return (
     <MainLayout>
       <div className='flex flex-col w-full gap-10 p-4 max-w-6xl '>
         <div className='flex w-full gap-8 '>
           <section className='w-2/6 max-w-xl '>
-            <article className=' flex  flex-col gap-4 justify-center items-center overflow-hidden border border-adivinaGreen/50 rounded-xl p-4 bg-adivinaBlack/25'>
-              <header>
-                <img className='rounded-full' src={actualUser.imgAvatar || '/imgs/no-avatar.webp'} alt='Imagen de avatar de Caraje' width={100} height={100} />
-              </header>
-              <footer className='flex flex-col justify-center items-center gap-4  text-2xl'>
-                <h2>{actualUser.userName}</h2>
-                <section className='flex items-center justify-center gap-4 font-light text-lg '>
-                  <div className='flex flex-col items-center justify-center gap-2'>
-                    <img src='/icons/cinema-icon.svg' alt='' width={24} height={24} />
-                    <p>{actualUser.categories.cinema.totalPoints}</p>
-                  </div>
-                  <div className='flex flex-col items-center justify-center gap-2'>
-                    <img src='/icons/series-icon.svg' alt='' width={24} height={24} />
-                    <p>{actualUser.categories.series.totalPoints}</p>
-                  </div>
-                  <div className='flex flex-col items-center justify-center gap-2'>
-                    <img src='/icons/game-icon.svg' alt='' width={24} height={24} />
-                    <p>{actualUser.categories.videogames.totalPoints}</p>
-                  </div>
-                </section>
-              </footer>
+            <UserCardSocial social={actualUser.socials} />
 
-            </article>
           </section>
           <section className='w-full '>
             <article className='flex  flex-col gap-4 justify-center items-center overflow-hidden border border-adivinaGreen/50 rounded-xl p-4 bg-adivinaBlack/25'>
