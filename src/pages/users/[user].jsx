@@ -77,7 +77,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const { user: userName } = params
-  console.log({ params })
+
   const usersList = await getUserList()
   const actualUser = usersList.filter((user) => (user.user_metadata.userName.toLowerCase().trim() === userName.toLowerCase().trim()))
   return {
