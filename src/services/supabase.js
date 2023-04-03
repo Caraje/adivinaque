@@ -20,23 +20,28 @@ export async function createUserWithEmail (userName, email, password) {
           socials: [
             {
               name: 'twitter',
-              user: ''
+              user: '',
+              url: 'https://twitter.com/'
             },
             {
               name: 'instagram',
-              user: ''
+              user: '',
+              url: 'https://www.instagram.com/'
             },
             {
               name: 'youtube',
-              user: ''
+              user: '',
+              url: 'https://www.youtube.com/@'
             },
             {
               name: 'twitch',
-              user: ''
+              user: '',
+              url: 'https://www.twitch.tv/'
             },
             {
               name: 'web',
-              user: ''
+              user: '',
+              url: ''
             }
           ],
           categories: {
