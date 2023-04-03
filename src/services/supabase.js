@@ -133,3 +133,9 @@ export async function updateUserSocials (user) {
   })
   window.location.reload()
 }
+
+export async function deleteUser (id) {
+  const data = await supabase.auth.admin.deleteUser(id)
+  window.location.replace('/')
+  return data
+}
