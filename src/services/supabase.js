@@ -131,5 +131,5 @@ export async function updateUserSocials (user) {
       ]
     }
   })
-  // document.location.href = `/user/${nameForm}`
+  window.location.reload()
 }
