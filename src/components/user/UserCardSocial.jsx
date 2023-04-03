@@ -6,7 +6,7 @@ export const UserCardSocial = ({ user }) => {
     <article className=' flex  flex-col gap-4 justify-center items-center overflow-hidden border border-adivinaGreen/50 rounded-xl p-8 bg-adivinaBlack/25'>
       <header className='flex flex-col justify-center items-center gap-2'>
         <img
-          className='rounded-full'
+          className='rounded-full w-[10rem] h-[10rem] object-cover border-4 border-adivinaGreen'
           src={user.imgAvatar ? `https://res.cloudinary.com/caraje/image/upload/v1679717935/${user.imgAvatar}` : '/imgs/no-avatar.webp'}
           alt='Imagen del avatar de Caraje'
           width={125}

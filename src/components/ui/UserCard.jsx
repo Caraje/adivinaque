@@ -7,7 +7,7 @@ const UserCard = () => {
     <Link className='hover:scale-105 transition-all' href={`/users${user.url.toLowerCase().trim()}`}>
       <article className=' flex  flex-col gap-4 justify-center items-center overflow-hidden border border-adivinaGreen/50 rounded-xl p-4 bg-adivinaBlack/25'>
         <header>
-          <img className='rounded-full' src={user.avatar ? `https://res.cloudinary.com/caraje/image/upload/v1679717935/${user.avatar}` : '/imgs/no-avatar.webp'} alt='Imagen de avatar de Caraje' width={100} height={100} />
+          <img className='rounded-full w-[10rem] h-[10rem] object-cover border-4 border-adivinaGreen' src={user.avatar ? `https://res.cloudinary.com/caraje/image/upload/v1679717935/${user.avatar}` : '/imgs/no-avatar.webp'} alt='Imagen de avatar de Caraje' width={100} height={100} />
         </header>
         <footer className='flex flex-col justify-center items-center gap-4  text-2xl'>
           <h2>{user.userName}</h2>
