@@ -1,10 +1,14 @@
 import { updateUserSocials } from '@/services/supabase'
 import { userUpdateState } from '@/store/user/thunks'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import DeleteConfirm from '../ui/DeleteConfirm'
 
 const FormUpdateSocial = ({ user }) => {
-  // const userData = user.socials
+  const { id: idAutenticated } = useSelector(state => state.auth)
+  const { id: idUser } = useSelector(state => state.user)
+  const [isConfirm, setIsConfirm] = useState(false)
+
   const dispatch = useDispatch()
 
   const userSocials = user.socials.reduce((acc, cur) => {
@@ -13,7 +17,6 @@ const FormUpdateSocial = ({ user }) => {
   }, {})
 
   const [file, setFile] = useState(null)
-  const [nameForm, setNameForm] = useState(user.userName)
   const [twitterForm, setTwitterForm] = useState(userSocials.twitter.user)
   const [instagramForm, setInstagramForm] = useState(userSocials.instagram.user)
   const [twitchForm, setTwitchForm] = useState(userSocials.twitch.user)
@@ -44,7 +47,6 @@ const FormUpdateSocial = ({ user }) => {
     const user = {
 
       avatarForm: await getImage(e),
-      nameForm,
       twitterForm,
       instagramForm,
       twitchForm,
@@ -90,87 +92,101 @@ const FormUpdateSocial = ({ user }) => {
     await postDataUser()
   }
 
+  const handleDeleteUser = () => {
+    if (idAutenticated === idUser) {
+      console.log('hola')
+      setIsConfirm(true)
+    }
+  }
+
   return (
-    <form
-      className='w-full grid grid-cols-2 gap-4 justify-end items-end'
-      onSubmit={handleForm}
-    >
-      <label className='flex flex-col text-xs gap-2'>
-        Twitter:
-        <input
-          className='w-full p-2 border-2 border-adivinaGreen rounded-lg bg-transparent text-white text-base font-normal'
-          type='text'
-          placeholder='Twitter'
-          value={twitterForm}
-          onChange={(e) => setTwitterForm(e.target.value)}
-        />
+    <>
+      {
+      isConfirm && <DeleteConfirm back={setIsConfirm} />
+    }
+      <form
+        className='w-full grid grid-cols-2 gap-4 justify-end items-end'
+        onSubmit={handleForm}
+      >
+        <label className='flex flex-col text-xs gap-2'>
+          Twitter:
+          <input
+            className='w-full p-2 border-2 border-adivinaGreen rounded-lg bg-transparent text-white text-base font-normal'
+            type='text'
+            placeholder='Twitter'
+            value={twitterForm}
+            onChange={(e) => setTwitterForm(e.target.value)}
+          />
 
-      </label>
-      <label className='flex flex-col text-xs gap-2'>
-        Instagram:
-        <input
-          className='w-full p-2 border-2 border-adivinaGreen rounded-lg bg-transparent text-white text-base font-normal'
-          type='text'
-          placeholder='Instagram'
-          value={instagramForm}
-          onChange={(e) => setInstagramForm(e.target.value)}
-        />
+        </label>
+        <label className='flex flex-col text-xs gap-2'>
+          Instagram:
+          <input
+            className='w-full p-2 border-2 border-adivinaGreen rounded-lg bg-transparent text-white text-base font-normal'
+            type='text'
+            placeholder='Instagram'
+            value={instagramForm}
+            onChange={(e) => setInstagramForm(e.target.value)}
+          />
 
-      </label>
-      <label className='flex flex-col text-xs gap-2'>
-        Twitch:
-        <input
-          className='w-full p-2 border-2 border-adivinaGreen rounded-lg bg-transparent text-white text-base font-normal'
-          type='text'
-          placeholder='Twitch'
-          value={twitchForm}
-          onChange={(e) => setTwitchForm(e.target.value)}
-        />
+        </label>
+        <label className='flex flex-col text-xs gap-2'>
+          Twitch:
+          <input
+            className='w-full p-2 border-2 border-adivinaGreen rounded-lg bg-transparent text-white text-base font-normal'
+            type='text'
+            placeholder='Twitch'
+            value={twitchForm}
+            onChange={(e) => setTwitchForm(e.target.value)}
+          />
 
-      </label>
-      <label className='flex flex-col text-xs gap-2'>
-        Youtube:
-        <input
-          className='w-full p-2 border-2 border-adivinaGreen rounded-lg bg-transparent text-white text-base font-normal'
-          type='text'
-          placeholder='YouTube'
-          value={userYoutubeForm}
-          onChange={(e) => setUserYoutubeForm(e.target.value)}
-        />
+        </label>
+        <label className='flex flex-col text-xs gap-2'>
+          Youtube:
+          <input
+            className='w-full p-2 border-2 border-adivinaGreen rounded-lg bg-transparent text-white text-base font-normal'
+            type='text'
+            placeholder='YouTube'
+            value={userYoutubeForm}
+            onChange={(e) => setUserYoutubeForm(e.target.value)}
+          />
 
-      </label>
-      <label className='flex flex-col text-xs gap-2'>
-        Web:
-        <input
-          className='w-full p-2 border-2 border-adivinaGreen rounded-lg bg-transparent text-white text-base font-normal'
-          type='text'
-          placeholder='Tu web'
-          value={webForm}
-          onChange={(e) => setWebForm(e.target.value)}
-        />
-      </label>
+        </label>
+        <label className='flex flex-col text-xs gap-2'>
+          Web:
+          <input
+            className='w-full p-2 border-2 border-adivinaGreen rounded-lg bg-transparent text-white text-base font-normal'
+            type='text'
+            placeholder='Tu web'
+            value={webForm}
+            onChange={(e) => setWebForm(e.target.value)}
+          />
+        </label>
 
-      <label className='flex flex-col text-xs gap-2'>
-        Avatar:
-        <input
-          className='w-full p-2 border-2 border-adivinaGreen rounded-lg bg-transparent text-white text-base font-normal'
-          type='file'
-          onChange={e => setFile(e.target.files[0])}
-        />
-      </label>
-      <div className='w-full flex gap-4 '>
-        <button
-          className='w-1/2 rounded-lg bg-adivinaGreen py-2 text-[#333] font-bold hover:scale-105 hover:brightness-110 transition-all '
-        >
-          Actualizar
-        </button>
-        <button
-          className='w-1/2 rounded-lg bg-red-700 py-2 text-white font-bold hover:scale-105 hover:brightness-110 transition-all '
-        >
-          Eliminar Usuario
-        </button>
-      </div>
-    </form>
+        <label className='flex flex-col text-xs gap-2'>
+          Avatar:
+          <input
+            className='w-full p-2 border-2 border-adivinaGreen rounded-lg bg-transparent text-white text-base font-normal'
+            type='file'
+            onChange={e => setFile(e.target.files[0])}
+          />
+        </label>
+        <div className='w-full flex gap-4 '>
+          <button
+            className='w-1/2 rounded-lg bg-adivinaGreen py-2 text-[#333] font-bold hover:scale-105 hover:brightness-110 transition-all '
+          >
+            Actualizar
+          </button>
+          <button
+            className='w-1/2 rounded-lg bg-red-700 py-2 text-white font-bold hover:scale-105 hover:brightness-110 transition-all '
+            type='button'
+            onClick={handleDeleteUser}
+          >
+            Eliminar Usuario
+          </button>
+        </div>
+      </form>
+    </>
   )
 }
 
