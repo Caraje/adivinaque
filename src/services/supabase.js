@@ -93,3 +93,43 @@ export async function getUserList () {
   const { data: { users }, error } = await supabase.auth.admin.listUsers()
   return (users)
 }
+
+export async function updateUserSocials (user) {
+  const { nameForm, avatarForm, instagramForm, twitchForm, twitterForm, userYoutubeForm, webForm } = user
+
+  const { data } = await supabase.auth.updateUser({
+    data: {
+      nameForm,
+      url: `/${nameForm}`,
+      imgAvatar: avatarForm,
+      socials: [
+        {
+          name: 'twitter',
+          user: twitterForm,
+          url: 'https://twitter.com/'
+        },
+        {
+          name: 'instagram',
+          user: instagramForm,
+          url: 'https://www.instagram.com/'
+        },
+        {
+          name: 'youtube',
+          user: userYoutubeForm,
+          url: 'https://www.youtube.com/@'
+        },
+        {
+          name: 'twitch',
+          user: twitchForm,
+          url: 'https://www.twitch.tv/'
+        },
+        {
+          name: 'web',
+          user: webForm,
+          url: webForm
+        }
+      ]
+    }
+  })
+  // document.location.href = `/user/${nameForm}`
+}
