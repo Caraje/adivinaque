@@ -1,7 +1,8 @@
 import MainLayout from '@/components/layout/MainLayout'
 import CategoryCardUser from '@/components/user/CategoryCardUser'
+import FormUpdateSocial from '@/components/user/FormUpdateSocial'
 import { UserCardSocial } from '@/components/user/UserCardSocial'
-import FormUpdateSocial from '@/components/user/formUpdateSocial'
+
 import { getUserList } from '@/services/supabase'
 import { useSelector } from 'react-redux'
 
@@ -60,11 +61,14 @@ const UserPage = ({ user }) => {
 
 export const getStaticPaths = async () => {
   const usersList = await getUserList()
-  const users = usersList.map((user) => ({
-    params: {
-      user: user.user_metadata.userName
-    }
-  }))
+  const users = usersList.map((user) => {
+    const userUrl = user.user_metadata.userName.toLowerCase().trim()
+    return ({
+      params: {
+        user: userUrl
+      }
+    })
+  })
 
   return {
     paths: users,
@@ -74,8 +78,9 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const { user: userName } = params
+  console.log({ params })
   const usersList = await getUserList()
-  const actualUser = usersList.filter((user) => (user.user_metadata.userName === userName))
+  const actualUser = usersList.filter((user) => (user.user_metadata.userName.toLowerCase().trim() === userName.toLowerCase().trim()))
   return {
     props: {
       user: actualUser
