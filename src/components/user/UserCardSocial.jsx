@@ -1,7 +1,6 @@
 
 export const UserCardSocial = ({ social }) => {
   const validSocials = social.filter(soc => soc.user === true)
-  console.log('=>', { validSocials })
 
   return (
     <article className=' flex  flex-col gap-4 justify-center items-center overflow-hidden border border-adivinaGreen/50 rounded-xl p-8 bg-adivinaBlack/25'>
