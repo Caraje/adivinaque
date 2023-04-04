@@ -2,9 +2,53 @@ import MainLayout from '@/components/layout/MainLayout'
 import UserCard from '@/components/ui/UserCard'
 import Link from 'next/link'
 import { useSelector } from 'react-redux'
+import { useState, useEffect } from 'react'
+import cinema from '@/db/levelsCategories/cinema.json'
+import CanvasCategory from '@/components/category/CanvasCategory'
+import AnswerForm from '@/components/category/AnswerForm'
+import CluesCategory from '@/components/category/CluesCategory'
 
 export default function CinemaPage () {
   const { status } = useSelector(store => store.auth)
+  const [isCorrect, setIsCorrect] = useState(false) // establece si la respuesta es correcta o no
+  const [actualLevel, setActualLevel] = useState(0) // Estado con el level actual
+  const [turn, setTurn] = useState(0) // estado con el turno del nivel actual
+  const [formAnswer, setFormAnswer] = useState('')
+  const [isError, setIsError] = useState(false)
+
+  const level = cinema.cinema[actualLevel]
+
+  useEffect(() => {
+    setTurn(0)
+    setIsError(false)
+    setIsCorrect(false)
+    setFormAnswer('')
+  }, [actualLevel])
+
+  const handleAnswer = (event) => {
+    event.preventDefault()
+    const answerForm = event.target.answer.value.toLowerCase()
+    const CorrectTitle = level.answer.title.toLowerCase()
+
+    console.log('answerForm.lenght=>', answerForm.length)
+    if (answerForm.length < 2) {
+      return
+    }
+    if (answerForm === CorrectTitle) {
+      setIsCorrect(true)
+      return
+    }
+    if (turn < 4) {
+      setTurn(turn + 1)
+      return
+    }
+    setIsError(true)
+  }
+
+  const prevLevel = () => {
+    setActualLevel(actualLevel + 1)
+  }
+
   return (
     <>
       <div className='w-screen min-h-screen  flex flex-col items-center justify-betwee text-white font-montserrat  bg-slate-950'>
@@ -21,41 +65,28 @@ export default function CinemaPage () {
               </h1>
               <div className=' w-full flex flex-col gap-8  items-center overflow-hidden'>
 
-                <div className='relative w-4/5 bg-slate-500 rounded-2xl overflow-hidden border border-adivinaGreen/50 '>
-                  <h3
-                    className='absolute bottom-4 w-full bg-adivinaGreen/40 ext-adivinaBlack font-bold  flex items-center justify-center text-3xl p-4'
-                  >
-                    ¡¡¡Respuesta Correcta!!!
-                  </h3>
+                {/* ESTO ES LA IMAGEN */}
+                <CanvasCategory level={level} isCorrect={isCorrect} isError={isError} turn={turn} />
+                {/* ESTO ES EL FORMULARIO */}
+                <AnswerForm
+                  handleAnswer={handleAnswer}
+                  formAnswer={formAnswer}
+                  setFormAnswer={setFormAnswer}
+                  isCorrect={isCorrect}
+                  isError={isError}
+                  prevLevel={prevLevel}
+                />
 
-                  <img src='./imgs/dino.webp' alt='imagen de parque jurasico' width={650} height={400} />
-                </div>
-                <form className='w-4/5 flex gap-4 h-12'>
-                  <input
-                    className='w-4/5 rounded-lg p-4 bg-adivinaBlack/25 border border-adivinaGreen'
-                    type='text'
-                    placeholder='Jurassic Park'
-                  />
-                  <button
-                    className='w-1/5 bg-adivinaGreen border border-adivinaGreen text-adivinaBlack font-bold rounded-lg hover:scale-105 hover:contrast-200 transition-all '
-                  >
-                    Enviar
-                  </button>
-                </form>
+                {/* ESTO Son las pistas */}
+                {
+                  turn >= 1 &&
+                    <CluesCategory level={level} turn={turn} />
+                }
 
-                <section className='w-4/5'>
-                  <h2 className='text-adivinaGreen font-extrabold text-2xl'>
-                    Pistas:
-                  </h2>
-                  <ol className='p-8 font-semibold flex flex-col gap-2'>
-                    <li className='list-disc'>Primera pista</li>
-                    <li className='list-disc'>Segunda Pista pista</li>
-                    <li className='list-disc'>Tercera pista</li>
-                    <li className='list-disc'>Cuarta pista</li>
-                  </ol>
-                </section>
               </div>
             </section>
+
+            {/* Esto es la barra lateral */}
             <aside className='w-80 flex flex-col gap-10  '>
               {/* USER CARD */}
               {
