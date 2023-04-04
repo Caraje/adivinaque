@@ -7,14 +7,18 @@ import cinema from '@/db/levelsCategories/cinema.json'
 import CanvasCategory from '@/components/category/CanvasCategory'
 import AnswerForm from '@/components/category/AnswerForm'
 import CluesCategory from '@/components/category/CluesCategory'
+import { getUserList } from '@/services/supabase'
 
-export default function CinemaPage () {
+export default function CinemaPage ({ usersList }) {
   const { status } = useSelector(store => store.auth)
   const [isCorrect, setIsCorrect] = useState(false) // establece si la respuesta es correcta o no
   const [actualLevel, setActualLevel] = useState(0) // Estado con el level actual
   const [turn, setTurn] = useState(0) // estado con el turno del nivel actual
   const [formAnswer, setFormAnswer] = useState('')
   const [isError, setIsError] = useState(false)
+  const [totalPoints, setTotalPoints] = useState(0)
+  const [errorsCount, setErrorsCount] = useState(0)
+  const [multiplyPoints, setMultiplyPoints] = useState(5)
 
   const level = cinema.cinema[actualLevel]
 
@@ -30,18 +34,25 @@ export default function CinemaPage () {
     const answerForm = event.target.answer.value.toLowerCase()
     const CorrectTitle = level.answer.title.toLowerCase()
 
-    console.log('answerForm.lenght=>', answerForm.length)
+    // La respuesta debe tener mas de 2 caeacteres
     if (answerForm.length < 2) {
       return
     }
+
+    // LA RESPUESTA ES CORRECTA
     if (answerForm === CorrectTitle) {
       setIsCorrect(true)
+      setTotalPoints(5 * multiplyPoints)
       return
     }
+    // LA RESPUESTA ES INCORRECTA
     if (turn < 4) {
       setTurn(turn + 1)
+      setMultiplyPoints(multiplyPoints - 1)
+      setErrorsCount(errorsCount + 1)
       return
     }
+    // SE PRODUCE ERROR EN EL NIVEL
     setIsError(true)
   }
 
@@ -49,6 +60,7 @@ export default function CinemaPage () {
     setActualLevel(actualLevel + 1)
   }
 
+  console.log({ usersList })
   return (
     <>
       <div className='w-screen min-h-screen  flex flex-col items-center justify-betwee text-white font-montserrat  bg-slate-950'>
@@ -95,25 +107,27 @@ export default function CinemaPage () {
               }
               {/* RANK CARD */}
               {/* TODO: CAMBIAR */}
-              <section className=' flex  flex-col gap-4 justify-center   overflow-hidden border border-adivinaGreen/50 rounded-xl p-4 bg-adivinaBlack/25'>
+              <section className='w-full flex  flex-col gap-4 justify-center   overflow-hidden border border-adivinaGreen/50 rounded-xl p-4 bg-adivinaBlack/25'>
                 <h2 className=' text-xl text-adivinaGreen font-semibold'>
-                  Últimas noticias
+                  Classificación
                 </h2>
-                <Link className='hover:scale-105 transition-all  hover:contrast-125 hover:brightness-110 hover:text-adivinaGreen' href='/#'>
-                  <article className='relative w-full  rounded-xl border border-adivinaGreen/75 overflow-hidden '>
-                    <h2 className='absolute bottom-2 left-2 m-2 font-semibold text-lg z-20'>Nuevas Secciones </h2>
-                    <div className='absolute w-full h-full bg-gradient-to-t from-black/30 from-30% to-transparent to-45% z-400' />
-                    <img className='w-full object-cover' src='./imgs/superman.webp' alt='' width={200} height={50} />
-                  </article>
-                </Link>
-                <Link className='hover:scale-105 transition-all  hover:contrast-125 hover:brightness-110 hover:text-adivinaGreen' href='/#'>
-                  <article className='relative w-full  rounded-xl border border-adivinaGreen/75 overflow-hidden '>
-                    <h2 className='absolute bottom-2 left-2 m-2 font-semibold text-lg z-20'>Cierre por mantenimiento </h2>
-                    <div className='absolute w-full h-full bg-gradient-to-t from-black/30 from-30% to-transparent to-45% z-400' />
-                    <img className='w-full object-cover' src='./imgs/superman.webp' alt='' width={200} height={50} />
-                  </article>
-                </Link>
 
+                {usersList.slice(0, 10).map((user, idx) => {
+                  const newUser = user.user_metadata
+                  console.log({ newUser })
+                  return (
+                    <Link
+                      href={`/users/${newUser.userName.toLowerCase().trim()}`}
+                      target='_blank'
+                      key={idx}
+                      className='w-full h-12 flex justify-between items-center gap-4 p-2 rounded-xl hover:bg-adivinaGreen/25 hover:scale-105 transition-all'
+                    >
+                      <img className='rounded-full w-10 h-10 object-cover border-2 border-adivinaGreen' src={newUser.imgAvatar ? `https://res.cloudinary.com/caraje/image/upload/v1679717935/${newUser.imgAvatar}` : '/imgs/no-avatar.webp'} alt={`Imagen de ${newUser.userName}`} width={50} height={50} />
+                      <h2 className='w-2/4 font-montserrat font-semibold'>{newUser.userName}</h2>
+                      <h2 className=''>{newUser.categories.cinema.totalPoints}</h2>
+                    </Link>
+                  )
+                })}
               </section>
             </aside>
 
@@ -125,4 +139,14 @@ export default function CinemaPage () {
       </div>
     </>
   )
+}
+
+export const getStaticProps = async (ctx) => {
+  const usersList = await getUserList()
+
+  return {
+    props: {
+      usersList
+    }
+  }
 }
