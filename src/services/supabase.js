@@ -135,6 +135,17 @@ export async function updateUserSocials (user) {
   window.location.reload()
   return data
 }
+export async function updateUserScore (score) {
+  const scoreUser = score
+
+  const { data } = await supabase.auth.updateUser({
+    data: {
+      categories: scoreUser
+    }
+  })
+  // window.location.reload()
+  return data
+}
 
 export async function deleteUser (id) {
   const data = await supabase.auth.admin.deleteUser(id)
