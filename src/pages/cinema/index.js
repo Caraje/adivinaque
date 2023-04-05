@@ -15,8 +15,18 @@ export default function CinemaPage ({ usersList }) {
   const user = useSelector(store => store.user)
   const { id } = user
 
+  const date = new Date()
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+  const actualDate = `${day}/${month}/${year}`
+
+  const getLevel = cinema.cinema.filter(lvl => {
+    return lvl.publishDay === actualDate
+  })
+
   const [isCorrect, setIsCorrect] = useState(false) // establece si la respuesta es correcta o no
-  const [actualLevel, setActualLevel] = useState(0) // Estado con el level actual
+  const [actualLevel, setActualLevel] = useState(getLevel[0].id - 1) // Estado con el level actual
   const [turn, setTurn] = useState(0) // estado con el turno del nivel actual
   const [formAnswer, setFormAnswer] = useState('') // recibe la respuesta del usuario
   const [isError, setIsError] = useState(false) // Estado para ver cuando la partida es marcada como error del nivel
@@ -27,9 +37,6 @@ export default function CinemaPage ({ usersList }) {
   const [check, setCheck] = useState(0)
 
   const dispatch = useDispatch()
-
-  const level = cinema.cinema[actualLevel]
-  const scoreUser = user.categories
 
   useEffect(() => {
     setTurn(0)
@@ -48,9 +55,13 @@ export default function CinemaPage ({ usersList }) {
     dispatch(userScoreState(pointsUser))
   }, [check])
 
+  const level = cinema.cinema[actualLevel]
+  const scoreUser = user.categories
   const orderList = usersList.sort((a, b) => {
     return (b.user_metadata.categories.cinema.totalPoints - a.user_metadata.categories.cinema.totalPoints)
   })
+
+  console.log({ level, actualLevel, getLevel })
 
   const userPosition = orderList.findIndex(function (objeto) {
     return objeto.id === id
@@ -116,7 +127,7 @@ export default function CinemaPage ({ usersList }) {
   }
 
   const prevLevel = () => {
-    setActualLevel(actualLevel + 1)
+    setActualLevel(actualLevel - 1)
   }
 
   return (
