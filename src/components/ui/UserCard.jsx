@@ -14,15 +14,15 @@ const UserCard = () => {
           <section className='flex items-center justify-center gap-4 font-light text-lg '>
             <div className='flex flex-col items-center justify-center gap-2'>
               <img src='./icons/cinema-icon.svg' alt='' width={24} height={24} />
-              <p>{user.categories.cinema.totalPoints}</p>
+              <p>{user.categories.cinema?.totalPoints}</p>
             </div>
             <div className='flex flex-col items-center justify-center gap-2'>
               <img src='./icons/series-icon.svg' alt='' width={24} height={24} />
-              <p>{user.categories.series.totalPoints}</p>
+              <p>{user.categories.series?.totalPoints}</p>
             </div>
             <div className='flex flex-col items-center justify-center gap-2'>
               <img src='./icons/game-icon.svg' alt='' width={24} height={24} />
-              <p>{user.categories.videogames.totalPoints}</p>
+              <p>{user.categories.videogames?.totalPoints}</p>
             </div>
           </section>
         </footer>
