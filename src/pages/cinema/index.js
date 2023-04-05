@@ -6,13 +6,14 @@ import cinema from '@/db/levelsCategories/cinema.json'
 import CanvasCategory from '@/components/category/CanvasCategory'
 import AnswerForm from '@/components/category/AnswerForm'
 import CluesCategory from '@/components/category/CluesCategory'
-import { getUserList, updateUserScore } from '@/services/supabase'
+import { getUserList } from '@/services/supabase'
 import RankList from '@/components/ui/RankList'
 import { userScoreState } from '@/store/user/thunks'
 
 export default function CinemaPage ({ usersList }) {
   const { status } = useSelector(store => store.auth)
   const user = useSelector(store => store.user)
+  const { id } = user
 
   const [isCorrect, setIsCorrect] = useState(false) // establece si la respuesta es correcta o no
   const [actualLevel, setActualLevel] = useState(0) // Estado con el level actual
@@ -23,7 +24,7 @@ export default function CinemaPage ({ usersList }) {
   const [errorsCount, setErrorsCount] = useState(0) // Almacena los errores del nivel
   const [corrects, setCorrects] = useState(0) // Almacena los errores del nivel
   const [multiplyPoints, setMultiplyPoints] = useState(5) // Establece el multiplicador de puntos
-  const [test, setTest] = useState(0)
+  const [check, setCheck] = useState(0)
 
   const dispatch = useDispatch()
 
@@ -45,14 +46,22 @@ export default function CinemaPage ({ usersList }) {
       return
     }
     dispatch(userScoreState(pointsUser))
-  }, [test])
+  }, [check])
+
+  const orderList = usersList.sort((a, b) => {
+    return (b.user_metadata.categories.cinema.totalPoints - a.user_metadata.categories.cinema.totalPoints)
+  })
+
+  const userPosition = orderList.findIndex(function (objeto) {
+    return objeto.id === id
+  })
 
   const pointsUser = {
     cinema: {
       corrects: corrects + scoreUser.cinema?.corrects,
       errors: errorsCount + scoreUser.cinema?.errors,
       levels_completed: [],
-      positionRank: scoreUser.cinema?.positionRank,
+      positionRank: userPosition + 1,
       totalPoints: totalPoints + scoreUser.cinema?.totalPoints
     },
     series: {
@@ -86,7 +95,7 @@ export default function CinemaPage ({ usersList }) {
       setIsCorrect(true)
       setTotalPoints(5 * multiplyPoints)
       setCorrects(corrects + 1)
-      setTest(test + 1)
+      setCheck(check + 1)
       // updateUserScore(pointsUser)
       return
     }
@@ -103,7 +112,7 @@ export default function CinemaPage ({ usersList }) {
     setIsError(true)
     setErrorsCount(errorsCount + 1)
 
-    setTest(test + 1)
+    setCheck(check + 1)
   }
 
   const prevLevel = () => {
