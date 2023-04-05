@@ -25,13 +25,15 @@ export const userSlice = createSlice({
     },
     updateUser: (state, action) => {
       const { payload } = action
-      console.log({ payload })
-      // state.avatar = payload.avatarForm
       state.socials = payload.socials
+    },
+    userScore: (state, action) => {
+      state.categories = action.payload
     }
+
   }
 })
 
-export const { getUser, updateUser } = userSlice.actions
+export const { getUser, updateUser, userScore } = userSlice.actions
 
 export default userSlice.reducer
