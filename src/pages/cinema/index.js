@@ -1,33 +1,75 @@
 import MainLayout from '@/components/layout/MainLayout'
 import UserCard from '@/components/ui/UserCard'
-import Link from 'next/link'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useState, useEffect } from 'react'
 import cinema from '@/db/levelsCategories/cinema.json'
 import CanvasCategory from '@/components/category/CanvasCategory'
 import AnswerForm from '@/components/category/AnswerForm'
 import CluesCategory from '@/components/category/CluesCategory'
-import { getUserList } from '@/services/supabase'
+import { getUserList, updateUserScore } from '@/services/supabase'
+import RankList from '@/components/ui/RankList'
+import { userScoreState } from '@/store/user/thunks'
 
 export default function CinemaPage ({ usersList }) {
   const { status } = useSelector(store => store.auth)
+  const user = useSelector(store => store.user)
+
   const [isCorrect, setIsCorrect] = useState(false) // establece si la respuesta es correcta o no
   const [actualLevel, setActualLevel] = useState(0) // Estado con el level actual
   const [turn, setTurn] = useState(0) // estado con el turno del nivel actual
-  const [formAnswer, setFormAnswer] = useState('')
-  const [isError, setIsError] = useState(false)
-  const [totalPoints, setTotalPoints] = useState(0)
-  const [errorsCount, setErrorsCount] = useState(0)
-  const [multiplyPoints, setMultiplyPoints] = useState(5)
+  const [formAnswer, setFormAnswer] = useState('') // recibe la respuesta del usuario
+  const [isError, setIsError] = useState(false) // Estado para ver cuando la partida es marcada como error del nivel
+  const [totalPoints, setTotalPoints] = useState(0) // Almacena los puntos del nivel
+  const [errorsCount, setErrorsCount] = useState(0) // Almacena los errores del nivel
+  const [corrects, setCorrects] = useState(0) // Almacena los errores del nivel
+  const [multiplyPoints, setMultiplyPoints] = useState(5) // Establece el multiplicador de puntos
+  const [test, setTest] = useState(0)
+
+  const dispatch = useDispatch()
 
   const level = cinema.cinema[actualLevel]
+  const scoreUser = user.categories
 
   useEffect(() => {
     setTurn(0)
     setIsError(false)
     setIsCorrect(false)
     setFormAnswer('')
+    setTotalPoints(0)
+    setErrorsCount(0)
+    setCorrects(0)
   }, [actualLevel])
+
+  useEffect(() => {
+    if (!totalPoints && !errorsCount) {
+      return
+    }
+    dispatch(userScoreState(pointsUser))
+  }, [test])
+
+  const pointsUser = {
+    cinema: {
+      corrects: corrects + scoreUser.cinema?.corrects,
+      errors: errorsCount + scoreUser.cinema?.errors,
+      levels_completed: [],
+      positionRank: scoreUser.cinema?.positionRank,
+      totalPoints: totalPoints + scoreUser.cinema?.totalPoints
+    },
+    series: {
+      corrects: scoreUser.series?.corrects,
+      errors: scoreUser.series?.errors,
+      levels_completed: scoreUser.series?.levels_completed,
+      positionRank: scoreUser.series?.positionRank,
+      totalPoints: scoreUser.series?.totalPoints
+    },
+    videogames: {
+      corrects: scoreUser.videogames?.corrects,
+      errors: scoreUser.videogames?.errors,
+      levels_completed: scoreUser.videogames?.levels_completed,
+      positionRank: scoreUser.videogames?.positionRank,
+      totalPoints: scoreUser.videogames?.totalPoints
+    }
+  }
 
   const handleAnswer = (event) => {
     event.preventDefault()
@@ -43,6 +85,9 @@ export default function CinemaPage ({ usersList }) {
     if (answerForm === CorrectTitle) {
       setIsCorrect(true)
       setTotalPoints(5 * multiplyPoints)
+      setCorrects(corrects + 1)
+      setTest(test + 1)
+      // updateUserScore(pointsUser)
       return
     }
     // LA RESPUESTA ES INCORRECTA
@@ -50,17 +95,21 @@ export default function CinemaPage ({ usersList }) {
       setTurn(turn + 1)
       setMultiplyPoints(multiplyPoints - 1)
       setErrorsCount(errorsCount + 1)
+      // setTest(test + 1)
+
       return
     }
     // SE PRODUCE ERROR EN EL NIVEL
     setIsError(true)
+    setErrorsCount(errorsCount + 1)
+
+    setTest(test + 1)
   }
 
   const prevLevel = () => {
     setActualLevel(actualLevel + 1)
   }
 
-  console.log({ usersList })
   return (
     <>
       <div className='w-screen min-h-screen  flex flex-col items-center justify-betwee text-white font-montserrat  bg-slate-950'>
@@ -112,22 +161,7 @@ export default function CinemaPage ({ usersList }) {
                   Classificación
                 </h2>
 
-                {usersList.slice(0, 10).map((user, idx) => {
-                  const newUser = user.user_metadata
-                  console.log({ newUser })
-                  return (
-                    <Link
-                      href={`/users/${newUser.userName.toLowerCase().trim()}`}
-                      target='_blank'
-                      key={idx}
-                      className='w-full h-12 flex justify-between items-center gap-4 p-2 rounded-xl hover:bg-adivinaGreen/25 hover:scale-105 transition-all'
-                    >
-                      <img className='rounded-full w-10 h-10 object-cover border-2 border-adivinaGreen' src={newUser.imgAvatar ? `https://res.cloudinary.com/caraje/image/upload/v1679717935/${newUser.imgAvatar}` : '/imgs/no-avatar.webp'} alt={`Imagen de ${newUser.userName}`} width={50} height={50} />
-                      <h2 className='w-2/4 font-montserrat font-semibold'>{newUser.userName}</h2>
-                      <h2 className=''>{newUser.categories.cinema.totalPoints}</h2>
-                    </Link>
-                  )
-                })}
+                <RankList usersList={usersList} />
               </section>
             </aside>
 
