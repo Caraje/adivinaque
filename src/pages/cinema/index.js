@@ -37,7 +37,14 @@ export default function CinemaPage ({ usersList }) {
   const [check, setCheck] = useState(0)
 
   const dispatch = useDispatch()
+  const arrayLevels = []
+  const scoreUser = user.categories
 
+  // const arrayFiltrado = arrayObjetos.filter(objeto => !arrayNumeros.includes(objeto.id));
+
+  const levelsList = cinema.cinema
+  const finalList = levelsList.filter(lvl => !scoreUser.cinema?.levels_completed.includes(lvl.id))
+  const level = finalList[actualLevel]
   useEffect(() => {
     setTurn(0)
     setIsError(false)
@@ -52,26 +59,25 @@ export default function CinemaPage ({ usersList }) {
     if (!totalPoints && !errorsCount) {
       return
     }
+
     dispatch(userScoreState(pointsUser))
+    arrayLevels.push(scoreUser.cinema?.levels_completed)
   }, [check])
 
-  const level = cinema.cinema[actualLevel]
-  const scoreUser = user.categories
   const orderList = usersList.sort((a, b) => {
     return (b.user_metadata.categories.cinema.totalPoints - a.user_metadata.categories.cinema.totalPoints)
   })
-
-  console.log({ level, actualLevel, getLevel })
 
   const userPosition = orderList.findIndex(function (objeto) {
     return objeto.id === id
   })
 
+  console.log(arrayLevels)
   const pointsUser = {
     cinema: {
       corrects: corrects + scoreUser.cinema?.corrects,
       errors: errorsCount + scoreUser.cinema?.errors,
-      levels_completed: [],
+      levels_completed: scoreUser.cinema?.levels_completed.concat(level.id),
       positionRank: userPosition + 1,
       totalPoints: totalPoints + scoreUser.cinema?.totalPoints
     },
