@@ -2,9 +2,13 @@ import Link from 'next/link'
 import React from 'react'
 
 const RankList = ({ usersList }) => {
+  const orderList = usersList.sort((a, b) => {
+    return (b.user_metadata.categories.cinema.totalPoints - a.user_metadata.categories.cinema.totalPoints)
+  })
+
   return (
     <div className='h-60 overflow-x-hidden scrollbar scrollbar-track-rounded-xl scrollbar-w-[3px] scrollbar-thumb-[#03fea4] scrollbar-track-[#333] '>
-      {usersList.slice(0, 10).map((user, idx) => {
+      {orderList.slice(0, 10).map((user, idx) => {
         const newUser = user.user_metadata
 
         return (
