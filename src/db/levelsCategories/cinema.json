@@ -2,7 +2,7 @@
   "cinema": [
     {
       "id": 1,
-      "publishDay": "01/4/2023",
+      "publishDay": "1/4/2023",
       "answer": {
         "title": "The Goonies",
         "answerImg": "/AdivinaQue/cinema/01/jgmjxxgeae1b0xg8euv3.webp"
@@ -32,7 +32,7 @@
     },
     {
       "id": 2,
-      "publishDay": "02/4/2023",
+      "publishDay": "2/4/2023",
       "answer": {
         "title": "Sister Act",
         "answerImg": "/AdivinaQue/cinema/02/cpf0dg4twadfcfo2yuot.webp"
@@ -62,7 +62,7 @@
     },
     {
       "id": 3,
-      "publishDay": "03/4/2023",
+      "publishDay": "3/4/2023",
       "answer": {
         "title": "Dirty Dancing",
         "answerImg": "/AdivinaQue/cinema/03/rpi8buqfmi7eazphuoue.webp"
@@ -92,7 +92,7 @@
     },
     {
       "id": 4,
-      "publishDay": "04/4/2023",
+      "publishDay": "4/4/2023",
       "answer": {
         "title": "Independence Day",
         "answerImg": "/AdivinaQue/cinema/04/w0twlgmot0pjchkoddmx.webp"
@@ -122,7 +122,7 @@
     },
     {
       "id": 5,
-      "publishDay": "05/4/2023",
+      "publishDay": "5/4/2023",
       "answer": {
         "title": "Spider-Man: No Way Home",
         "answerImg": "/AdivinaQue/cinema/05/sykoo0ybkibdkye0h2nf.webp"
@@ -152,7 +152,7 @@
     },
     {
       "id": 6,
-      "publishDay": "06/4/2023",
+      "publishDay": "6/4/2023",
       "answer": {
         "title": "The Lost Boys",
         "answerImg": "/AdivinaQue/cinema/06/s0iw295yaqhhwiylxffc.webp"
@@ -182,7 +182,7 @@
     },
     {
       "id": 7,
-      "publishDay": "07/4/2023",
+      "publishDay": "7/4/2023",
       "answer": {
         "title": "Who Framed Roger Rabbit",
         "answerImg": "/AdivinaQue/cinema/07/rgreamvaf5bbcucsc15k.webp"
@@ -212,7 +212,7 @@
     },
     {
       "id": 8,
-      "publishDay": "08/4/2023",
+      "publishDay": "8/4/2023",
       "answer": {
         "title": "The Naked Gun",
         "answerImg": "/AdivinaQue/cinema/08/ruhrbnluxhhkg7omfoz4.webp"
@@ -242,7 +242,7 @@
     },
     {
       "id": 9,
-      "publishDay": "09/4/2023",
+      "publishDay": "9/4/2023",
       "answer": {
         "title": "Dead Poets Society",
         "answerImg": "/AdivinaQue/cinema/09/z8dkiowbxtiudb7fjxkt.webp"
