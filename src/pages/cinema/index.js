@@ -15,58 +15,29 @@ import { useScoreGame } from '@/hooks/useScoreGame'
 
 export default function CinemaPage ({ usersList }) {
   const dispatch = useDispatch()
+  const [formAnswer, setFormAnswer] = useState('') // recibe la respuesta del usuario
   const { status } = useSelector(store => store.auth)
   const user = useSelector(store => store.user)
 
-  const [formAnswer, setFormAnswer] = useState('') // recibe la respuesta del usuario
   const { id } = user
   const scoreUser = user.categories
   const userPosition = getPositionUserRank(usersList, id)
   const levelList = getLevelsList(scoreUser)
 
-  const {
-    pointsUser,
-    setTotalPoints,
-    totalPoints,
-    setErrorsCount,
-    errorsCount,
-    setCorrects,
-    corrects
-  } = useUpdateScoreUser(scoreUser, userPosition, levelList)
-
-  const {
-    actualLevel,
-    setActualLevel,
-    turn,
-    setTurn,
-    isCorrect,
-    setIsCorrect,
-    isError,
-    setIsError,
-    check,
-    isAnswerCorrect,
-    isAnswerIncorrect,
-    isAnswerFail
-  } = useScoreGame(scoreUser, userPosition)
-
+  const { actualLevel, setActualLevel, turn, isCorrect, isError, check, isAnswerCorrect, isAnswerIncorrect, isAnswerFail, resetScoreLevel } = useScoreGame(scoreUser, userPosition)
   const level = getLevelsList(scoreUser)[actualLevel]
+  const { pointsUser, setTotalPoints, totalPoints, setErrorsCount, errorsCount, setCorrects, corrects } = useUpdateScoreUser(scoreUser, userPosition, level)
+
   const arrayLevels = []
 
   useEffect(() => {
-    setTurn(0)
-    setIsError(false)
-    setIsCorrect(false)
-    setFormAnswer('')
-    setTotalPoints(0)
-    setErrorsCount(0)
-    setCorrects(0)
+    resetScoreLevel(setFormAnswer)
   }, [actualLevel])
 
   useEffect(() => {
     if (!totalPoints && !errorsCount) {
       return
     }
-
     dispatch(userScoreState(pointsUser))
     arrayLevels.push(scoreUser.cinema?.levels_completed)
   }, [check])
