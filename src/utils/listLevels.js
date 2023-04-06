@@ -15,7 +15,7 @@ export const getLevelOfDay = () => {
 export const getLevelsList = (scoreUser) => {
   const levelsList = cinema.cinema
     .filter(lvl => lvl.id <= getLevelOfDay()[0].id)
-    .filter(lvl => !scoreUser.cinema?.levels_completed
+    .filter(lvl => !scoreUser?.cinema?.levels_completed
       .includes(lvl.id))
     .sort((a, b) => b.id - a.id)
 
@@ -23,7 +23,7 @@ export const getLevelsList = (scoreUser) => {
 }
 
 export const previusLevel = (setActualLevel, actualLevel, levelList) => {
-  if (actualLevel + 1 <= levelList.length - 1) {
+  if (actualLevel <= levelList.length) {
     setActualLevel(actualLevel + 1)
   }
 }
