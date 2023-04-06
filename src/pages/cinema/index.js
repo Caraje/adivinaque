@@ -11,6 +11,7 @@ import RankList from '@/components/ui/RankList'
 import { userScoreState } from '@/store/user/thunks'
 import { getLevelsList } from '@/utils/listLevels'
 import { getPositionUserRank } from '@/utils/users'
+import { useUpdateScoreUser } from '@/hooks/useUpdateScoreUser'
 
 export default function CinemaPage ({ usersList }) {
   const dispatch = useDispatch()
@@ -22,17 +23,27 @@ export default function CinemaPage ({ usersList }) {
   const [turn, setTurn] = useState(0) // estado con el turno del nivel actual
   const [formAnswer, setFormAnswer] = useState('') // recibe la respuesta del usuario
   const [isError, setIsError] = useState(false) // Estado para ver cuando la partida es marcada como error del nivel
-  const [totalPoints, setTotalPoints] = useState(0) // Almacena los puntos del nivel
-  const [errorsCount, setErrorsCount] = useState(0) // Almacena los errores del nivel
-  const [corrects, setCorrects] = useState(0) // Almacena los errores del nivel
+  // const [totalPoints, setTotalPoints] = useState(0) // Almacena los puntos del nivel
+  // const [errorsCount, setErrorsCount] = useState(0) // Almacena los errores del nivel
+  // const [corrects, setCorrects] = useState(0) // Almacena los errores del nivel
   const [multiplyPoints, setMultiplyPoints] = useState(5) // Establece el multiplicador de puntos
   const [check, setCheck] = useState(0)
 
   const scoreUser = user.categories
   const level = getLevelsList(scoreUser)[actualLevel]
+  const levelList = getLevelsList(scoreUser)
   const arrayLevels = []
   const { id } = user
   const userPosition = getPositionUserRank(usersList, id)
+  const {
+    pointsUser,
+    setTotalPoints,
+    totalPoints,
+    setErrorsCount,
+    errorsCount,
+    setCorrects,
+    corrects
+  } = useUpdateScoreUser(scoreUser, userPosition, levelList)
 
   useEffect(() => {
     setTurn(0)
@@ -52,31 +63,6 @@ export default function CinemaPage ({ usersList }) {
     dispatch(userScoreState(pointsUser))
     arrayLevels.push(scoreUser.cinema?.levels_completed)
   }, [check])
-
-  const pointsUser = {
-    cinema: {
-      corrects: corrects + scoreUser.cinema?.corrects,
-      errors: errorsCount + scoreUser.cinema?.errors,
-      levels_completed: [],
-      // levels_completed: scoreUser.cinema?.levels_completed.concat(level.id),
-      positionRank: userPosition + 1,
-      totalPoints: totalPoints + scoreUser.cinema?.totalPoints
-    },
-    series: {
-      corrects: scoreUser.series?.corrects,
-      errors: scoreUser.series?.errors,
-      levels_completed: scoreUser.series?.levels_completed,
-      positionRank: scoreUser.series?.positionRank,
-      totalPoints: scoreUser.series?.totalPoints
-    },
-    videogames: {
-      corrects: scoreUser.videogames?.corrects,
-      errors: scoreUser.videogames?.errors,
-      levels_completed: scoreUser.videogames?.levels_completed,
-      positionRank: scoreUser.videogames?.positionRank,
-      totalPoints: scoreUser.videogames?.totalPoints
-    }
-  }
 
   const handleAnswer = (event) => {
     event.preventDefault()
