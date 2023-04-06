@@ -15,7 +15,7 @@ import { useScoreGame } from '@/hooks/useScoreGame'
 
 export default function CinemaPage ({ usersList }) {
   const dispatch = useDispatch()
-  const [formAnswer, setFormAnswer] = useState('') // recibe la respuesta del usuario
+  const [formAnswer, setFormAnswer] = useState('')
   const { status } = useSelector(store => store.auth)
   const user = useSelector(store => store.user)
 
@@ -28,8 +28,6 @@ export default function CinemaPage ({ usersList }) {
   const level = getLevelsList(scoreUser)[actualLevel]
   const { pointsUser, setTotalPoints, totalPoints, setErrorsCount, errorsCount, setCorrects, corrects } = useUpdateScoreUser(scoreUser, userPosition, level)
 
-  const arrayLevels = []
-
   useEffect(() => {
     resetScoreLevel(setFormAnswer)
   }, [actualLevel])
@@ -39,7 +37,6 @@ export default function CinemaPage ({ usersList }) {
       return
     }
     dispatch(userScoreState(pointsUser))
-    arrayLevels.push(scoreUser.cinema?.levels_completed)
   }, [check])
 
   const handleAnswer = (event) => {
@@ -62,18 +59,12 @@ export default function CinemaPage ({ usersList }) {
 
           {/* CONTENIDO */}
           <main className='w-full flex gap-10 p-4 max-w-6xl'>
-
             <section className=' w-full flex flex-col gap-8  border border-adivinaGreen/50 rounded-xl p-4 bg-adivinaBlack/25'>
-              <h1
-                className='font-black text-3xl text-adivinaGreen ml-8 mt-8'
-              >
+              <h1 className='font-black text-3xl text-adivinaGreen ml-8 mt-8'>
                 Cine
               </h1>
               <div className=' w-full flex flex-col gap-8  items-center overflow-hidden'>
-
-                {/* ESTO ES LA IMAGEN */}
                 <CanvasCategory level={level} isCorrect={isCorrect} isError={isError} turn={turn} />
-                {/* ESTO ES EL FORMULARIO */}
                 <AnswerForm
                   handleAnswer={handleAnswer}
                   formAnswer={formAnswer}
@@ -84,37 +75,19 @@ export default function CinemaPage ({ usersList }) {
                   setActualLevel={setActualLevel}
                   levelList={levelList}
                 />
-
-                {/* ESTO Son las pistas */}
-                {
-                  turn >= 1 &&
-                    <CluesCategory level={level} turn={turn} />
-                }
-
+                {turn >= 1 && <CluesCategory level={level} turn={turn} />}
               </div>
             </section>
-
-            {/* Esto es la barra lateral */}
             <aside className='w-80 flex flex-col gap-10  '>
-              {/* USER CARD */}
-              {
-                status && <UserCard />
-
-              }
-              {/* RANK CARD */}
-              {/* TODO: CAMBIAR */}
+              {status && <UserCard />}
               <section className='w-full flex  flex-col gap-4 justify-center   overflow-hidden border border-adivinaGreen/50 rounded-xl p-4 bg-adivinaBlack/25'>
                 <h2 className=' text-xl text-adivinaGreen font-semibold'>
                   Classificación
                 </h2>
-
                 <RankList usersList={usersList} />
               </section>
             </aside>
-
           </main>
-
-          {/* FOOTER */}
           <footer className='w-full mt-auto flex items-center  justify-around bg-adivinaBlack'>Aqui va el pie de pagina</footer>
         </MainLayout>
       </div>
