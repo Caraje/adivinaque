@@ -1,6 +1,14 @@
-import { previusLevel } from '@/utils/listLevels'
 
-const AnswerForm = ({ handleAnswer, formAnswer, setFormAnswer, isCorrect, isError, actualLevel, setActualLevel, levelList }) => {
+import { userScoreState } from '@/store/user/thunks'
+import { previusLevel } from '@/utils/listLevels'
+import { useDispatch } from 'react-redux'
+
+const AnswerForm = ({ handleAnswer, formAnswer, setFormAnswer, isCorrect, isError, actualLevel, setActualLevel, levelList, pointsUser }) => {
+  const dispatch = useDispatch()
+  const handleResetLevel = async () => {
+    await dispatch(userScoreState(pointsUser))
+    previusLevel(setActualLevel, actualLevel, levelList)
+  }
   return (
     <form
       className='w-4/5 flex gap-4 h-12'
@@ -20,7 +28,7 @@ const AnswerForm = ({ handleAnswer, formAnswer, setFormAnswer, isCorrect, isErro
                       ? (
                         <button
                           type='button'
-                          onClick={() => { previusLevel(setActualLevel, actualLevel, levelList) }}
+                          onClick={handleResetLevel}
                           className='w-1/5 bg-yellow-400 border border-adivinaGreen text-adivinaBlack font-bold rounded-lg hover:scale-105 hover:contrast-200 transition-all '
                         >
                           Nivel anterior
