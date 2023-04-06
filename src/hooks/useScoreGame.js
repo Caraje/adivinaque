@@ -1,6 +1,7 @@
 
 import { useState } from 'react'
 import { useUpdateScoreUser } from './useUpdateScoreUser'
+import { getLevelsList } from '@/utils/listLevels'
 
 export const useScoreGame = (scoreUser, userPosition) => {
   const { setTotalPoints, setErrorsCount, setCorrects } = useUpdateScoreUser(scoreUser, userPosition)
@@ -11,6 +12,9 @@ export const useScoreGame = (scoreUser, userPosition) => {
   const [isError, setIsError] = useState(false) // Estado para ver cuando la partida es marcada como error del nivel
   const [multiplyPoints, setMultiplyPoints] = useState(5) // Establece el multiplicador de puntos
   const [check, setCheck] = useState(0)
+
+  const level = getLevelsList(scoreUser)[actualLevel]
+  const levelList = getLevelsList(scoreUser)
 
   const isAnswerCorrect = (setTotalPoints, setCorrects, corrects) => {
     setIsCorrect(true)
@@ -35,7 +39,7 @@ export const useScoreGame = (scoreUser, userPosition) => {
     setTurn(0)
     setIsError(false)
     setIsCorrect(false)
-    setFormAnswer('')
+    // setFormAnswer('')
     setTotalPoints(0)
     setErrorsCount(0)
     setCorrects(0)
@@ -57,7 +61,9 @@ export const useScoreGame = (scoreUser, userPosition) => {
     isAnswerCorrect,
     isAnswerIncorrect,
     isAnswerFail,
-    resetScoreLevel
+    resetScoreLevel,
+    level,
+    levelList
 
   }
 }
