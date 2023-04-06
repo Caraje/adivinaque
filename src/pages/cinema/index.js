@@ -10,14 +10,12 @@ import { getUserList } from '@/services/supabase'
 import RankList from '@/components/ui/RankList'
 import { userScoreState } from '@/store/user/thunks'
 import { getLevelsList } from '@/utils/listLevels'
+import { getPositionUserRank } from '@/utils/users'
 
 export default function CinemaPage ({ usersList }) {
   const dispatch = useDispatch()
   const { status } = useSelector(store => store.auth)
   const user = useSelector(store => store.user)
-  const scoreUser = user.categories
-
-  const { id } = user
 
   const [isCorrect, setIsCorrect] = useState(false) // establece si la respuesta es correcta o no
   const [actualLevel, setActualLevel] = useState(0) // Estado con el level actual
@@ -30,9 +28,11 @@ export default function CinemaPage ({ usersList }) {
   const [multiplyPoints, setMultiplyPoints] = useState(5) // Establece el multiplicador de puntos
   const [check, setCheck] = useState(0)
 
-  const arrayLevels = []
-
+  const scoreUser = user.categories
   const level = getLevelsList(scoreUser)[actualLevel]
+  const arrayLevels = []
+  const { id } = user
+  const userPosition = getPositionUserRank(usersList, id)
 
   useEffect(() => {
     setTurn(0)
@@ -52,14 +52,6 @@ export default function CinemaPage ({ usersList }) {
     dispatch(userScoreState(pointsUser))
     arrayLevels.push(scoreUser.cinema?.levels_completed)
   }, [check])
-
-  const orderList = usersList.sort((a, b) => {
-    return (b.user_metadata.categories.cinema.totalPoints - a.user_metadata.categories.cinema.totalPoints)
-  })
-
-  const userPosition = orderList.findIndex(function (objeto) {
-    return objeto.id === id
-  })
 
   const pointsUser = {
     cinema: {
