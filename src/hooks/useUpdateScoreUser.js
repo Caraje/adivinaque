@@ -1,7 +1,7 @@
 
 import { useState } from 'react'
 
-export const useUpdateScoreUser = (scoreUser, userPosition, levels) => {
+export const useUpdateScoreUser = (scoreUser, userPosition, levelList) => {
   const [totalPoints, setTotalPoints] = useState(0) // Almacena los puntos del nivel
   const [errorsCount, setErrorsCount] = useState(0) // Almacena los errores del nivel
   const [corrects, setCorrects] = useState(0) //
@@ -11,7 +11,7 @@ export const useUpdateScoreUser = (scoreUser, userPosition, levels) => {
       corrects: corrects + scoreUser.cinema?.corrects,
       errors: errorsCount + scoreUser.cinema?.errors,
       levels_completed: [],
-      // levels_completed: scoreUser.cinema?.levels_completed.concat(levels.id),
+      // levels_completed: scoreUser.cinema?.levels_completed.concat(levelList.id),
       positionRank: userPosition + 1,
       totalPoints: totalPoints + scoreUser.cinema?.totalPoints
     },
