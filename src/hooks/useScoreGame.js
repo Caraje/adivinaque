@@ -1,7 +1,10 @@
 
 import { useState } from 'react'
+import { useUpdateScoreUser } from './useUpdateScoreUser'
 
 export const useScoreGame = (scoreUser, userPosition) => {
+  const { setTotalPoints, setErrorsCount, setCorrects } = useUpdateScoreUser(scoreUser, userPosition)
+
   const [actualLevel, setActualLevel] = useState(0) // Estado con el level actual
   const [turn, setTurn] = useState(0) // estado con el turno del nivel actual
   const [isCorrect, setIsCorrect] = useState(false) // establece si la respuesta es correcta o no
@@ -28,6 +31,16 @@ export const useScoreGame = (scoreUser, userPosition) => {
     setCheck(check + 1)
   }
 
+  const resetScoreLevel = (setFormAnswer) => {
+    setTurn(0)
+    setIsError(false)
+    setIsCorrect(false)
+    setFormAnswer('')
+    setTotalPoints(0)
+    setErrorsCount(0)
+    setCorrects(0)
+  }
+
   return {
     actualLevel,
     setActualLevel,
@@ -43,7 +56,8 @@ export const useScoreGame = (scoreUser, userPosition) => {
     setCheck,
     isAnswerCorrect,
     isAnswerIncorrect,
-    isAnswerFail
+    isAnswerFail,
+    resetScoreLevel
 
   }
 }
