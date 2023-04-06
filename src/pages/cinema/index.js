@@ -9,24 +9,18 @@ import CluesCategory from '@/components/category/CluesCategory'
 import { getUserList } from '@/services/supabase'
 import RankList from '@/components/ui/RankList'
 import { userScoreState } from '@/store/user/thunks'
+import { getLevelsList } from '@/utils/listLevels'
 
 export default function CinemaPage ({ usersList }) {
+  const dispatch = useDispatch()
   const { status } = useSelector(store => store.auth)
   const user = useSelector(store => store.user)
+  const scoreUser = user.categories
+
   const { id } = user
 
-  const date = new Date()
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const actualDate = `${day}/${month}/${year}`
-
-  const getLevel = cinema.cinema.filter(lvl => {
-    return lvl.publishDay === actualDate
-  })
-
   const [isCorrect, setIsCorrect] = useState(false) // establece si la respuesta es correcta o no
-  const [actualLevel, setActualLevel] = useState(getLevel[0].id - 1) // Estado con el level actual
+  const [actualLevel, setActualLevel] = useState(0) // Estado con el level actual
   const [turn, setTurn] = useState(0) // estado con el turno del nivel actual
   const [formAnswer, setFormAnswer] = useState('') // recibe la respuesta del usuario
   const [isError, setIsError] = useState(false) // Estado para ver cuando la partida es marcada como error del nivel
@@ -36,15 +30,10 @@ export default function CinemaPage ({ usersList }) {
   const [multiplyPoints, setMultiplyPoints] = useState(5) // Establece el multiplicador de puntos
   const [check, setCheck] = useState(0)
 
-  const dispatch = useDispatch()
   const arrayLevels = []
-  const scoreUser = user.categories
 
-  // const arrayFiltrado = arrayObjetos.filter(objeto => !arrayNumeros.includes(objeto.id));
+  const level = getLevelsList(scoreUser)[actualLevel]
 
-  const levelsList = cinema.cinema
-  const finalList = levelsList.filter(lvl => !scoreUser.cinema?.levels_completed.includes(lvl.id))
-  const level = finalList[actualLevel]
   useEffect(() => {
     setTurn(0)
     setIsError(false)
@@ -72,12 +61,12 @@ export default function CinemaPage ({ usersList }) {
     return objeto.id === id
   })
 
-  console.log(arrayLevels)
   const pointsUser = {
     cinema: {
       corrects: corrects + scoreUser.cinema?.corrects,
       errors: errorsCount + scoreUser.cinema?.errors,
-      levels_completed: scoreUser.cinema?.levels_completed.concat(level.id),
+      levels_completed: [],
+      // levels_completed: scoreUser.cinema?.levels_completed.concat(level.id),
       positionRank: userPosition + 1,
       totalPoints: totalPoints + scoreUser.cinema?.totalPoints
     },
@@ -133,7 +122,14 @@ export default function CinemaPage ({ usersList }) {
   }
 
   const prevLevel = () => {
-    setActualLevel(actualLevel - 1)
+    console.log(actualLevel + 1, finalList.length - 1)
+    if (actualLevel + 1 <= finalList.length - 1) {
+      setActualLevel(actualLevel + 1)
+      return
+    }
+
+    // TODO: poner pantalla de no hay mas niveles
+    console.log('no hay mas')
   }
 
   return (
