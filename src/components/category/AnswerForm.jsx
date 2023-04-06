@@ -1,5 +1,6 @@
+import { previusLevel } from '@/utils/listLevels'
 
-const AnswerForm = ({ handleAnswer, formAnswer, setFormAnswer, isCorrect, isError, prevLevel }) => {
+const AnswerForm = ({ handleAnswer, formAnswer, setFormAnswer, isCorrect, isError, actualLevel, setActualLevel, levelList }) => {
   return (
     <form
       className='w-4/5 flex gap-4 h-12'
@@ -19,7 +20,7 @@ const AnswerForm = ({ handleAnswer, formAnswer, setFormAnswer, isCorrect, isErro
                       ? (
                         <button
                           type='button'
-                          onClick={prevLevel}
+                          onClick={() => { previusLevel(setActualLevel, actualLevel, levelList) }}
                           className='w-1/5 bg-yellow-400 border border-adivinaGreen text-adivinaBlack font-bold rounded-lg hover:scale-105 hover:contrast-200 transition-all '
                         >
                           Nivel anterior
