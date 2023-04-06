@@ -21,3 +21,9 @@ export const getLevelsList = (scoreUser) => {
 
   return levelsList
 }
+
+export const previusLevel = (setActualLevel, actualLevel, levelList) => {
+  if (actualLevel + 1 <= levelList.length - 1) {
+    setActualLevel(actualLevel + 1)
+  }
+}
