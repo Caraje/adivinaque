@@ -1,20 +1,18 @@
 import MainLayout from '@/components/layout/MainLayout'
 import UserCard from '@/components/ui/UserCard'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useState, useEffect } from 'react'
 import CanvasCategory from '@/components/category/CanvasCategory'
 import AnswerForm from '@/components/category/AnswerForm'
 import CluesCategory from '@/components/category/CluesCategory'
 import { getUserList } from '@/services/supabase'
 import RankList from '@/components/ui/RankList'
-import { userScoreState } from '@/store/user/thunks'
-import { getLevelsList } from '@/utils/listLevels'
+// import { getLevelsList } from '@/utils/listLevels'
 import { getPositionUserRank } from '@/utils/users'
 import { useUpdateScoreUser } from '@/hooks/useUpdateScoreUser'
 import { useScoreGame } from '@/hooks/useScoreGame'
 
 export default function CinemaPage ({ usersList }) {
-  const dispatch = useDispatch()
   const [formAnswer, setFormAnswer] = useState('')
   const { status } = useSelector(store => store.auth)
   const user = useSelector(store => store.user)
@@ -22,23 +20,13 @@ export default function CinemaPage ({ usersList }) {
   const { id } = user
   const scoreUser = user.categories
   const userPosition = getPositionUserRank(usersList, id)
-  const levelList = getLevelsList(scoreUser)
 
-  const { actualLevel, setActualLevel, turn, isCorrect, isError, check, isAnswerCorrect, isAnswerIncorrect, isAnswerFail, resetScoreLevel } = useScoreGame(scoreUser, userPosition)
-  const level = getLevelsList(scoreUser)[actualLevel]
-  const { pointsUser, setTotalPoints, totalPoints, setErrorsCount, errorsCount, setCorrects, corrects } = useUpdateScoreUser(scoreUser, userPosition, level)
+  const { actualLevel, setActualLevel, turn, isCorrect, isError, isAnswerCorrect, isAnswerIncorrect, isAnswerFail, level, resetScoreLevel, levelList } = useScoreGame(scoreUser, userPosition)
+  const { pointsUser, setTotalPoints, setErrorsCount, errorsCount, setCorrects, corrects } = useUpdateScoreUser(scoreUser, userPosition, level)
 
   useEffect(() => {
-    resetScoreLevel(setFormAnswer)
+    resetScoreLevel()
   }, [actualLevel])
-
-  useEffect(() => {
-    if (!totalPoints && !errorsCount) {
-      return
-    }
-    dispatch(userScoreState(pointsUser))
-  }, [check])
-
   const handleAnswer = (event) => {
     event.preventDefault()
     const answerForm = event.target.answer.value.toLowerCase()
@@ -63,20 +51,28 @@ export default function CinemaPage ({ usersList }) {
               <h1 className='font-black text-3xl text-adivinaGreen ml-8 mt-8'>
                 Cine
               </h1>
-              <div className=' w-full flex flex-col gap-8  items-center overflow-hidden'>
-                <CanvasCategory level={level} isCorrect={isCorrect} isError={isError} turn={turn} />
-                <AnswerForm
-                  handleAnswer={handleAnswer}
-                  formAnswer={formAnswer}
-                  setFormAnswer={setFormAnswer}
-                  isCorrect={isCorrect}
-                  isError={isError}
-                  actualLevel={actualLevel}
-                  setActualLevel={setActualLevel}
-                  levelList={levelList}
-                />
-                {turn >= 1 && <CluesCategory level={level} turn={turn} />}
-              </div>
+              {
+                (level)
+                  ? (
+                    <div className=' w-full flex flex-col gap-8  items-center overflow-hidden'>
+                      <CanvasCategory level={level} isCorrect={isCorrect} isError={isError} turn={turn} />
+                      <AnswerForm
+                        handleAnswer={handleAnswer}
+                        formAnswer={formAnswer}
+                        setFormAnswer={setFormAnswer}
+                        isCorrect={isCorrect}
+                        isError={isError}
+                        actualLevel={actualLevel}
+                        setActualLevel={setActualLevel}
+                        levelList={levelList}
+                        pointsUser={pointsUser}
+                      />
+                      {turn >= 1 && <CluesCategory level={level} turn={turn} />}
+                    </div>
+                    )
+                  : <h1>No hay mas niveles</h1> // TODO: Hay que hacer un mensjae de aviso de no mas niveles
+              }
+
             </section>
             <aside className='w-80 flex flex-col gap-10  '>
               {status && <UserCard />}
