@@ -6,14 +6,14 @@ export const useUpdateScoreUser = (scoreUser, userPosition, level) => {
   const [errorsCount, setErrorsCount] = useState(0) // Almacena los errores del nivel
   const [corrects, setCorrects] = useState(0) //
   // console.log({ level })
-  // const idLevel = level && level.id
+  const idLevel = level && level.id
 
   const pointsUser = {
     cinema: {
       corrects: corrects + scoreUser?.cinema?.corrects,
       errors: errorsCount + scoreUser?.cinema?.errors,
-      levels_completed: [],
-      // levels_completed: scoreUser?.cinema?.levels_completed.concat(idLevel),
+      // levels_completed: [],
+      levels_completed: scoreUser?.cinema?.levels_completed.concat(idLevel),
       positionRank: userPosition + 1,
       totalPoints: totalPoints + scoreUser?.cinema?.totalPoints
     },
