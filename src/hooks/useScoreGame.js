@@ -11,16 +11,15 @@ export const useScoreGame = (scoreUser, userPosition) => {
   const [isCorrect, setIsCorrect] = useState(false) // establece si la respuesta es correcta o no
   const [isError, setIsError] = useState(false) // Estado para ver cuando la partida es marcada como error del nivel
   const [multiplyPoints, setMultiplyPoints] = useState(5) // Establece el multiplicador de puntos
-  const [check, setCheck] = useState(0)
-
-  const level = getLevelsList(scoreUser)[actualLevel]
+  let levelNumber = 0
+  const level = getLevelsList(scoreUser)[levelNumber]
   const levelList = getLevelsList(scoreUser)
 
   const isAnswerCorrect = (setTotalPoints, setCorrects, corrects) => {
     setIsCorrect(true)
     setTotalPoints(5 * multiplyPoints)
     setCorrects(corrects + 1)
-    setCheck(check + 1)
+    levelNumber = levelNumber + 1
   }
 
   const isAnswerIncorrect = (setErrorsCount, errorsCount) => {
@@ -32,7 +31,7 @@ export const useScoreGame = (scoreUser, userPosition) => {
   const isAnswerFail = (setErrorsCount, errorsCount) => {
     setIsError(true)
     setErrorsCount(errorsCount + 1)
-    setCheck(check + 1)
+    levelNumber = levelNumber + 1
   }
 
   const resetScoreLevel = (setFormAnswer) => {
@@ -56,14 +55,13 @@ export const useScoreGame = (scoreUser, userPosition) => {
     setIsError,
     multiplyPoints,
     setMultiplyPoints,
-    check,
-    setCheck,
     isAnswerCorrect,
     isAnswerIncorrect,
     isAnswerFail,
     resetScoreLevel,
     level,
-    levelList
+    levelList,
+    levelNumber
 
   }
 }
