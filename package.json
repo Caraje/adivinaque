@@ -11,6 +11,7 @@
   "dependencies": {
     "@cloudinary/react": "1.11.2",
     "@cloudinary/url-gen": "1.9.2",
+    "@heroicons/react": "^2.0.17",
     "@reduxjs/toolkit": "1.9.3",
     "@supabase/supabase-js": "2.13.0",
     "atropos": "1.0.2",
