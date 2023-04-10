@@ -58,24 +58,36 @@ const UserPage = ({ user }) => {
   )
 }
 
-export const getStaticPaths = async () => {
-  const usersList = await getUserList()
-  const users = usersList.map((user) => {
-    const userUrl = user.user_metadata.userName.toLowerCase().trim()
-    return ({
-      params: {
-        user: userUrl
-      }
-    })
-  })
+// export const getStaticPaths = async () => {
+//   const usersList = await getUserList()
+//   const users = usersList.map((user) => {
+//     const userUrl = user.user_metadata.userName.toLowerCase().trim()
+//     return ({
+//       params: {
+//         user: userUrl
+//       }
+//     })
+//   })
 
-  return {
-    paths: users,
-    fallback: false
-  }
-}
+//   return {
+//     paths: users,
+//     fallback: false
+//   }
+// }
 
-export const getStaticProps = async ({ params }) => {
+// export const getStaticProps = async ({ params }) => {
+//   const { user: userName } = params
+
+//   const usersList = await getUserList()
+//   const actualUser = usersList.filter((user) => (user.user_metadata.userName.toLowerCase().trim() === userName.toLowerCase().trim()))
+//   return {
+//     props: {
+//       user: actualUser
+//     }
+//   }
+// }
+
+export async function getServerSideProps ({ params }) {
   const { user: userName } = params
 
   const usersList = await getUserList()
