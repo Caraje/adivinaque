@@ -90,7 +90,7 @@ export default function CinemaPage ({ usersList }) {
             </aside>
           </main>
           <footer className='w-full mt-auto flex items-center  justify-around bg-adivinaBlack'>
-            <button onClick={() => { logoutUser() }}>X</button>
+
             Aqui va el pie de pagina
           </footer>
         </MainLayout>
