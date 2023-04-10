@@ -38,7 +38,6 @@ export const useScoreGame = (scoreUser, userPosition) => {
     setTurn(0)
     setIsError(false)
     setIsCorrect(false)
-    // setFormAnswer('')
     setTotalPoints(0)
     setErrorsCount(0)
     setCorrects(0)
