@@ -56,7 +56,7 @@ export default function CinemaPage ({ usersList }) {
               {
                 (level)
                   ? (
-                    <div className='w-full flex flex-col gap-4  items-center overflow-hidden'>
+                    <div className='w-full flex flex-col gap-4  items-center overflow-hidden mb-8'>
                       <CanvasCategory level={level} isCorrect={isCorrect} isError={isError} turn={turn} />
                       <div className='w-4/5  font-montserrat font-semibold text-adivinaGreen text-xs'>
                         <span className='text-white text-base font-normal'>Dia: </span>{level.publishDay}
