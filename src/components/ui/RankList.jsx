@@ -16,7 +16,7 @@ const RankList = ({ usersList }) => {
             href={`/users/${newUser.userName.toLowerCase().trim()}`}
             target='_blank'
             key={idx}
-            className='w-full h-12 flex justify-between items-center gap- p-2 rounded-xl hover:bg-adivinaGreen/25 hover:scale-105 transition-all'
+            className='w-full h-12 flex justify-between items-center gap-4 p-2 rounded-xl hover:bg-adivinaGreen/25 hover:scale-105 transition-all'
           >
             <img
               className='rounded-full w-8 h-8 object-cover border border-adivinaGreen'
