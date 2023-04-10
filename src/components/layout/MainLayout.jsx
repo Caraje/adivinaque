@@ -3,16 +3,17 @@ import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import UserAutenticated from '../ui/UserAutenticated'
 import LoginButton from '../ui/LoginButton'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { getUser, getUserList } from '@/services/supabase'
 import { loginState } from '@/store/auth/thunks'
 import { userState } from '@/store/user/thunks'
 
 const MainLayout = ({ children }) => {
   const dispatch = useDispatch()
-
+  const [url, setUrl] = useState('')
   // LOGIN USER
   useEffect(() => {
+    setUrl(window.location.pathname.replace('/', ''))
     const isLogin = async () => {
       const activeUser = await getUser()
       const userList = await getUserList()
@@ -60,9 +61,9 @@ const MainLayout = ({ children }) => {
 
             </Link>
             <nav className='flex gap-8 font-semibold px-20 py-1 rounded-full border border-adivinaGreen/40  text-2xl'>
-              <Link className='hover:scale-110 hover:text-adivinaGreen hover:shadow-adivinaGreen transition-all' href='/cinema'>Cine</Link>
-              <Link className='hover:scale-110 hover:text-adivinaGreen hover:shadow-adivinaGreen transition-all' href='/series'>series</Link>
-              <Link className='hover:scale-110 hover:text-adivinaGreen hover:shadow-adivinaGreen transition-all' href='/videogames'>Juegos</Link>
+              <Link className={`hover:scale-110 hover:text-adivinaGreen hover:shadow-adivinaGreen transition-all ${url === 'cinema' ? 'text-adivinaGreen' : ''}`} href='/cinema'>Cine</Link>
+              <Link className={`hover:scale-110 hover:text-adivinaGreen hover:shadow-adivinaGreen transition-all ${url === 'series' ? 'text-adivinaGreen' : ''}`} href='/series'>series</Link>
+              <Link className={`hover:scale-110 hover:text-adivinaGreen hover:shadow-adivinaGreen transition-all ${url === 'videogames' ? 'text-adivinaGreen' : ''}`} href='/videogames'>Juegos</Link>
             </nav>
             {
               user.id
