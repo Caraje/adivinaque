@@ -7,7 +7,7 @@ const LoginButton = () => {
       href='/auth/login'
     >
       <h2 className='font-semibold text-lg'>Login</h2>
-      <img src='./icons/user-icon.svg' alt='Icono de usuario' width={30} height={30} />
+      <img src='/icons/user-icon.svg' alt='Icono de usuario' width={30} height={30} />
     </Link>
   )
 }
