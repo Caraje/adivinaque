@@ -2,7 +2,6 @@ import { useState } from 'react'
 import MenuUser from './MenuUser'
 
 const UserAutenticated = ({ user }) => {
-  console.log({ user })
   const [isHidden, setIsHidden] = useState(false)
   return (
     <div>
