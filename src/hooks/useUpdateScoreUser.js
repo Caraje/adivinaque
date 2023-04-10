@@ -5,7 +5,6 @@ export const useUpdateScoreUser = (scoreUser, userPosition, level) => {
   const [totalPoints, setTotalPoints] = useState(0) // Almacena los puntos del nivel
   const [errorsCount, setErrorsCount] = useState(0) // Almacena los errores del nivel
   const [corrects, setCorrects] = useState(0) //
-  // console.log({ level })
   const idLevel = level && level.id
 
   const pointsUser = {
