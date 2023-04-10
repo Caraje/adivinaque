@@ -34,7 +34,7 @@ export const useScoreGame = (scoreUser, userPosition) => {
     levelNumber = levelNumber + 1
   }
 
-  const resetScoreLevel = (setFormAnswer) => {
+  const resetScoreLevel = () => {
     setTurn(0)
     setIsError(false)
     setIsCorrect(false)
