@@ -1,11 +1,21 @@
-import Link from 'next/link'
+import { useState } from 'react'
+import MenuUser from './MenuUser'
 
 const UserAutenticated = ({ user }) => {
+  const [isHidden, setIsHidden] = useState(false)
   return (
-    <Link href='/auth/login' className='flex items-center gap-4 hover:text-adivinaGreen hover:shadow-adivinaGreen '>
-      <h5 className='font-semibold text-lg' href={`/users/${user.userName}`}>{user.userName}</h5>
-      <img className='rounded-full' src={!user.vatar ? `https://res.cloudinary.com/caraje/image/upload/v1679717935/${user.avatar}` : '/imgs/no-avatar.webp'} alt='Imagen de avatar de Caraje' width={40} height={40} />
-    </Link>
+    <div>
+      <button
+        onClick={() => setIsHidden(!isHidden)}
+        className='flex items-center justify-center gap-4 hover:text-adivinaGreen hover:shadow-adivinaGreen '
+      >
+        <h5 className='font-semibold text-lg' href={`/users/${user.userName}`}>{user.userName}</h5>
+        <img className='rounded-full' src={!user.vatar ? `https://res.cloudinary.com/caraje/image/upload/v1679717935/${user.avatar}` : '/imgs/no-avatar.webp'} alt='Imagen de avatar de Caraje' width={40} height={40} />
+      </button>
+      {
+        isHidden && <MenuUser user={user} setIsHidden={setIsHidden} />
+      }
+    </div>
   )
 }
 
