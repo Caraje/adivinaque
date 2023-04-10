@@ -2,12 +2,10 @@ import { logoutState } from '@/store/auth/thunks'
 import Link from 'next/link'
 import { useDispatch } from 'react-redux'
 
-const MenuUser = ({ user, setIsHidden }) => {
+const MenuUser = ({ user }) => {
   const dispatch = useDispatch()
   const handleLogout = () => {
     dispatch(logoutState())
-    console.log('funciona')
-    // setIsHidden(false)
   }
   return (
     <ol className='absolute z-50 bg-adivinaDark/50 backdrop-blur-xl border border-adivinaGreen p-4 rounded-xl mt-2 font-semibold flex flex-col gap-2'>
