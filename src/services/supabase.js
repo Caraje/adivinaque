@@ -155,6 +155,7 @@ export async function deleteUser (id) {
 
 export async function logoutUser () {
   const { error } = await supabase.auth.signOut()
-  window.location.replace('/')
+  window.location.reload()
+
   return error
 }
