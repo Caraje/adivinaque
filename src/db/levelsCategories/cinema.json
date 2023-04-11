@@ -299,6 +299,36 @@
           "img": "/AdivinaQue/cinema/10/on5heigxj9n1knbcqfkp.webp"
         }
       ]
+    },
+    {
+      "id": 11,
+      "publishDay": "11/4/2023",
+      "answer": {
+        "title": "Back to the Future",
+        "answerImg": "/AdivinaQue/cinema/10/krnpoqjzdreeik7utpky.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/10/sp3ekanwrbmduey1fblw.webp"
+        },
+        {
+          "clue": "Se estrena en 1985",
+          "img": "/AdivinaQue/cinema/10/mbz6gzlsokphdt5zzzne.webp"
+        },
+        {
+          "clue": "Fue una trilogia",
+          "img": "/AdivinaQue/cinema/10/keehoztycvxabmrxiibr.webp"
+        },
+        {
+          "clue": "Eric Stoltz iba a ser el protagonista pero cambiaron tras iniciar el rodaje",
+          "img": "/AdivinaQue/cinema/10/meqpjsmyxffvcla6aib9.webp"
+        },
+        {
+          "clue": "A donde vamos no necesitamos carreteras",
+          "img": "/AdivinaQue/cinema/10/on5heigxj9n1knbcqfkp.webp"
+        }
+      ]
     }
   ]
 }
