@@ -1,16 +1,31 @@
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
-import { createUserWithEmail, loginWithEmail } from '@/services/supabase'
-import { useDispatch, useSelector } from 'react-redux'
+import { createUserWithEmail, getUserList, loginWithEmail } from '@/services/supabase'
+import { useDispatch } from 'react-redux'
 import { loginState } from '@/store/auth/thunks'
+import { useState } from 'react'
 
-export default function RegisterPage () {
-  const { register, handleSubmit, formState: { errors } } = useForm()
+export default function RegisterPage ({ usersList }) {
   const dispatch = useDispatch()
-  const state = useSelector(state => state.auth)
-  console.log('register => ', { state })
+  const { register, handleSubmit, formState: { errors } } = useForm()
+
+  const [nameError, setNameError] = useState(false)
+  const [emailError, setEmailError] = useState(false)
+
+  const namesUserList = usersList.map(user => user.user_metadata.userName)
+  const emailUserList = usersList.map(user => user.email
+  )
+
   const handleForm = async (data) => {
     const { name, email, password } = data
+    if (namesUserList.includes(name)) {
+      setNameError(true)
+      return
+    }
+    if (emailUserList.includes(email)) {
+      setEmailError(true)
+      return
+    }
     await createUserWithEmail(name, email, password)
     const user = await loginWithEmail(email, password)
     dispatch(loginState(user.data.user))
@@ -33,7 +48,7 @@ export default function RegisterPage () {
           <label className='flex flex-col text-xs gap-2'>
             Nombre:
             <input
-              className='w-80 p-2 border-2 border-[#03fea4] rounded-lg bg-transparent text-white text-base font-normal'
+              className='w-80 p-2 border-2 border-adivinaGreen rounded-lg bg-transparent text-white text-base font-normal'
               type='text'
               placeholder='nombre de usuario'
               {...register('name', {
@@ -41,6 +56,7 @@ export default function RegisterPage () {
               })}
             />
             {errors.name?.type === 'required' && <p role='alert'>El nombre de usuario es requerido</p>}
+            {nameError && <h2>El usuario ya existe</h2>}
           </label>
 
           <label className='flex flex-col text-xs gap-2'>
@@ -48,7 +64,7 @@ export default function RegisterPage () {
             <input
               className='
             w-80 p-2
-            border-2 border-[#03fea4] rounded-lg bg-transparent text-white  text-base font-normal'
+            border-2 border-adivinaGreen rounded-lg bg-transparent text-white  text-base font-normal'
               type='email'
               placeholder='user@advinaque.com'
               {...register('email', {
@@ -56,6 +72,7 @@ export default function RegisterPage () {
               })}
             />
             {errors.email?.type === 'required' && <p role='alert'>Introduce un email Valido</p>}
+            {emailError && <h2>El usuario ya existe</h2>}
           </label>
 
           <label className='flex flex-col text-xs gap-2'>
@@ -63,7 +80,7 @@ export default function RegisterPage () {
             <input
               className='
             w-80 p-2
-            border-2 border-[#03fea4] rounded-lg bg-transparent
+            border-2 border-adivinaGreen rounded-lg bg-transparent
             text-white text-base font-normal'
               type='password'
               placeholder='Password'
@@ -77,7 +94,7 @@ export default function RegisterPage () {
 
           <button
             className='
-          rounded-lg bg-[#03fea4] py-2
+          rounded-lg bg-adivinaGreen py-2
           text-[#333] font-bold
           hover:scale-105 hover:brightness-110 hover:shadow-adivinaGreen hover:shadow-2xl
           '
@@ -103,4 +120,14 @@ export default function RegisterPage () {
       </section>
     </main>
   )
+}
+
+export const getStaticProps = async (ctx) => {
+  const usersList = await getUserList()
+
+  return {
+    props: {
+      usersList
+    }
+  }
 }
