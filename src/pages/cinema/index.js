@@ -12,9 +12,11 @@ import { getPositionUserRank } from '@/utils/users'
 import { useUpdateScoreUser } from '@/hooks/useUpdateScoreUser'
 import { useScoreGame } from '@/hooks/useScoreGame'
 import NoLevels from '@/components/category/NoLevels'
+import NoUserAutenticated from '@/components/category/NoUserAutenticated'
 
 export default function CinemaPage ({ usersList }) {
   const [formAnswer, setFormAnswer] = useState('')
+  const [isAutenticated, setIsAutenticated] = useState(false)
   const { status } = useSelector(store => store.auth)
   const user = useSelector(store => store.user)
 
@@ -29,6 +31,7 @@ export default function CinemaPage ({ usersList }) {
     resetScoreLevel()
     setFormAnswer('')
   }, [actualLevel])
+
   const handleAnswer = (event) => {
     event.preventDefault()
     const answerForm = event.target.answer.value.toLowerCase()
@@ -47,6 +50,7 @@ export default function CinemaPage ({ usersList }) {
       <div className='w-screen min-h-screen  flex flex-col items-center justify-betwee text-white font-montserrat  bg-slate-950'>
         <MainLayout>
 
+          {isAutenticated && <NoUserAutenticated />}
           {/* CONTENIDO */}
           <main className='w-full flex gap-10 p-4 max-w-6xl'>
             <section className='relative w-full flex flex-col gap-8  border border-adivinaGreen/50 rounded-xl p-4 bg-adivinaBlack/25'>
@@ -71,6 +75,9 @@ export default function CinemaPage ({ usersList }) {
                         setActualLevel={setActualLevel}
                         levelList={levelList}
                         pointsUser={pointsUser}
+                        status={status}
+                        setIsAutenticated={setIsAutenticated}
+                        isAutenticated={isAutenticated}
                       />
                       {turn >= 1 && <CluesCategory level={level} turn={turn} />}
                     </div>
