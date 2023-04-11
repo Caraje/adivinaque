@@ -19,7 +19,7 @@ const Footer = () => {
           </h2>
           <div className='flex justify-center items-center gap-4'>
 
-            <Link href='https://twitter.com/Caraje_' className=' hover:scale-110 hover:brightness-110 transition-all '>
+            <Link href='https://twitter.com/Adivina_Que_' className=' hover:scale-110 hover:brightness-110 transition-all '>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 width='50'
@@ -33,7 +33,7 @@ const Footer = () => {
               </svg>
             </Link>
             <Link
-              href='https://www.instagram.com/caraje_/'
+              href='https://www.instagram.com/adivina_que_/'
               className=' hover:scale-110 hover:brightness-110 transition-all '
             >
               <svg
