@@ -7,12 +7,12 @@ import AnswerForm from '@/components/category/AnswerForm'
 import CluesCategory from '@/components/category/CluesCategory'
 import { getUserList } from '@/services/supabase'
 import RankList from '@/components/ui/RankList'
-// import { getLevelsList } from '@/utils/listLevels'
 import { getPositionUserRank } from '@/utils/users'
 import { useUpdateScoreUser } from '@/hooks/useUpdateScoreUser'
 import { useScoreGame } from '@/hooks/useScoreGame'
 import NoLevels from '@/components/category/NoLevels'
 import NoUserAutenticated from '@/components/category/NoUserAutenticated'
+import Footer from '@/components/ui/Footer'
 
 export default function CinemaPage ({ usersList }) {
   const [formAnswer, setFormAnswer] = useState('')
@@ -96,10 +96,7 @@ export default function CinemaPage ({ usersList }) {
               </section>
             </aside>
           </main>
-          <footer className='w-full mt-auto flex items-center  justify-around bg-adivinaBlack'>
-
-            Aqui va el pie de pagina
-          </footer>
+          <Footer />
         </MainLayout>
       </div>
     </>

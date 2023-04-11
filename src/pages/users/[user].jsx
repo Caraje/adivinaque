@@ -1,4 +1,5 @@
 import MainLayout from '@/components/layout/MainLayout'
+import Footer from '@/components/ui/Footer'
 import CategoryCardUser from '@/components/user/CategoryCardUser'
 import FormUpdateSocial from '@/components/user/FormUpdateSocial'
 import { UserCardSocial } from '@/components/user/UserCardSocial'
@@ -53,39 +54,10 @@ const UserPage = ({ user }) => {
           </article>
         </section>
       </div>
-      <footer className='w-full mt-auto flex items-center  justify-around bg-adivinaBlack'>Aqui va el pie de pagina</footer>
+      <Footer />
     </MainLayout>
   )
 }
-
-// export const getStaticPaths = async () => {
-//   const usersList = await getUserList()
-//   const users = usersList.map((user) => {
-//     const userUrl = user.user_metadata.userName.toLowerCase().trim()
-//     return ({
-//       params: {
-//         user: userUrl
-//       }
-//     })
-//   })
-
-//   return {
-//     paths: users,
-//     fallback: false
-//   }
-// }
-
-// export const getStaticProps = async ({ params }) => {
-//   const { user: userName } = params
-
-//   const usersList = await getUserList()
-//   const actualUser = usersList.filter((user) => (user.user_metadata.userName.toLowerCase().trim() === userName.toLowerCase().trim()))
-//   return {
-//     props: {
-//       user: actualUser
-//     }
-//   }
-// }
 
 export async function getServerSideProps ({ params }) {
   const { user: userName } = params

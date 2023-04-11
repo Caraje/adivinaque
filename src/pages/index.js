@@ -2,6 +2,7 @@
 import NewsCard from '@/components/home/NewsCard'
 import SelectCategory from '@/components/home/SelectCategory'
 import MainLayout from '@/components/layout/MainLayout'
+import Footer from '@/components/ui/Footer'
 import UserCard from '@/components/ui/UserCard'
 import { getUserList } from '@/services/supabase'
 import { useSelector } from 'react-redux'
@@ -30,7 +31,7 @@ export default function Home ({ usersList }) {
           </main>
 
           {/* FOOTER */}
-          <footer className='w-full mt-auto flex items-center  justify-around bg-adivinaBlack'>Aqui va el pie de pagina</footer>
+          <Footer />
         </MainLayout>
       </div>
     </>
