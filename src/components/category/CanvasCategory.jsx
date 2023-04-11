@@ -9,6 +9,7 @@ const CanvasCategory = ({ level, isCorrect, isError, turn }) => {
   setTimeout(() => {
     setIsloadding(false)
   }, 500)
+
   return (
     <>{
       isloadding
@@ -19,7 +20,7 @@ const CanvasCategory = ({ level, isCorrect, isError, turn }) => {
               ? (
                 <>
                   <CorrectAnswer />
-                  <img src={`https://res.cloudinary.com/caraje/image/upload/v1679936239${level.answer.answerImg}`} alt='imagen de parque jurasico' width={650} height={400} />
+                  <img src={`https://res.cloudinary.com/caraje/image/upload/c_fill,g_auto,h_562,w_1000/f_webp/q_auto:eco//v1679936239${level.answer.answerImg}`} alt='imagen de parque jurasico' width={650} height={400} />
                 </>
                 )
               : (
@@ -27,7 +28,7 @@ const CanvasCategory = ({ level, isCorrect, isError, turn }) => {
                   {
               isError && <ErrorAnswer />
             }
-                  <img src={`https://res.cloudinary.com/caraje/image/upload/v1679936239${level.clues[turn].img}`} alt='imagen de parque jurasico' width={650} height={400} />
+                  <img src={`https://res.cloudinary.com/caraje/image/upload/c_fill,g_auto,h_562,w_1000/f_webp/q_auto:eco//v1679936239${level.clues[turn].img}`} alt='imagen de parque jurasico' width={650} height={400} />
                 </>
                 )}
           </div>
