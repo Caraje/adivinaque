@@ -14,7 +14,7 @@ export async function createUserWithEmail (userName, email, password) {
       options: {
         data: {
           userName,
-          imgAvatar: '',
+          imgAvatar: 'AdivinaQue/piwp3hgmtlq46v2uq5q2.webp',
           url: `/${userName.toLowerCase().trim().replace(' ', '-')}`,
           isActive: true,
           socials: [
