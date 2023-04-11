@@ -3,9 +3,14 @@ import { userScoreState } from '@/store/user/thunks'
 import { previusLevel } from '@/utils/listLevels'
 import { useDispatch } from 'react-redux'
 
-const AnswerForm = ({ handleAnswer, formAnswer, setFormAnswer, isCorrect, isError, actualLevel, setActualLevel, levelList, pointsUser }) => {
+const AnswerForm = ({ handleAnswer, formAnswer, setFormAnswer, isCorrect, isError, actualLevel, setActualLevel, levelList, pointsUser, status, setIsAutenticated }) => {
   const dispatch = useDispatch()
   const handleResetLevel = async () => {
+    if (status !== 'authenticated') {
+      console.log('No esta autenticado')
+      setIsAutenticated(true)
+      return
+    }
     await dispatch(userScoreState(pointsUser))
     previusLevel(setActualLevel, actualLevel, levelList)
   }
