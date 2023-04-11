@@ -14,7 +14,7 @@ export const getLevelOfDay = () => {
 // Get filtered List of Valid Levels
 export const getLevelsList = (scoreUser) => {
   const levelsList = cinema.cinema
-    .filter(lvl => lvl.id <= getLevelOfDay()[0].id)
+    .filter(lvl => lvl.id <= getLevelOfDay()[0]?.id)
     .filter(lvl => !scoreUser?.cinema?.levels_completed
       .includes(lvl.id))
     .sort((a, b) => b.id - a.id)
