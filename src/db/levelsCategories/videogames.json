@@ -1,0 +1,334 @@
+{
+  "videogames": [
+    {
+      "id": 1,
+      "publishDay": "1/4/2023",
+      "answer": {
+        "title": "The Goonies videogame",
+        "answerImg": "/AdivinaQue/cinema/01/jgmjxxgeae1b0xg8euv3.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/01/msgvj4frwymkxpna6tsb.webp"
+        },
+        {
+          "clue": "Del año 1985",
+          "img": "/AdivinaQue/cinema/01/evkg7qdl0lv5tt2f2het.webp"
+        },
+        {
+          "clue": "Pelicula de aventuras",
+          "img": "/AdivinaQue/cinema/01/fauu1hnxfqfzmxclwhdb.webp"
+        },
+        {
+          "clue": "Dirigida por Richar Donner",
+          "img": "/AdivinaQue/cinema/01/rwlf8u1caanjf7ketgkh.webp"
+        },
+        {
+          "clue": "Gordi, tienes que hacer el supermeneo",
+          "img": "/AdivinaQue/cinema/01/bxvkappn8l2kw0enmonu.webp"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "publishDay": "2/4/2023",
+      "answer": {
+        "title": "Sister Act",
+        "answerImg": "/AdivinaQue/cinema/02/cpf0dg4twadfcfo2yuot.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/02/uwjhll0ar865za6brjrv.webp"
+        },
+        {
+          "clue": "Del año 1992",
+          "img": "/AdivinaQue/cinema/02/j5952evkexiteliqvwyg.webp"
+        },
+        {
+          "clue": "Es una comedia",
+          "img": "/AdivinaQue/cinema/02/d4ered2qq939tdpfjwhl.webp"
+        },
+        {
+          "clue": "Con Maggie Smith",
+          "img": "/AdivinaQue/cinema/02/blbpvsfs2q1kni8wsvtd.webp"
+        },
+        {
+          "clue": "Protagonizada por Whoopi Goldberg",
+          "img": "/AdivinaQue/cinema/02/ar7peh7n497tesmcj3u1.webp"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "publishDay": "3/4/2023",
+      "answer": {
+        "title": "Dirty Dancing",
+        "answerImg": "/AdivinaQue/cinema/03/rpi8buqfmi7eazphuoue.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/03/rogoizgxdoazuomkysjs.webp"
+        },
+        {
+          "clue": "Año 1987",
+          "img": "/AdivinaQue/cinema/03/mtvzjqemaxe29aeq7ago.webp"
+        },
+        {
+          "clue": "Have the time of your life",
+          "img": "/AdivinaQue/cinema/03/viyibjc4aliqduvbil75.webp"
+        },
+        {
+          "clue": "Con Jennifer Grey",
+          "img": "/AdivinaQue/cinema/03/cqjhs2dn2d4kqcx37xdq.webp"
+        },
+        {
+          "clue": "Y Patrick Swayze",
+          "img": "/AdivinaQue/cinema/03/kl4cgdz14hrqam3keama.webp"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "publishDay": "4/4/2023",
+      "answer": {
+        "title": "Independence Day",
+        "answerImg": "/AdivinaQue/cinema/04/w0twlgmot0pjchkoddmx.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/04/lnywhdehmubqfg8fyghh.webp"
+        },
+        {
+          "clue": "Año 1996",
+          "img": "/AdivinaQue/cinema/04/nrobreflgyle672fq9nw.webp"
+        },
+        {
+          "clue": "On July 2nd, they arrive.",
+          "img": "/AdivinaQue/cinema/04/d3jzq4ohkuzjvevcw2vb.webp"
+        },
+        {
+          "clue": "De Roland Emmerich",
+          "img": "/AdivinaQue/cinema/04/km5gxsj7jzxwedanpngb.webp"
+        },
+        {
+          "clue": "Con Will Smith y Jeff Goldblum",
+          "img": "/AdivinaQue/cinema/04/t021myclmhowkqfmv0x5.webp"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "publishDay": "5/4/2023",
+      "answer": {
+        "title": "Spider-Man: No Way Home",
+        "answerImg": "/AdivinaQue/cinema/05/sykoo0ybkibdkye0h2nf.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/05/qrcmgritamezuy8arri4.webp"
+        },
+        {
+          "clue": "Año 2021",
+          "img": "/AdivinaQue/cinema/05/zvoblvx0go8gualtncml.webp"
+        },
+        {
+          "clue": "dirigida por Jon Watts",
+          "img": "/AdivinaQue/cinema/05/alxejgxgzhqepjriofcb.webp"
+        },
+        {
+          "clue": "Con Benedict Wong",
+          "img": "/AdivinaQue/cinema/05/u5gjzzl6is3rjsxzcdph.webp"
+        },
+        {
+          "clue": "The Multiverse Unleashed.",
+          "img": "/AdivinaQue/cinema/05/dsc3wdzzmbpmsqgopjhn.webp"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "publishDay": "6/4/2023",
+      "answer": {
+        "title": "The Lost Boys",
+        "answerImg": "/AdivinaQue/cinema/06/s0iw295yaqhhwiylxffc.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/06/hemsmifjfoyqw2lbdaei.webp"
+        },
+        {
+          "clue": "Se estreno en 1987",
+          "img": "/AdivinaQue/cinema/06/bppinxaturfznjygpwkl.webp"
+        },
+        {
+          "clue": "Dirigida por Joel Schumacher",
+          "img": "/AdivinaQue/cinema/06/e7gbo6ydwgydxaeg3yxj.webp"
+        },
+        {
+          "clue": "Con Kiefer Sutherland",
+          "img": "/AdivinaQue/cinema/06/hr32xl4xgi9pnzaxkatu.webp"
+        },
+        {
+          "clue": "It's fun to be a vampire",
+          "img": "/AdivinaQue/cinema/06/uwp3zeshfqkoxohdkzwo.webp"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "publishDay": "7/4/2023",
+      "answer": {
+        "title": "Who Framed Roger Rabbit",
+        "answerImg": "/AdivinaQue/cinema/07/rgreamvaf5bbcucsc15k.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/07/ny0hiazw1fmfvzfr7aqu.webp"
+        },
+        {
+          "clue": "Estrenada en 1988",
+          "img": "/AdivinaQue/cinema/07/fznxtkjfm9wlneaukpod.webp"
+        },
+        {
+          "clue": "Una pelicula de Robert Zemeckis",
+          "img": "/AdivinaQue/cinema/07/xrn9em1awpyxvpc2h0un.webp"
+        },
+        {
+          "clue": "Con bob Hoskins",
+          "img": "/AdivinaQue/cinema/07/qsb5ds6n9mx9qliwd8y3.webp"
+        },
+        {
+          "clue": "La primera y unica colaboración de Bugs Bunny y Mickey Mouse",
+          "img": "/AdivinaQue/cinema/07/ss2wuekljxfunghtf5vr.webp"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "publishDay": "8/4/2023",
+      "answer": {
+        "title": "The Naked Gun",
+        "answerImg": "/AdivinaQue/cinema/08/ruhrbnluxhhkg7omfoz4.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/08/rus8j86nur7yeehlvisz.webp"
+        },
+        {
+          "clue": "Estrenada en 1988",
+          "img": "/AdivinaQue/cinema/08/cgl5la6hgpbnasj9gngt.webp"
+        },
+        {
+          "clue": "Basada en una serie con una temporada",
+          "img": "/AdivinaQue/cinema/08/e8fnrpglpwz23ieq9vel.webp"
+        },
+        {
+          "clue": "Una disparatada comedia",
+          "img": "/AdivinaQue/cinema/08/u22pmvaintvnpi88wovl.webp"
+        },
+        {
+          "clue": "Protagonizada por Leslie Nielsen",
+          "img": "/AdivinaQue/cinema/08/nqmujfzqfgzqpfhkt4on.webp"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "publishDay": "9/4/2023",
+      "answer": {
+        "title": "Dead Poets Society",
+        "answerImg": "/AdivinaQue/cinema/09/z8dkiowbxtiudb7fjxkt.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/09/xzanqyub5j2ly8c4kar5.webp"
+        },
+        {
+          "clue": "Estrenada en 1989",
+          "img": "/AdivinaQue/cinema/09/s62gzrixxcdjlg7fvpck.webp"
+        },
+        {
+          "clue": "El Dr.Wilson de la serie House, aparece en esta pelicula",
+          "img": "/AdivinaQue/cinema/09/yzvwgermuskmwy41bhty.webp"
+        },
+        {
+          "clue": "Con Robin Williams",
+          "img": "/AdivinaQue/cinema/09/potbic87fcoivakljre1.webp"
+        },
+        {
+          "clue": "¡Oh capitán, mi capitán!",
+          "img": "/AdivinaQue/cinema/09/bzi7jg1qgxae5dbh3ep6.webp"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "publishDay": "10/4/2023",
+      "answer": {
+        "title": "Back to the Future",
+        "answerImg": "/AdivinaQue/cinema/10/krnpoqjzdreeik7utpky.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/10/sp3ekanwrbmduey1fblw.webp"
+        },
+        {
+          "clue": "Se estrena en 1985",
+          "img": "/AdivinaQue/cinema/10/mbz6gzlsokphdt5zzzne.webp"
+        },
+        {
+          "clue": "Fue una trilogia",
+          "img": "/AdivinaQue/cinema/10/keehoztycvxabmrxiibr.webp"
+        },
+        {
+          "clue": "Eric Stoltz iba a ser el protagonista pero cambiaron tras iniciar el rodaje",
+          "img": "/AdivinaQue/cinema/10/meqpjsmyxffvcla6aib9.webp"
+        },
+        {
+          "clue": "A donde vamos no necesitamos carreteras",
+          "img": "/AdivinaQue/cinema/10/on5heigxj9n1knbcqfkp.webp"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "publishDay": "11/4/2023",
+      "answer": {
+        "title": "Back to the Future videogames",
+        "answerImg": "/AdivinaQue/cinema/10/krnpoqjzdreeik7utpky.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/10/sp3ekanwrbmduey1fblw.webp"
+        },
+        {
+          "clue": "Se estrena en 1985",
+          "img": "/AdivinaQue/cinema/10/mbz6gzlsokphdt5zzzne.webp"
+        },
+        {
+          "clue": "Fue una trilogia",
+          "img": "/AdivinaQue/cinema/10/keehoztycvxabmrxiibr.webp"
+        },
+        {
+          "clue": "Eric Stoltz iba a ser el protagonista pero cambiaron tras iniciar el rodaje",
+          "img": "/AdivinaQue/cinema/10/meqpjsmyxffvcla6aib9.webp"
+        },
+        {
+          "clue": "A donde vamos no necesitamos carreteras",
+          "img": "/AdivinaQue/cinema/10/on5heigxj9n1knbcqfkp.webp"
+        }
+      ]
+    }
+  ]
+}
