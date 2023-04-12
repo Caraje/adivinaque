@@ -13,6 +13,7 @@ import { useScoreGame } from '@/hooks/useScoreGame'
 import NoLevels from '@/components/category/NoLevels'
 import NoUserAutenticated from '@/components/category/NoUserAutenticated'
 import Footer from '@/components/ui/Footer'
+import cinema from '@/db/levelsCategories/cinema.json'
 
 export default function CinemaPage ({ usersList }) {
   const [formAnswer, setFormAnswer] = useState('')
@@ -22,10 +23,16 @@ export default function CinemaPage ({ usersList }) {
 
   const { id } = user
   const scoreUser = user.categories
-  const userPosition = getPositionUserRank(usersList, id)
+  const categoryDB = {
+    userScore: scoreUser.cinema,
+    categoryDataBase: cinema.cinema,
+    userScoreAll: scoreUser,
+    category: 'cinema'
+  }
+  const userPosition = getPositionUserRank(categoryDB, usersList, id)
 
-  const { actualLevel, setActualLevel, turn, isCorrect, isError, isAnswerCorrect, isAnswerIncorrect, isAnswerFail, level, resetScoreLevel, levelList } = useScoreGame(scoreUser, userPosition)
-  const { pointsUser, setTotalPoints, setErrorsCount, errorsCount, setCorrects, corrects } = useUpdateScoreUser(scoreUser, userPosition, level)
+  const { actualLevel, setActualLevel, turn, isCorrect, isError, isAnswerCorrect, isAnswerIncorrect, isAnswerFail, level, resetScoreLevel, levelList } = useScoreGame(categoryDB, scoreUser, userPosition)
+  const { pointsUser, setTotalPoints, setErrorsCount, errorsCount, setCorrects, corrects } = useUpdateScoreUser(categoryDB, scoreUser, userPosition, level)
 
   useEffect(() => {
     resetScoreLevel()
@@ -92,7 +99,7 @@ export default function CinemaPage ({ usersList }) {
                 <h2 className=' text-xl text-adivinaGreen font-semibold'>
                   Classificación
                 </h2>
-                <RankList usersList={usersList} />
+                <RankList usersList={usersList} categoryDB={categoryDB} />
               </section>
             </aside>
           </main>

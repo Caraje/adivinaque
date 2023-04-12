@@ -1,97 +1,122 @@
 import MainLayout from '@/components/layout/MainLayout'
 import UserCard from '@/components/ui/UserCard'
-import Link from 'next/link'
 import { useSelector } from 'react-redux'
+import { useState, useEffect } from 'react'
+import CanvasCategory from '@/components/category/CanvasCategory'
+import AnswerForm from '@/components/category/AnswerForm'
+import CluesCategory from '@/components/category/CluesCategory'
+import { getUserList } from '@/services/supabase'
+import RankList from '@/components/ui/RankList'
+import { getPositionUserRank } from '@/utils/users'
+import { useUpdateScoreUser } from '@/hooks/useUpdateScoreUser'
+import { useScoreGame } from '@/hooks/useScoreGame'
+import NoLevels from '@/components/category/NoLevels'
+import NoUserAutenticated from '@/components/category/NoUserAutenticated'
+import Footer from '@/components/ui/Footer'
+import series from '@/db/levelsCategories/series.json'
 
-export default function SeriesPage () {
+export default function SeriesPage ({ usersList }) {
+  const [formAnswer, setFormAnswer] = useState('')
+  const [isAutenticated, setIsAutenticated] = useState(false)
   const { status } = useSelector(store => store.auth)
+  const user = useSelector(store => store.user)
+
+  const { id } = user
+  const scoreUser = user.categories
+  // const userPosition = getPositionUserRank(usersList, id)
+  const categoryDB = {
+    userScore: scoreUser.series,
+    categoryDataBase: series.series,
+    userScoreAll: scoreUser,
+    category: 'series'
+  }
+  const userPosition = getPositionUserRank(categoryDB, usersList, id)
+
+  const { actualLevel, setActualLevel, turn, isCorrect, isError, isAnswerCorrect, isAnswerIncorrect, isAnswerFail, level, resetScoreLevel, levelList } = useScoreGame(categoryDB, scoreUser, userPosition)
+  const { pointsUser, setTotalPoints, setErrorsCount, errorsCount, setCorrects, corrects } = useUpdateScoreUser(categoryDB, scoreUser, userPosition, level)
+
+  useEffect(() => {
+    resetScoreLevel()
+    setFormAnswer('')
+  }, [actualLevel])
+
+  const handleAnswer = (event) => {
+    event.preventDefault()
+    const answerForm = event.target.answer.value.toLowerCase()
+    const CorrectTitle = level.answer.title.toLowerCase()
+
+    if (answerForm.length < 2) return
+    (answerForm === CorrectTitle)
+      ? isAnswerCorrect(setTotalPoints, setCorrects, corrects)
+      : (turn < 4)
+          ? isAnswerIncorrect(setErrorsCount, errorsCount)
+          : isAnswerFail(setErrorsCount, errorsCount)
+  }
+
   return (
     <>
       <div className='w-screen min-h-screen  flex flex-col items-center justify-betwee text-white font-montserrat  bg-slate-950'>
         <MainLayout>
 
+          {isAutenticated && <NoUserAutenticated />}
           {/* CONTENIDO */}
           <main className='w-full flex gap-10 p-4 max-w-6xl'>
-
-            <section className=' w-full flex flex-col gap-8  border border-adivinaGreen/50 rounded-xl p-4 bg-adivinaBlack/25'>
-              <h1
-                className='font-black text-3xl text-adivinaGreen ml-8 mt-8'
-              >
+            <section className='relative w-full flex flex-col gap-8  border border-adivinaGreen/50 rounded-xl p-4 bg-adivinaBlack/25'>
+              <h1 className='font-black text-3xl text-adivinaGreen ml-8 mt-8'>
                 Cine
               </h1>
-              <div className=' w-full flex flex-col gap-8  items-center overflow-hidden'>
-
-                <div className='relative w-4/5 bg-slate-500 rounded-2xl overflow-hidden border border-adivinaGreen/50 '>
-                  <h3
-                    className='absolute bottom-4 w-full bg-adivinaGreen/40 ext-adivinaBlack font-bold  flex items-center justify-center text-3xl p-4'
-                  >
-                    ¡¡¡Respuesta Correcta!!!
-                  </h3>
-
-                  <img src='./imgs/dino.webp' alt='imagen de parque jurasico' width={650} height={400} />
-                </div>
-                <form className='w-4/5 flex gap-4 h-12'>
-                  <input
-                    className='w-4/5 rounded-lg p-4 bg-adivinaBlack/25 border border-adivinaGreen'
-                    type='text'
-                    placeholder='Jurassic Park'
-                  />
-                  <button
-                    className='w-1/5 bg-adivinaGreen border border-adivinaGreen text-adivinaBlack font-bold rounded-lg hover:scale-105 hover:contrast-200 transition-all '
-                  >
-                    Enviar
-                  </button>
-                </form>
-
-                <section className='w-4/5'>
-                  <h2 className='text-adivinaGreen font-extrabold text-2xl'>
-                    Pistas:
-                  </h2>
-                  <ol className='p-8 font-semibold flex flex-col gap-2'>
-                    <li className='list-disc'>Primera pista</li>
-                    <li className='list-disc'>Segunda Pista pista</li>
-                    <li className='list-disc'>Tercera pista</li>
-                    <li className='list-disc'>Cuarta pista</li>
-                  </ol>
-                </section>
-              </div>
+              {
+                (level)
+                  ? (
+                    <div className='w-full flex flex-col gap-4  items-center overflow-hidden mb-8'>
+                      <CanvasCategory level={level} isCorrect={isCorrect} isError={isError} turn={turn} />
+                      <div className='w-4/5  font-montserrat font-semibold text-adivinaGreen text-xs'>
+                        <span className='text-white text-base font-normal'>Dia: </span>{level.publishDay}
+                      </div>
+                      <AnswerForm
+                        handleAnswer={handleAnswer}
+                        formAnswer={formAnswer}
+                        setFormAnswer={setFormAnswer}
+                        isCorrect={isCorrect}
+                        isError={isError}
+                        actualLevel={actualLevel}
+                        setActualLevel={setActualLevel}
+                        levelList={levelList}
+                        pointsUser={pointsUser}
+                        status={status}
+                        setIsAutenticated={setIsAutenticated}
+                        isAutenticated={isAutenticated}
+                      />
+                      {turn >= 1 && <CluesCategory level={level} turn={turn} />}
+                    </div>
+                    )
+                  : <NoLevels />
+                  }
+              <p className=' absolute bottom-1 w-4/5 font-thin '>* Se debe introducir el titulo en su version original</p>
             </section>
             <aside className='w-80 flex flex-col gap-10  '>
-              {/* USER CARD */}
-              {
-                status && <UserCard />
-
-              }
-              {/* RANK CARD */}
-              {/* TODO: CAMBIAR */}
-              <section className=' flex  flex-col gap-4 justify-center   overflow-hidden border border-adivinaGreen/50 rounded-xl p-4 bg-adivinaBlack/25'>
+              {status && <UserCard />}
+              <section className='w-full flex  flex-col gap-4 justify-center   overflow-hidden border border-adivinaGreen/50 rounded-xl p-4 bg-adivinaBlack/25'>
                 <h2 className=' text-xl text-adivinaGreen font-semibold'>
-                  Últimas noticias
+                  Classificación
                 </h2>
-                <Link className='hover:scale-105 transition-all  hover:contrast-125 hover:brightness-110 hover:text-adivinaGreen' href='/#'>
-                  <article className='relative w-full  rounded-xl border border-adivinaGreen/75 overflow-hidden '>
-                    <h2 className='absolute bottom-2 left-2 m-2 font-semibold text-lg z-20'>Nuevas Secciones </h2>
-                    <div className='absolute w-full h-full bg-gradient-to-t from-black/30 from-30% to-transparent to-45% z-400' />
-                    <img className='w-full object-cover' src='./imgs/superman.webp' alt='' width={200} height={50} />
-                  </article>
-                </Link>
-                <Link className='hover:scale-105 transition-all  hover:contrast-125 hover:brightness-110 hover:text-adivinaGreen' href='/#'>
-                  <article className='relative w-full  rounded-xl border border-adivinaGreen/75 overflow-hidden '>
-                    <h2 className='absolute bottom-2 left-2 m-2 font-semibold text-lg z-20'>Cierre por mantenimiento </h2>
-                    <div className='absolute w-full h-full bg-gradient-to-t from-black/30 from-30% to-transparent to-45% z-400' />
-                    <img className='w-full object-cover' src='./imgs/superman.webp' alt='' width={200} height={50} />
-                  </article>
-                </Link>
-
+                <RankList usersList={usersList} categoryDB={categoryDB} />
               </section>
             </aside>
-
           </main>
-
-          {/* FOOTER */}
-          <footer className='w-full mt-auto flex items-center  justify-around bg-adivinaBlack'>Aqui va el pie de pagina</footer>
+          <Footer />
         </MainLayout>
       </div>
     </>
   )
+}
+
+export const getStaticProps = async (ctx) => {
+  const usersList = await getUserList()
+
+  return {
+    props: {
+      usersList
+    }
+  }
 }
