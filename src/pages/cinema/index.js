@@ -1,7 +1,7 @@
 import MainLayout from '@/components/layout/MainLayout'
 import UserCard from '@/components/ui/UserCard'
 import { useSelector } from 'react-redux'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import CanvasCategory from '@/components/category/CanvasCategory'
 import AnswerForm from '@/components/category/AnswerForm'
 import CluesCategory from '@/components/category/CluesCategory'
@@ -30,14 +30,27 @@ export default function CinemaPage ({ usersList }) {
     category: 'cinema'
   }
   const userPosition = getPositionUserRank(categoryDB, usersList, id)
-
-  const { actualLevel, setActualLevel, turn, isCorrect, isError, isAnswerCorrect, isAnswerIncorrect, isAnswerFail, level, resetScoreLevel, levelList } = useScoreGame(categoryDB, scoreUser, userPosition)
-  const { pointsUser, setTotalPoints, setErrorsCount, errorsCount, setCorrects, corrects } = useUpdateScoreUser(categoryDB, scoreUser, userPosition, level)
-
-  useEffect(() => {
-    resetScoreLevel()
-    setFormAnswer('')
-  }, [actualLevel])
+  const {
+    actualLevel,
+    setActualLevel,
+    turn,
+    isCorrect,
+    isError,
+    isAnswerCorrect,
+    isAnswerIncorrect,
+    isAnswerFail,
+    level,
+    levelList,
+    setIsCorrect, resetScore
+  } = useScoreGame(categoryDB, scoreUser, userPosition)
+  const {
+    pointsUser,
+    setTotalPoints,
+    setErrorsCount,
+    errorsCount,
+    setCorrects,
+    corrects
+  } = useUpdateScoreUser(categoryDB, scoreUser, userPosition, level)
 
   const handleAnswer = (event) => {
     event.preventDefault()
@@ -45,11 +58,16 @@ export default function CinemaPage ({ usersList }) {
     const CorrectTitle = level.answer.title.toLowerCase()
 
     if (answerForm.length < 2) return
-    (answerForm === CorrectTitle)
-      ? isAnswerCorrect(setTotalPoints, setCorrects, corrects)
-      : (turn < 4)
-          ? isAnswerIncorrect(setErrorsCount, errorsCount)
-          : isAnswerFail(setErrorsCount, errorsCount)
+    if (answerForm === CorrectTitle) {
+      isAnswerCorrect(setTotalPoints, setCorrects, corrects)
+      setIsCorrect(true)
+      return
+    }
+    if (turn < 4) {
+      isAnswerIncorrect(setErrorsCount, errorsCount)
+      return
+    }
+    isAnswerFail(setErrorsCount, errorsCount)
   }
 
   return (
@@ -85,6 +103,11 @@ export default function CinemaPage ({ usersList }) {
                         status={status}
                         setIsAutenticated={setIsAutenticated}
                         isAutenticated={isAutenticated}
+                        categoryDB={categoryDB}
+                        resetScore={resetScore}
+                        setTotalPoints={setTotalPoints}
+                        setErrorsCount={setErrorsCount}
+                        setCorrects={setCorrects}
                       />
                       {turn >= 1 && <CluesCategory level={level} turn={turn} />}
                     </div>
