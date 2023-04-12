@@ -4,7 +4,7 @@
       "id": 1,
       "publishDay": "1/4/2023",
       "answer": {
-        "title": "The Goonies videogame",
+        "title": "The Goonies",
         "answerImg": "/AdivinaQue/cinema/01/jgmjxxgeae1b0xg8euv3.webp"
       },
       "clues": [
@@ -304,29 +304,299 @@
       "id": 11,
       "publishDay": "11/4/2023",
       "answer": {
-        "title": "Back to the Future videogames",
-        "answerImg": "/AdivinaQue/cinema/10/krnpoqjzdreeik7utpky.webp"
+        "title": "The Princess Bride",
+        "answerImg": "/AdivinaQue/cinema/11/oisvpprderp6f4bfuwz6.webp"
       },
       "clues": [
         {
           "clue": null,
-          "img": "/AdivinaQue/cinema/10/sp3ekanwrbmduey1fblw.webp"
+          "img": "/AdivinaQue/cinema/11/amsxmenu5ip2yhzrqzns.webp"
         },
         {
-          "clue": "Se estrena en 1985",
-          "img": "/AdivinaQue/cinema/10/mbz6gzlsokphdt5zzzne.webp"
+          "clue": "Se estrena en 1987",
+          "img": "/AdivinaQue/cinema/11/hxrvubynbikpbaanetsy.webp"
         },
         {
-          "clue": "Fue una trilogia",
-          "img": "/AdivinaQue/cinema/10/keehoztycvxabmrxiibr.webp"
+          "clue": "Uno de los actores aparece en las serie Homeland",
+          "img": "/AdivinaQue/cinema/11/wfdg1tnze0eopgy9oyog.webp"
         },
         {
-          "clue": "Eric Stoltz iba a ser el protagonista pero cambiaron tras iniciar el rodaje",
-          "img": "/AdivinaQue/cinema/10/meqpjsmyxffvcla6aib9.webp"
+          "clue": "Es un cuento de fantasia",
+          "img": "/AdivinaQue/cinema/11/srr5h1lzat7pstgkzmnj.webp"
         },
         {
-          "clue": "A donde vamos no necesitamos carreteras",
-          "img": "/AdivinaQue/cinema/10/on5heigxj9n1knbcqfkp.webp"
+          "clue": "Hello. My name is Inigo Montoya. You killed my father. Prepare to die",
+          "img": "/AdivinaQue/cinema/11/zkhnydrlyba6wyhwrg5c.webp"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "publishDay": "12/4/2023",
+      "answer": {
+        "title": "The Land Before Time",
+        "answerImg": "/AdivinaQue/cinema/12/ticpa1de7pk6amlzn69o.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/12/eargpxxrqkgb1j6him1m.webp"
+        },
+        {
+          "clue": "Estrenada en 1988",
+          "img": "/AdivinaQue/cinema/12/odflep369hrjyi43baw8.webp"
+        },
+        {
+          "clue": "Producida por LucasFilm",
+          "img": "/AdivinaQue/cinema/12/drhkakw8zgujhhmhe3jz.webp"
+        },
+        {
+          "clue": "Fue la primera de una extensa saga",
+          "img": "/AdivinaQue/cinema/12/xqwizkxcmmo7pmam8ayu.webp"
+        },
+        {
+          "clue": "El protagonista se llama piecito (En la version de España)",
+          "img": "/AdivinaQue/cinema/12/husvcu1m3egtjmuu8hms.webp"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "publishDay": "13/4/2023",
+      "answer": {
+        "title": "Super Mario Bros",
+        "answerImg": ""
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/13/z69gbozmjguyeodtsh4h.webp"
+        },
+        {
+          "clue": "Se estrena en 1993",
+          "img": "/AdivinaQue/cinema/13/wrkvu8krorm2r1ndqwep.webp"
+        },
+        {
+          "clue": "Adaptación de un popular juego",
+          "img": "/AdivinaQue/cinema/13/xrbjmvwlo9ge9cb6ld04.webp"
+        },
+        {
+          "clue": "Bob Hoskins y John Leguizamo son hermanos",
+          "img": "/AdivinaQue/cinema/13/obxgcltnyfiuk9qo9tcy.webp"
+        },
+        {
+          "clue": "It's a me ...",
+          "img": "/AdivinaQue/cinema/13/xdrvwuxhqbrufx0rgu0h.webp"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "publishDay": "14/4/2023",
+      "answer": {
+        "title": "Cool Runnings",
+        "answerImg": ""
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/14/eh9giypikjsbzbpwyiyi.jpg"
+        },
+        {
+          "clue": "Estrenada en 1993",
+          "img": "/AdivinaQue/cinema/14/cao5mzbfd2lz5tqq4krg.jpg"
+        },
+        {
+          "clue": "Inspirada en una historia Real",
+          "img": "/AdivinaQue/cinema/14/snt8mc8pikpzirkjuib4.jpg"
+        },
+        {
+          "clue": "Con John Candy",
+          "img": "/AdivinaQue/cinema/14/pjimhppoyjzmeucwngkx.jpg"
+        },
+        {
+          "clue": "Una comedia de Disney",
+          "img": "/AdivinaQue/cinema/14/tvjgkyssaj2zl9gbe9hx.jpg"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "publishDay": "15/4/2023",
+      "answer": {
+        "title": "Jumanji",
+        "answerImg": "/AdivinaQue/cinema/15/usnfqhlidz1fjvgbeyjk.jpg"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/15/whqgwuk5chqrgou1wbqp.jpg"
+        },
+        {
+          "clue": "Estrenada en 1995",
+          "img": "/AdivinaQue/cinema/15/i0dyoceqagaqphjgmmgc.jpg"
+        },
+        {
+          "clue": "Con una muy joven Kirsten Dunst",
+          "img": "/AdivinaQue/cinema/15/wsoqcrpu0evpua4jm8ku.jpg"
+        },
+        {
+          "clue": "Con Robin williams",
+          "img": "/AdivinaQue/cinema/15/t1qo3lp5wfb3k7vva3xq.jpg"
+        },
+        {
+          "clue": "Un juego de mesa muy salvaje",
+          "img": "/AdivinaQue/cinema/15/ihxedplikbie0sodeia6.jpg"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "publishDay": "16/4/2023",
+      "answer": {
+        "title": "E.T. the Extra-Terrestrial",
+        "answerImg": "/AdivinaQue/cinema/16/v1cbrvrtoamqrnw94igr.jpg"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/16/cqnbny0eijsuidaacilc.jpg"
+        },
+        {
+          "clue": "Se estrena en 1982",
+          "img": "/AdivinaQue/cinema/16/imfkemja2uqwm3md39km.jpg"
+        },
+        {
+          "clue": "Ganadora de 4 Óscar",
+          "img": "/AdivinaQue/cinema/16/imfkemja2uqwm3md39km.jpg"
+        },
+        {
+          "clue": "DEbut de Drew Barrymore",
+          "img": "/AdivinaQue/cinema/16/tvabkxhevicmli9mepjz.jpg"
+        },
+        {
+          "clue": "Uno de los clasicos mas importantes de Steven Spielberg",
+          "img": "/AdivinaQue/cinema/16/h5wxduj8smeaqelnyvhy.jpg"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "publishDay": "17/4/2023",
+      "answer": {
+        "title": "The Road to El Dorado",
+        "answerImg": ""
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/17/pmtdcogpqn9uwfwpxvni.jpg"
+        },
+        {
+          "clue": "Estrenada en 2000",
+          "img": "/AdivinaQue/cinema/17/z36jtrug6zptlbus2anh.jpg"
+        },
+        {
+          "clue": "Una pelicula de DreamWorks",
+          "img": "/AdivinaQue/cinema/17/lklt10wpxlgldio6tohc.jpg"
+        },
+        {
+          "clue": "Con las voces de Kevin Kline y Kenneth Branagh",
+          "img": "/AdivinaQue/cinema/17/j5nlbji6j3zqiu4f88q2.jpg"
+        },
+        {
+          "clue": "La aventura de dos estafadores que consiguen un mapa a un gran tesoro",
+          "img": "/AdivinaQue/cinema/17/kopl5q7zkixce6qhafrb.jpg"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "publishDay": "18/4/2023",
+      "answer": {
+        "title": "The Wizard of Oz",
+        "answerImg": "/AdivinaQue/cinema/18/nsdyjagrofrmfwelz6oc.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/18/xccfp4dlw026f0hqlspo.jpg"
+        },
+        {
+          "clue": "Del año 1939",
+          "img": "/AdivinaQue/cinema/18/n1cckhce2auhxtenxsj3.jpg"
+        },
+        {
+          "clue": "Uno de los grandes clasicos del cine",
+          "img": "/AdivinaQue/cinema/18/tsbxumhb2yluvqhlwsuw.jpg"
+        },
+        {
+          "clue": "Con Judy Garland",
+          "img": "/AdivinaQue/cinema/18/jpzuk8rk2zrj6jtehy7s.jpg"
+        },
+        {
+          "clue": "we're not in Kansas any more",
+          "img": "/AdivinaQue/cinema/18/lrqh7iui8fyld0muw45o.jpg"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "publishDay": "19/4/2023",
+      "answer": {
+        "title": "The Dark Crystal",
+        "answerImg": ""
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/19/gbvsoofl8egklqvttyhz.jpg"
+        },
+        {
+          "clue": "Del año 1982",
+          "img": "/AdivinaQue/cinema/19/zfsfybh3t7uuuzbl5ngc.jpg"
+        },
+        {
+          "clue": "Fue recuperada recientemente para una secuela",
+          "img": "/AdivinaQue/cinema/19/f0sipyietnpcxmk86pgf.jpg"
+        },
+        {
+          "clue": "Creada por Jim Henson",
+          "img": "/AdivinaQue/cinema/19/lipi8ilhqn7rgox411d4.jpg"
+        },
+        {
+          "clue": "End, begin, all the same. Big change. Sometimes good. Sometimes bad.",
+          "img": "/AdivinaQue/cinema/19/hwxhzmajfgxvjrtylvmt.jpg"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "publishDay": "20/4/2023",
+      "answer": {
+        "title": "Small Soldiers",
+        "answerImg": "/AdivinaQue/cinema/20/phs0v42effvhkglixttu.jpg"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/20/vpoiu0g9vvpecrg1kmkl.jpg"
+        },
+        {
+          "clue": "Estrenada en 1998",
+          "img": "/AdivinaQue/cinema/20/y4sr7y8ixoec5dyyhsrf.jpg"
+        },
+        {
+          "clue": "Aparece Kristen Dunst",
+          "img": "/AdivinaQue/cinema/20/cdrm0akkytvgrwdfb99t.jpg"
+        },
+        {
+          "clue": "Dirigida por Joe Dante",
+          "img": "/AdivinaQue/cinema/20/frd4t4dtbfgt8clo1q4d.jpg"
+        },
+        {
+          "clue": "Greetings. I am Archer, emissary or the Gorgonites.",
+          "img": "/AdivinaQue/cinema/20/enpdujpd5oldjpb7cgid.jpg"
         }
       ]
     }
