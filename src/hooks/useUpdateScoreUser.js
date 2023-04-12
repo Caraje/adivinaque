@@ -1,34 +1,38 @@
 
 import { useState } from 'react'
 
-export const useUpdateScoreUser = (scoreUser, userPosition, level) => {
+export const useUpdateScoreUser = (categoryDB, scoreUser, userPosition, level) => {
   const [totalPoints, setTotalPoints] = useState(0) // Almacena los puntos del nivel
   const [errorsCount, setErrorsCount] = useState(0) // Almacena los errores del nivel
   const [corrects, setCorrects] = useState(0) //
   const idLevel = level && level.id
+  const { cinema, series, videogames } = categoryDB.userScoreAll
+  const category = categoryDB.category
+
+  // console.log({ userPosition })
 
   const pointsUser = {
     cinema: {
-      corrects: corrects + scoreUser?.cinema?.corrects,
-      errors: errorsCount + scoreUser?.cinema?.errors,
+      corrects: (category === 'cinema') ? cinema?.corrects + corrects : cinema?.corrects,
+      errors: (category === 'cinema') ? cinema?.errors + errorsCount : cinema?.errors,
       // levels_completed: [],
-      levels_completed: scoreUser?.cinema?.levels_completed.concat(idLevel),
-      positionRank: userPosition + 1,
-      totalPoints: totalPoints + scoreUser?.cinema?.totalPoints
+      levels_completed: (category === 'cinema') ? cinema?.levels_completed.concat(idLevel) : cinema?.levels_completed,
+      positionRank: (category === 'cinema') ? userPosition + 1 : cinema?.positionRank,
+      totalPoints: (category === 'cinema') ? cinema?.totalPoints + totalPoints : cinema?.totalPoints
     },
     series: {
-      corrects: scoreUser?.series?.corrects,
-      errors: scoreUser?.series?.errors,
-      levels_completed: scoreUser?.series?.levels_completed,
-      positionRank: scoreUser?.series?.positionRank,
-      totalPoints: scoreUser?.series?.totalPoints
+      corrects: (category === 'series') ? series?.corrects + corrects : series?.corrects,
+      errors: (category === 'series') ? series?.errors + errorsCount : series?.errors,
+      levels_completed: (category === 'series') ? series?.levels_completed.concat(idLevel) : series?.levels_completed,
+      positionRank: (category === 'series') ? userPosition + 1 : series?.positionRank,
+      totalPoints: (category === 'series') ? series?.totalPoints + totalPoints : series?.totalPoints
     },
     videogames: {
-      corrects: scoreUser?.videogames?.corrects,
-      errors: scoreUser?.videogames?.errors,
-      levels_completed: scoreUser?.videogames?.levels_completed,
-      positionRank: scoreUser?.videogames?.positionRank,
-      totalPoints: scoreUser?.videogames?.totalPoints
+      corrects: (category === 'videogames') ? videogames?.corrects + corrects : videogames?.corrects,
+      errors: (category === 'videogames') ? videogames?.errors + errorsCount : videogames?.errors,
+      levels_completed: (category === 'videogames') ? videogames?.levels_completed.concat(idLevel) : videogames?.levels_completed,
+      positionRank: (category === 'videogames') ? userPosition + 1 : videogames?.positionRank,
+      totalPoints: (category === 'videogames') ? videogames?.totalPoints + totalPoints : videogames?.totalPoints
     }
   }
   return {
