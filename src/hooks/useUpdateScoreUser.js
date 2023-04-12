@@ -9,13 +9,12 @@ export const useUpdateScoreUser = (categoryDB, scoreUser, userPosition, level) =
   const { cinema, series, videogames } = categoryDB.userScoreAll
   const category = categoryDB.category
 
-  // console.log({ userPosition })
+  // console.log({ totalPoints, errorsCount, corrects })
 
   const pointsUser = {
     cinema: {
       corrects: (category === 'cinema') ? cinema?.corrects + corrects : cinema?.corrects,
       errors: (category === 'cinema') ? cinema?.errors + errorsCount : cinema?.errors,
-      // levels_completed: [],
       levels_completed: (category === 'cinema') ? cinema?.levels_completed.concat(idLevel) : cinema?.levels_completed,
       positionRank: (category === 'cinema') ? userPosition + 1 : cinema?.positionRank,
       totalPoints: (category === 'cinema') ? cinema?.totalPoints + totalPoints : cinema?.totalPoints
@@ -35,6 +34,7 @@ export const useUpdateScoreUser = (categoryDB, scoreUser, userPosition, level) =
       totalPoints: (category === 'videogames') ? videogames?.totalPoints + totalPoints : videogames?.totalPoints
     }
   }
+
   return {
     pointsUser,
     setTotalPoints,
