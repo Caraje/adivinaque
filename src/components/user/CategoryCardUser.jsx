@@ -13,28 +13,28 @@ const CategoryCardUser = ({ category, image, name, score }) => {
           </header>
           <footer className='absolute w-full flex justify-center items-center gap-4 bottom-4  z-50' data-atropos-offset='15'>
             <div className='bg-adivinaDark/75 p-2 flex flex-col justify-center items-center gap-2 rounded-xl'>
-              <div className='text-adivinaGreen'>
+              <div className='text-adivinaGreen' data-atropos-offset='40'>
                 {correctIcon}
               </div>
-              <h3>{score.corrects}</h3>
+              <h3 data-atropos-offset='55'>{score.corrects}</h3>
             </div>
             <div className='bg-adivinaDark/75 p-2 flex flex-col justify-center items-center gap-2 rounded-xl'>
-              <div className='text-adivinaGreen'>
+              <div className='text-adivinaGreen' data-atropos-offset='40'>
                 {errorIcon}
               </div>
-              <h3>{score.errors}</h3>
+              <h3 data-atropos-offset='55'>{score.errors}</h3>
             </div>
             <div className='bg-adivinaDark/75 p-2 flex flex-col justify-center items-center gap-2 rounded-xl'>
-              <div className='text-adivinaGreen'>
+              <div className='text-adivinaGreen' data-atropos-offset='40'>
                 {pointsIcon}
               </div>
-              <h3>{score.totalPoints}</h3>
+              <h3 data-atropos-offset='55'>{score.totalPoints}</h3>
             </div>
             <div className='bg-adivinaDark/75 p-2 flex flex-col justify-center items-center gap-2 rounded-xl'>
-              <div className='text-adivinaGreen'>
+              <div className='text-adivinaGreen' data-atropos-offset='40'>
                 {rankIcon}
               </div>
-              <h3>{score.positionRank}</h3>
+              <h3 data-atropos-offset='55'>{score.positionRank}</h3>
             </div>
           </footer>
         </article>
