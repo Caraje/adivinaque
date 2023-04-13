@@ -1,3 +1,4 @@
+import { gameIcon, movieIcon, televisionIcon } from '@/utils/icons'
 import Link from 'next/link'
 import { useSelector } from 'react-redux'
 
@@ -17,15 +18,22 @@ const UserCard = () => {
           <h2>{user.userName}</h2>
           <section className='flex items-center justify-center gap-4 font-light text-lg '>
             <div className='flex flex-col items-center justify-center gap-2'>
-              <img src='./icons/cinema-icon.svg' alt='' width={24} height={24} />
+              <div className='text-adivinaGreen'>
+                {movieIcon}
+              </div>
               <p>{user.categories.cinema?.totalPoints}</p>
             </div>
             <div className='flex flex-col items-center justify-center gap-2'>
-              <img src='./icons/series-icon.svg' alt='' width={24} height={24} />
+              <div className='text-adivinaGreen'>
+                {televisionIcon}
+              </div>
               <p>{user.categories.series?.totalPoints}</p>
             </div>
             <div className='flex flex-col items-center justify-center gap-2'>
-              <img src='./icons/game-icon.svg' alt='' width={24} height={24} />
+
+              <div className='text-adivinaGreen'>
+                {gameIcon}
+              </div>
               <p>{user.categories.videogames?.totalPoints}</p>
             </div>
           </section>
