@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Atropos from 'atropos/react'
+import { correctIcon, errorIcon, pointsIcon, rankIcon } from '@/utils/icons'
 
 const CategoryCardUser = ({ category, image, name, score }) => {
   return (
@@ -12,19 +13,27 @@ const CategoryCardUser = ({ category, image, name, score }) => {
           </header>
           <footer className='absolute w-full flex justify-center items-center gap-4 bottom-4  z-50' data-atropos-offset='15'>
             <div className='bg-adivinaDark/75 p-2 flex flex-col justify-center items-center gap-2 rounded-xl'>
-              <img src='/icons/correct-icon.svg' alt='icono de ' width={35} height={35} />
+              <div className='text-adivinaGreen'>
+                {correctIcon}
+              </div>
               <h3>{score.corrects}</h3>
             </div>
             <div className='bg-adivinaDark/75 p-2 flex flex-col justify-center items-center gap-2 rounded-xl'>
-              <img src='/icons/error-icon.svg' alt='icono de ' width={35} height={35} />
+              <div className='text-adivinaGreen'>
+                {errorIcon}
+              </div>
               <h3>{score.errors}</h3>
             </div>
             <div className='bg-adivinaDark/75 p-2 flex flex-col justify-center items-center gap-2 rounded-xl'>
-              <img src='/icons/points-icon.svg' alt='icono de ' width={35} height={35} />
+              <div className='text-adivinaGreen'>
+                {pointsIcon}
+              </div>
               <h3>{score.totalPoints}</h3>
             </div>
             <div className='bg-adivinaDark/75 p-2 flex flex-col justify-center items-center gap-2 rounded-xl'>
-              <img src='/icons/rank-icon.svg' alt='icono de ' width={35} height={35} />
+              <div className='text-adivinaGreen'>
+                {rankIcon}
+              </div>
               <h3>{score.positionRank}</h3>
             </div>
           </footer>
