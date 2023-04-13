@@ -39,7 +39,7 @@ export const UserCardSocial = ({ user }) => {
               }
               return (
                 <Link
-                  className=' scale-75 hover:scale-125 transition-all hover:bg-adivinaGreen  hover:text-adivinaDark rounded-full p-1'
+                  className=' scale-75 hover:scale-125 transition-all text-adivinaGreen hover:bg-adivinaGreen hover:text-adivinaDark rounded-full p-1'
                   href={(soc.name === 'web') ? `${soc.url}` : `${soc.url}${soc.user}`}
                   target='_blank'
                   rel='noreferrer'
