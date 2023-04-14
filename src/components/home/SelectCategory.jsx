@@ -19,7 +19,7 @@ const SelectCategory = () => {
           />
         </div>
 
-        <div className='flex justify-between max-w-2xl w-full'>
+        <div className='flex flex-col sm:flex-row gap-8 justify-center sm:justify-between max-w-2xl w-full'>
           <CategoryCard
             category='series'
             name='Series'
