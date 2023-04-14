@@ -12,12 +12,12 @@ export default function Home ({ usersList }) {
 
   return (
     <>
-      <div className='w-screen min-h-screen  flex flex-col items-center justify-betwee text-white font-montserrat  bg-slate-950'>
+      <div className='w-screen min-h-screen   flex flex-col  items-center justify-between text-white font-montserrat  bg-slate-950'>
         {/* BARRA DE MENU_ */}
         <MainLayout>
 
           {/* CONTENIDO */}
-          <main className='w-full flex gap-10 p-4 max-w-6xl'>
+          <main className='w-full flex flex-col sm:flex-row justify-center items-center sm:items-stretch gap-10 p-4 max-w-6xl'>
             <SelectCategory />
             <aside className='w-80 flex flex-col gap-10  '>
               {/* USER CARD */}
