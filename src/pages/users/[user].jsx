@@ -15,8 +15,8 @@ const UserPage = ({ user }) => {
   return (
     <MainLayout>
       <div className='flex flex-col w-full gap-10 p-4 max-w-6xl '>
-        <div className='flex w-full gap-8 '>
-          <section className='w-2/6 max-w-xl '>
+        <div className='flex flex-col sm:flex-row w-full gap-8 '>
+          <section className='w-full sm:w-2/6 max-w-xl '>
             <UserCardSocial social={actualUser.socials} user={actualUser} />
 
           </section>
@@ -31,7 +31,7 @@ const UserPage = ({ user }) => {
           </section>
         </div>
         <section className='w-full flex gap-10 max-w-6xl'>
-          <article className=' w-full flex  gap-8 justify-evenly items-center overflow-hidden border border-adivinaGreen/50 rounded-xl p-4 bg-adivinaBlack/25'>
+          <article className=' w-full flex flex-col sm:flex-row  gap-8 justify-evenly items-center overflow-hidden border border-adivinaGreen/50 rounded-xl p-4 bg-adivinaBlack/25'>
             <CategoryCardUser
               category={category[0]}
               name='Cine'
