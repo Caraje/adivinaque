@@ -105,7 +105,7 @@ const FormUpdateSocial = ({ user }) => {
       isConfirm && <DeleteConfirm back={setIsConfirm} />
     }
       <form
-        className='w-full grid grid-cols-2 gap-4 justify-end items-end'
+        className='w-full grid grid-cols-1 sm:grid-cols-2 gap-4 justify-end items-end'
         onSubmit={handleForm}
       >
         <label className='flex flex-col text-xs gap-2'>
@@ -171,14 +171,15 @@ const FormUpdateSocial = ({ user }) => {
             onChange={e => setFile(e.target.files[0])}
           />
         </label>
-        <div className='w-full flex gap-4 '>
+        <div className='w-full flex gap-4 ' />
+        <div className='w-full flex flex-col sm:flex-row sm-flex-row gap-4 '>
           <button
-            className='w-1/2 rounded-lg bg-adivinaGreen py-2 text-[#333] font-bold hover:scale-105 hover:brightness-110 transition-all '
+            className='w-full sm:w-1/2 rounded-lg bg-adivinaGreen py-2 text-[#333] font-bold hover:scale-105 hover:brightness-110 transition-all '
           >
             Actualizar
           </button>
           <button
-            className='w-1/2 rounded-lg bg-red-700 py-2 text-white font-bold hover:scale-105 hover:brightness-110 transition-all '
+            className='w-full sm:w-1/2 rounded-lg bg-red-700 py-2 text-white font-bold hover:scale-105 hover:brightness-110 transition-all '
             type='button'
             onClick={handleDeleteUser}
           >
