@@ -9,7 +9,7 @@ const MenuUser = ({ user }) => {
     dispatch(logoutState())
   }
   return (
-    <ol className='absolute z-50 bg-adivinaDark/50 backdrop-blur-xl border border-adivinaGreen p-4 rounded-xl mt-2 font-semibold flex flex-col gap-2'>
+    <ol className='absolute right-0 sm:right-auto z-50 bg-adivinaDark/50 backdrop-blur-xl border border-adivinaGreen p-4 rounded-xl mt-2 font-semibold flex flex-col gap-2'>
       <li>
         <Link className='flex items-center gap-2 hover:scale-110 hover:text-adivinaGreen transition-all ' href={`/users/${user.userName}`}>
           {settingsIcon}
