@@ -4,6 +4,7 @@ import { createUserWithEmail, getUserList, loginWithEmail } from '@/services/sup
 import { useDispatch } from 'react-redux'
 import { loginState } from '@/store/auth/thunks'
 import { useState } from 'react'
+import { backIcon } from '@/utils/icons'
 
 export default function RegisterPage ({ usersList }) {
   const dispatch = useDispatch()
@@ -32,13 +33,13 @@ export default function RegisterPage ({ usersList }) {
   }
 
   return (
-    <main className='w-screen h-screen flex justify-center items-center bg-adivinaDark text-white font-montserrat'>
+    <main className='w-screen h-screen flex flex-col-reverse sm:flex-row justify-end gap-4 sm:justify-center items-center bg-adivinaDark text-white font-montserrat'>
       <Link
-        className='absolute top-4 right-4 bg-red-600'
+        className='absolute top-4 right-4 text-adivinaGreen hover:scale-125 transition-all '
         href='/'
-      >X
+      >{backIcon}
       </Link>
-      <section className='w-1/2 h-full flex flex-col justify-center items-center '>
+      <section className='w-1/2 h-1/2 flex flex-col justify-center items-center'>
         <h1 className='font-montserrat font-extrabold text-4xl text-adivinaGreen'>Registro
         </h1>
         <form
@@ -111,9 +112,9 @@ export default function RegisterPage ({ usersList }) {
           </Link>
         </nav>
       </section>
-      <section className='w-1/2 h-full flex justify-center items-center '>
+      <section className='w-full sm:w-1/2 h-1/3 sm:h-full flex justify-center items-center '>
         <img
-          className='w-full h-full object-cover object-top border-l-2 border-adivinaGreen'
+          className='w-full h-full object-cover object-top sm:object-top border-b-2 sm:border-b-0 sm:border-l-2 border-adivinaGreen'
           src='/imgs/last.webp'
           alt='imagen de The mandalorian'
         />
