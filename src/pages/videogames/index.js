@@ -1,7 +1,7 @@
 import MainLayout from '@/components/layout/MainLayout'
 import UserCard from '@/components/ui/UserCard'
 import { useSelector } from 'react-redux'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import CanvasCategory from '@/components/category/CanvasCategory'
 import AnswerForm from '@/components/category/AnswerForm'
 import CluesCategory from '@/components/category/CluesCategory'
@@ -23,7 +23,6 @@ export default function VideogamesPage ({ usersList }) {
 
   const { id } = user
   const scoreUser = user.categories
-  // const userPosition = getPositionUserRank(usersList, id)
   const categoryDB = {
     userScore: scoreUser.videogames,
     categoryDataBase: videogames.videogames,
@@ -31,16 +30,27 @@ export default function VideogamesPage ({ usersList }) {
     category: 'videogames'
   }
   const userPosition = getPositionUserRank(categoryDB, usersList, id)
-
-  // console.log({ userPosition })
-
-  const { actualLevel, setActualLevel, turn, isCorrect, isError, isAnswerCorrect, isAnswerIncorrect, isAnswerFail, level, resetScoreLevel, levelList } = useScoreGame(categoryDB, scoreUser, userPosition)
-  const { pointsUser, setTotalPoints, setErrorsCount, errorsCount, setCorrects, corrects } = useUpdateScoreUser(categoryDB, scoreUser, userPosition, level)
-
-  useEffect(() => {
-    resetScoreLevel()
-    setFormAnswer('')
-  }, [actualLevel])
+  const {
+    actualLevel,
+    setActualLevel,
+    turn,
+    isCorrect,
+    isError,
+    isAnswerCorrect,
+    isAnswerIncorrect,
+    isAnswerFail,
+    level,
+    levelList,
+    setIsCorrect, resetScore
+  } = useScoreGame(categoryDB, scoreUser, userPosition)
+  const {
+    pointsUser,
+    setTotalPoints,
+    setErrorsCount,
+    errorsCount,
+    setCorrects,
+    corrects
+  } = useUpdateScoreUser(categoryDB, scoreUser, userPosition, level)
 
   const handleAnswer = (event) => {
     event.preventDefault()
@@ -48,11 +58,16 @@ export default function VideogamesPage ({ usersList }) {
     const CorrectTitle = level.answer.title.toLowerCase()
 
     if (answerForm.length < 2) return
-    (answerForm === CorrectTitle)
-      ? isAnswerCorrect(setTotalPoints, setCorrects, corrects)
-      : (turn < 4)
-          ? isAnswerIncorrect(setErrorsCount, errorsCount)
-          : isAnswerFail(setErrorsCount, errorsCount)
+    if (answerForm === CorrectTitle) {
+      isAnswerCorrect(setTotalPoints, setCorrects, corrects)
+      setIsCorrect(true)
+      return
+    }
+    if (turn < 4) {
+      isAnswerIncorrect(setErrorsCount, errorsCount)
+      return
+    }
+    isAnswerFail(setErrorsCount, errorsCount)
   }
 
   return (
@@ -62,7 +77,7 @@ export default function VideogamesPage ({ usersList }) {
 
           {isAutenticated && <NoUserAutenticated />}
           {/* CONTENIDO */}
-          <main className='w-full flex gap-10 p-4 max-w-6xl'>
+          <main className='w-full flex flex-col items-center sm:items-stretch sm:flex-row gap-10 p-4 max-w-6xl'>
             <section className='relative w-full flex flex-col gap-8  border border-adivinaGreen/50 rounded-xl p-4 bg-adivinaBlack/25'>
               <h1 className='font-black text-3xl text-adivinaGreen ml-8 mt-8'>
                 Cine
@@ -88,6 +103,11 @@ export default function VideogamesPage ({ usersList }) {
                         status={status}
                         setIsAutenticated={setIsAutenticated}
                         isAutenticated={isAutenticated}
+                        categoryDB={categoryDB}
+                        resetScore={resetScore}
+                        setTotalPoints={setTotalPoints}
+                        setErrorsCount={setErrorsCount}
+                        setCorrects={setCorrects}
                       />
                       {turn >= 1 && <CluesCategory level={level} turn={turn} />}
                     </div>
