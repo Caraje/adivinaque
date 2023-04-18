@@ -4,29 +4,29 @@
       "id": 1,
       "publishDay": "1/4/2023",
       "answer": {
-        "title": "The Goonies",
-        "answerImg": "/AdivinaQue/cinema/01/jgmjxxgeae1b0xg8euv3.webp"
+        "title": "Friends",
+        "answerImg": "/AdivinaQue/series/01/vsc8nl1unry5i3pkfayx.webp"
       },
       "clues": [
         {
           "clue": null,
-          "img": "/AdivinaQue/cinema/01/msgvj4frwymkxpna6tsb.webp"
+          "img": "/AdivinaQue/series/01/bl11wpkzwfiwi3ph4u9g.webp"
         },
         {
-          "clue": "Del año 1985",
-          "img": "/AdivinaQue/cinema/01/evkg7qdl0lv5tt2f2het.webp"
+          "clue": "Comienza en 1994",
+          "img": "/AdivinaQue/series/01/txuhyupsrnrd07sqjbpf.webp"
         },
         {
-          "clue": "Pelicula de aventuras",
-          "img": "/AdivinaQue/cinema/01/fauu1hnxfqfzmxclwhdb.webp"
+          "clue": "Cuenta con 10 temporadas",
+          "img": "/AdivinaQue/series/01/q3pc26rnqlatdwas7tzc.webp"
         },
         {
-          "clue": "Dirigida por Richar Donner",
-          "img": "/AdivinaQue/cinema/01/rwlf8u1caanjf7ketgkh.webp"
+          "clue": "Se desarrolla en New York",
+          "img": "/AdivinaQue/series/01/qtnybhinkx8czm08a1fy.webp"
         },
         {
-          "clue": "Gordi, tienes que hacer el supermeneo",
-          "img": "/AdivinaQue/cinema/01/bxvkappn8l2kw0enmonu.webp"
+          "clue": "Unagi",
+          "img": "/AdivinaQue/series/01/cswxka8bib3ugtrl7pqa.webp"
         }
       ]
     },
@@ -34,29 +34,29 @@
       "id": 2,
       "publishDay": "2/4/2023",
       "answer": {
-        "title": "Sister Act",
-        "answerImg": "/AdivinaQue/cinema/02/cpf0dg4twadfcfo2yuot.webp"
+        "title": "True Detective",
+        "answerImg": "/AdivinaQue/series/02/i6rpbyrjdth6ogwbkdod.webp"
       },
       "clues": [
         {
           "clue": null,
-          "img": "/AdivinaQue/cinema/02/uwjhll0ar865za6brjrv.webp"
+          "img": "/AdivinaQue/series/02/p0ugpojhrqe41irjvek9.webp"
         },
         {
-          "clue": "Del año 1992",
-          "img": "/AdivinaQue/cinema/02/j5952evkexiteliqvwyg.webp"
+          "clue": "Comienza en 2014",
+          "img": "/AdivinaQue/series/02/auwqjlvwm7amaz7oaiii.webp"
         },
         {
-          "clue": "Es una comedia",
-          "img": "/AdivinaQue/cinema/02/d4ered2qq939tdpfjwhl.webp"
+          "clue": "Actualmente cuenta con 4 temporadas",
+          "img": "/AdivinaQue/series/02/lbifvrmjfnrstenix5ty.webp"
         },
         {
-          "clue": "Con Maggie Smith",
-          "img": "/AdivinaQue/cinema/02/blbpvsfs2q1kni8wsvtd.webp"
+          "clue": "Serie de HBO",
+          "img": "/AdivinaQue/series/02/sl3dvn6jlelktrbsqlhx.webp"
         },
         {
-          "clue": "Protagonizada por Whoopi Goldberg",
-          "img": "/AdivinaQue/cinema/02/ar7peh7n497tesmcj3u1.webp"
+          "clue": "La han protagonizado Colin Farrell, Matthew McConaughey y Mahershala Ali entre otros",
+          "img": "/AdivinaQue/series/02/c00qo7kcyywxzyzcst0a.webp"
         }
       ]
     },
@@ -64,29 +64,29 @@
       "id": 3,
       "publishDay": "3/4/2023",
       "answer": {
-        "title": "Dirty Dancing",
-        "answerImg": "/AdivinaQue/cinema/03/rpi8buqfmi7eazphuoue.webp"
+        "title": "Firefly",
+        "answerImg": "/AdivinaQue/series/03/hjgpjvq8z9vkwaqhuife.webp"
       },
       "clues": [
         {
           "clue": null,
-          "img": "/AdivinaQue/cinema/03/rogoizgxdoazuomkysjs.webp"
+          "img": "/AdivinaQue/series/03/jaq7aktg7akaymx16twh.webp"
         },
         {
-          "clue": "Año 1987",
-          "img": "/AdivinaQue/cinema/03/mtvzjqemaxe29aeq7ago.webp"
+          "clue": "Estrenada en 2002",
+          "img": "/AdivinaQue/series/03/fxlxqfw9dsisszgeuh6g.webp"
         },
         {
-          "clue": "Have the time of your life",
-          "img": "/AdivinaQue/cinema/03/viyibjc4aliqduvbil75.webp"
+          "clue": "Cuenta con 1 temporada",
+          "img": "/AdivinaQue/series/03/mqaxvf3vwzvdde9vcvpy.webp"
         },
         {
-          "clue": "Con Jennifer Grey",
-          "img": "/AdivinaQue/cinema/03/cqjhs2dn2d4kqcx37xdq.webp"
+          "clue": "Termino con una pelicula",
+          "img": "/AdivinaQue/series/03/iffm7fnxzeutjketam5v.webp"
         },
         {
-          "clue": "Y Patrick Swayze",
-          "img": "/AdivinaQue/cinema/03/kl4cgdz14hrqam3keama.webp"
+          "clue": "De Joss Whedon",
+          "img": "/AdivinaQue/series/03/y9mgqyatt4mclf0wurzd.webp"
         }
       ]
     },
@@ -94,29 +94,29 @@
       "id": 4,
       "publishDay": "4/4/2023",
       "answer": {
-        "title": "Independence Day",
-        "answerImg": "/AdivinaQue/cinema/04/w0twlgmot0pjchkoddmx.webp"
+        "title": "Arcane",
+        "answerImg": "/AdivinaQue/series/04/vpjycxyifvxqcs2jrjl6.webp"
       },
       "clues": [
         {
           "clue": null,
-          "img": "/AdivinaQue/cinema/04/lnywhdehmubqfg8fyghh.webp"
+          "img": "/AdivinaQue/series/04/r5od6drcyx1du2yct6sn.webp"
         },
         {
-          "clue": "Año 1996",
-          "img": "/AdivinaQue/cinema/04/nrobreflgyle672fq9nw.webp"
+          "clue": "Estrenada en 2021",
+          "img": "/AdivinaQue/series/04/fz6tqizcaseliigzjfgq.webp"
         },
         {
-          "clue": "On July 2nd, they arrive.",
-          "img": "/AdivinaQue/cinema/04/d3jzq4ohkuzjvevcw2vb.webp"
+          "clue": "Por ahora solo cuenta con una temporadaº",
+          "img": "/AdivinaQue/series/04/sd2ljuwlqw1fn5flb0h0.webp"
         },
         {
-          "clue": "De Roland Emmerich",
-          "img": "/AdivinaQue/cinema/04/km5gxsj7jzxwedanpngb.webp"
+          "clue": "Serie de Netflix",
+          "img": "/AdivinaQue/series/04/rv0eyxuhfu0ryigeaaei.webp"
         },
         {
-          "clue": "Con Will Smith y Jeff Goldblum",
-          "img": "/AdivinaQue/cinema/04/t021myclmhowkqfmv0x5.webp"
+          "clue": "Basada en un popular videojuego",
+          "img": "/AdivinaQue/series/04/d9eygaxrda8vxwfv4gwr.webp"
         }
       ]
     },
@@ -124,29 +124,29 @@
       "id": 5,
       "publishDay": "5/4/2023",
       "answer": {
-        "title": "Spider-Man: No Way Home",
-        "answerImg": "/AdivinaQue/cinema/05/sykoo0ybkibdkye0h2nf.webp"
+        "title": "Chernobyl",
+        "answerImg": "/AdivinaQue/series/05/seti1v2r8cqbt5iihmwg.webp"
       },
       "clues": [
         {
           "clue": null,
-          "img": "/AdivinaQue/cinema/05/qrcmgritamezuy8arri4.webp"
+          "img": "/AdivinaQue/series/05/drrmusnilxfzgpupmj8o.webp"
         },
         {
-          "clue": "Año 2021",
-          "img": "/AdivinaQue/cinema/05/zvoblvx0go8gualtncml.webp"
+          "clue": "Estrenada en 2019",
+          "img": "/AdivinaQue/series/05/b6fy7ggyihdl5mjpqpj0.webp"
         },
         {
-          "clue": "dirigida por Jon Watts",
-          "img": "/AdivinaQue/cinema/05/alxejgxgzhqepjriofcb.webp"
+          "clue": "Solo tiene una temporada",
+          "img": "/AdivinaQue/series/05/ql4ld4s6vojzekhlnykn.webp"
         },
         {
-          "clue": "Con Benedict Wong",
-          "img": "/AdivinaQue/cinema/05/u5gjzzl6is3rjsxzcdph.webp"
+          "clue": "De HBO",
+          "img": "/AdivinaQue/series/05/j0lbx9mm0ocukmky2tca.webp"
         },
         {
-          "clue": "The Multiverse Unleashed.",
-          "img": "/AdivinaQue/cinema/05/dsc3wdzzmbpmsqgopjhn.webp"
+          "clue": "La historia de una de las mayores catastofres de la humanidad",
+          "img": "/AdivinaQue/series/05/z21rsajfwgf1yawlbhnk.webp"
         }
       ]
     },
@@ -154,29 +154,29 @@
       "id": 6,
       "publishDay": "6/4/2023",
       "answer": {
-        "title": "The Lost Boys",
-        "answerImg": "/AdivinaQue/cinema/06/s0iw295yaqhhwiylxffc.webp"
+        "title": "Daredevil",
+        "answerImg": "/AdivinaQue/series/06/uob2uouc0hsxhu3a8kz2.webp"
       },
       "clues": [
         {
           "clue": null,
-          "img": "/AdivinaQue/cinema/06/hemsmifjfoyqw2lbdaei.webp"
+          "img": "/AdivinaQue/series/06/lsgngjptsisxvwybtz1e.webp"
         },
         {
-          "clue": "Se estreno en 1987",
-          "img": "/AdivinaQue/cinema/06/bppinxaturfznjygpwkl.webp"
+          "clue": "Estrenada en 2015",
+          "img": "/AdivinaQue/series/06/gskabd0iprrm02uxf8oa.webp"
         },
         {
-          "clue": "Dirigida por Joel Schumacher",
-          "img": "/AdivinaQue/cinema/06/e7gbo6ydwgydxaeg3yxj.webp"
+          "clue": "Con 3 temporadas",
+          "img": "/AdivinaQue/series/06/k4xzzynyaocmdiwvinlt.webp"
         },
         {
-          "clue": "Con Kiefer Sutherland",
-          "img": "/AdivinaQue/cinema/06/hr32xl4xgi9pnzaxkatu.webp"
+          "clue": "De Netflix",
+          "img": "/AdivinaQue/series/06/t9qihkz6joybpt5hycbp.webp"
         },
         {
-          "clue": "It's fun to be a vampire",
-          "img": "/AdivinaQue/cinema/06/uwp3zeshfqkoxohdkzwo.webp"
+          "clue": "Disney+ ha recuperado y hara nueva temporada",
+          "img": "/AdivinaQue/series/06/ec2hny38cc5b44vc9ucs.webp"
         }
       ]
     },
@@ -184,29 +184,29 @@
       "id": 7,
       "publishDay": "7/4/2023",
       "answer": {
-        "title": "Who Framed Roger Rabbit",
-        "answerImg": "/AdivinaQue/cinema/07/rgreamvaf5bbcucsc15k.webp"
+        "title": "Parks and Recreation",
+        "answerImg": "/AdivinaQue/series/07/vndasg1uzedq4aphqkph.webp"
       },
       "clues": [
         {
           "clue": null,
-          "img": "/AdivinaQue/cinema/07/ny0hiazw1fmfvzfr7aqu.webp"
+          "img": "/AdivinaQue/series/07/ri5u6sm5cjzvlajtspxp.webp"
         },
         {
-          "clue": "Estrenada en 1988",
-          "img": "/AdivinaQue/cinema/07/fznxtkjfm9wlneaukpod.webp"
+          "clue": "Estrenada en 2009",
+          "img": "/AdivinaQue/series/07/pek3hcd62zgjouzxfytk.webp"
         },
         {
-          "clue": "Una pelicula de Robert Zemeckis",
-          "img": "/AdivinaQue/cinema/07/xrn9em1awpyxvpc2h0un.webp"
+          "clue": "tiene 7 temporadas",
+          "img": "/AdivinaQue/series/07/cwyugih0b0szyxquofzo.webp"
         },
         {
-          "clue": "Con bob Hoskins",
-          "img": "/AdivinaQue/cinema/07/qsb5ds6n9mx9qliwd8y3.webp"
+          "clue": "Con Chris Pratt y Audrey Plaza",
+          "img": "/AdivinaQue/series/07/jjgh1uwcvngwdlhmkbaj.webp"
         },
         {
-          "clue": "La primera y unica colaboración de Bugs Bunny y Mickey Mouse",
-          "img": "/AdivinaQue/cinema/07/ss2wuekljxfunghtf5vr.webp"
+          "clue": "Con Amy Poehler",
+          "img": "/AdivinaQue/series/07/rcr5jg3zopgy6v1yveam.webp"
         }
       ]
     },
@@ -214,29 +214,29 @@
       "id": 8,
       "publishDay": "8/4/2023",
       "answer": {
-        "title": "The Naked Gun",
-        "answerImg": "/AdivinaQue/cinema/08/ruhrbnluxhhkg7omfoz4.webp"
+        "title": "This Is Us",
+        "answerImg": "/AdivinaQue/series/08/vlq6collcesxyr9jbjl6.webp"
       },
       "clues": [
         {
           "clue": null,
-          "img": "/AdivinaQue/cinema/08/rus8j86nur7yeehlvisz.webp"
+          "img": "/AdivinaQue/series/08/b10catpopblpe3ysbcx4.webp"
         },
         {
-          "clue": "Estrenada en 1988",
-          "img": "/AdivinaQue/cinema/08/cgl5la6hgpbnasj9gngt.webp"
+          "clue": "Estrenada en 2016",
+          "img": "/AdivinaQue/series/08/dxh8fnm2y51q9cd37m5p.webp"
         },
         {
-          "clue": "Basada en una serie con una temporada",
-          "img": "/AdivinaQue/cinema/08/e8fnrpglpwz23ieq9vel.webp"
+          "clue": "Cuenta con 6 Temporadas",
+          "img": "/AdivinaQue/series/08/gpat0eq6bvxuy3bkynbg.webp"
         },
         {
-          "clue": "Una disparatada comedia",
-          "img": "/AdivinaQue/cinema/08/u22pmvaintvnpi88wovl.webp"
+          "clue": "Con Milo Ventimiglia",
+          "img": "/AdivinaQue/series/08/zc9osaiv4ihje5iubo2x.webp"
         },
         {
-          "clue": "Protagonizada por Leslie Nielsen",
-          "img": "/AdivinaQue/cinema/08/nqmujfzqfgzqpfhkt4on.webp"
+          "clue": "Cuenta la historia de una familia americana",
+          "img": "/AdivinaQue/series/08/grjlblkvsmkc49yr8ic0.webp"
         }
       ]
     },
@@ -244,29 +244,29 @@
       "id": 9,
       "publishDay": "9/4/2023",
       "answer": {
-        "title": "Dead Poets Society",
-        "answerImg": "/AdivinaQue/cinema/09/z8dkiowbxtiudb7fjxkt.webp"
+        "title": "Stranger Things",
+        "answerImg": "/AdivinaQue/series/09/pffordtwiqqm7oacodzi.webp"
       },
       "clues": [
         {
           "clue": null,
-          "img": "/AdivinaQue/cinema/09/xzanqyub5j2ly8c4kar5.webp"
+          "img": "/AdivinaQue/series/09/f9aahytue2dkzkjm86m1.webp"
         },
         {
-          "clue": "Estrenada en 1989",
-          "img": "/AdivinaQue/cinema/09/s62gzrixxcdjlg7fvpck.webp"
+          "clue": "Estrenada en 2016",
+          "img": "/AdivinaQue/series/09/vhlbiwpyaid9fyd2qjme.webp"
         },
         {
-          "clue": "El Dr.Wilson de la serie House, aparece en esta pelicula",
-          "img": "/AdivinaQue/cinema/09/yzvwgermuskmwy41bhty.webp"
+          "clue": "5 temporadas",
+          "img": "/AdivinaQue/series/09/rvblvaccx8ichdw3enuu.webp"
         },
         {
-          "clue": "Con Robin Williams",
-          "img": "/AdivinaQue/cinema/09/potbic87fcoivakljre1.webp"
+          "clue": "Netflix",
+          "img": "/AdivinaQue/series/09/vx0ftij3hutki0yahg31.webp"
         },
         {
-          "clue": "¡Oh capitán, mi capitán!",
-          "img": "/AdivinaQue/cinema/09/bzi7jg1qgxae5dbh3ep6.webp"
+          "clue": "Millie Bobby Brown",
+          "img": "/AdivinaQue/series/09/gtropqc1rlyy4f85f4yl.webp"
         }
       ]
     },
@@ -274,29 +274,29 @@
       "id": 10,
       "publishDay": "10/4/2023",
       "answer": {
-        "title": "Back to the Future",
-        "answerImg": "/AdivinaQue/cinema/10/krnpoqjzdreeik7utpky.webp"
+        "title": "Ted Lasso",
+        "answerImg": "/AdivinaQue/series/10/pku2v3id444bv9y7l3t5.webp"
       },
       "clues": [
         {
           "clue": null,
-          "img": "/AdivinaQue/cinema/10/sp3ekanwrbmduey1fblw.webp"
+          "img": "/AdivinaQue/series/10/wcyvpec9xnl1bgjkb5j3.webp"
         },
         {
-          "clue": "Se estrena en 1985",
-          "img": "/AdivinaQue/cinema/10/mbz6gzlsokphdt5zzzne.webp"
+          "clue": "Se estrena en 2020",
+          "img": "/AdivinaQue/series/10/qr8duxrnpexocevzpaft.webp"
         },
         {
-          "clue": "Fue una trilogia",
-          "img": "/AdivinaQue/cinema/10/keehoztycvxabmrxiibr.webp"
+          "clue": "Tiene 3 Temporadas",
+          "img": "/AdivinaQue/series/10/bqvgvupgxkp712gwbext.webp"
         },
         {
-          "clue": "Eric Stoltz iba a ser el protagonista pero cambiaron tras iniciar el rodaje",
-          "img": "/AdivinaQue/cinema/10/meqpjsmyxffvcla6aib9.webp"
+          "clue": "De Apple tv",
+          "img": "/AdivinaQue/series/10/yyuijzwcbhs12xjshwm1.webp"
         },
         {
-          "clue": "A donde vamos no necesitamos carreteras",
-          "img": "/AdivinaQue/cinema/10/on5heigxj9n1knbcqfkp.webp"
+          "clue": "Comedia que sigue la actualidad de un equipo de futbol",
+          "img": "/AdivinaQue/series/10/jc3s1yfjhwigpskiwtod.webp"
         }
       ]
     },
@@ -304,29 +304,29 @@
       "id": 11,
       "publishDay": "11/4/2023",
       "answer": {
-        "title": "The Princess Bride",
-        "answerImg": "/AdivinaQue/cinema/11/oisvpprderp6f4bfuwz6.webp"
+        "title": "BoJack Horseman",
+        "answerImg": "/AdivinaQue/series/11/nqrbtdap1yoraj9bvtsb.webp"
       },
       "clues": [
         {
           "clue": null,
-          "img": "/AdivinaQue/cinema/11/amsxmenu5ip2yhzrqzns.webp"
+          "img": "/AdivinaQue/series/11/nqmdxo9hxnrcnie4r562.webp"
         },
         {
-          "clue": "Se estrena en 1987",
-          "img": "/AdivinaQue/cinema/11/hxrvubynbikpbaanetsy.webp"
+          "clue": "Se estrena en 2014",
+          "img": "/AdivinaQue/series/11/wucr8ymp43n0aozmvwm6.webp"
         },
         {
-          "clue": "Uno de los actores aparece en las serie Homeland",
-          "img": "/AdivinaQue/cinema/11/wfdg1tnze0eopgy9oyog.webp"
+          "clue": "Tiene 6 temporadas",
+          "img": "/AdivinaQue/series/11/d1sv3gduxerkh94mvsh0.webp"
         },
         {
-          "clue": "Es un cuento de fantasia",
-          "img": "/AdivinaQue/cinema/11/srr5h1lzat7pstgkzmnj.webp"
+          "clue": "Serie de Netflix",
+          "img": "/AdivinaQue/series/11/p8kcpq09jqcogawaadvc.webp"
         },
         {
-          "clue": "Hello. My name is Inigo Montoya. You killed my father. Prepare to die",
-          "img": "/AdivinaQue/cinema/11/zkhnydrlyba6wyhwrg5c.webp"
+          "clue": "Nominada a 3 premios Emmy",
+          "img": "/AdivinaQue/series/11/fncx4om1o47xkamgg3tu.webp"
         }
       ]
     },
@@ -334,29 +334,29 @@
       "id": 12,
       "publishDay": "12/4/2023",
       "answer": {
-        "title": "The Land Before Time",
-        "answerImg": "/AdivinaQue/cinema/12/ticpa1de7pk6amlzn69o.webp"
+        "title": "Dark",
+        "answerImg": "/AdivinaQue/series/12/p2rc8rhu2soljx85mp8c.webp"
       },
       "clues": [
         {
           "clue": null,
-          "img": "/AdivinaQue/cinema/12/eargpxxrqkgb1j6him1m.webp"
+          "img": "/AdivinaQue/series/12/aazcwajbhmcif3p9rbpl.webp"
         },
         {
-          "clue": "Estrenada en 1988",
-          "img": "/AdivinaQue/cinema/12/odflep369hrjyi43baw8.webp"
+          "clue": "Estrenada en 2017",
+          "img": "/AdivinaQue/series/12/wy7r35bmw0ey3s0a4fia.webp"
         },
         {
-          "clue": "Producida por LucasFilm",
-          "img": "/AdivinaQue/cinema/12/drhkakw8zgujhhmhe3jz.webp"
+          "clue": "Con 3 temporadas",
+          "img": "/AdivinaQue/series/12/i3ihjfqtneity41sfvvj.webp"
         },
         {
-          "clue": "Fue la primera de una extensa saga",
-          "img": "/AdivinaQue/cinema/12/xqwizkxcmmo7pmam8ayu.webp"
+          "clue": "Serie de Netflix",
+          "img": "/AdivinaQue/series/12/uqolwbqsjhx6h6cguytx.webp"
         },
         {
-          "clue": "El protagonista se llama piecito (En la version de España)",
-          "img": "/AdivinaQue/cinema/12/husvcu1m3egtjmuu8hms.webp"
+          "clue": "Hay viajes en el tiempo",
+          "img": "/AdivinaQue/series/12/tsqc90xvgnj4gjkzny5n.webp"
         }
       ]
     },
@@ -364,29 +364,29 @@
       "id": 13,
       "publishDay": "13/4/2023",
       "answer": {
-        "title": "Super Mario Bros",
-        "answerImg": "/AdivinaQue/cinema/13/cvfgqzjnyzywijomsdp8.webp"
+        "title": "Silicon Valley",
+        "answerImg": "/AdivinaQue/series/13/fm0zmmk5nmnmpaqoxhj0.webp"
       },
       "clues": [
         {
           "clue": null,
-          "img": "/AdivinaQue/cinema/13/z69gbozmjguyeodtsh4h.webp"
+          "img": "/AdivinaQue/series/13/t9i4v9gyzxceo2xy9sem.webp"
         },
         {
-          "clue": "Se estrena en 1993",
-          "img": "/AdivinaQue/cinema/13/wrkvu8krorm2r1ndqwep.webp"
+          "clue": "Se estrena en 2014",
+          "img": "/AdivinaQue/series/13/ln5v9qytzpaq8wlmczz6.webp"
         },
         {
-          "clue": "Adaptación de un popular juego",
-          "img": "/AdivinaQue/cinema/13/xrbjmvwlo9ge9cb6ld04.webp"
+          "clue": "Cuenta con 6 temporadas",
+          "img": "/AdivinaQue/series/13/apcdfebnijsq5r8dcpoq.webp"
         },
         {
-          "clue": "Bob Hoskins y John Leguizamo son hermanos",
-          "img": "/AdivinaQue/cinema/13/obxgcltnyfiuk9qo9tcy.webp"
+          "clue": "De HBO",
+          "img": "/AdivinaQue/series/13/uheqydksojfxjd8joylc.webp"
         },
         {
-          "clue": "It's a me ...",
-          "img": "/AdivinaQue/cinema/13/xdrvwuxhqbrufx0rgu0h.webp"
+          "clue": "Comedia sobre el mundo IT",
+          "img": "/AdivinaQue/series/13/zbpdrrvopec6hnymg2hq.webp"
         }
       ]
     },
@@ -394,29 +394,29 @@
       "id": 14,
       "publishDay": "14/4/2023",
       "answer": {
-        "title": "Cool Runnings",
-        "answerImg": "/AdivinaQue/cinema/14/tvjgkyssaj2zl9gbe9hx.jpg"
+        "title": "The Last of Us",
+        "answerImg": "/AdivinaQue/series/14/vicsr2csqfyde7uijnxz.webp"
       },
       "clues": [
         {
           "clue": null,
-          "img": "/AdivinaQue/cinema/14/eh9giypikjsbzbpwyiyi.jpg"
+          "img": "/AdivinaQue/series/14/erqxuxhbvdrfz1zzexui.webp"
         },
         {
-          "clue": "Estrenada en 1993",
-          "img": "/AdivinaQue/cinema/14/cao5mzbfd2lz5tqq4krg.jpg"
+          "clue": "Estrenada en 2023",
+          "img": "/AdivinaQue/series/14/kybzpcchmdotwto0fo1d.webp"
         },
         {
-          "clue": "Inspirada en una historia Real",
-          "img": "/AdivinaQue/cinema/14/snt8mc8pikpzirkjuib4.jpg"
+          "clue": "Con una temporada a la espera de una segunda",
+          "img": "/AdivinaQue/series/14/w9fbpqiqqvx0c2xngsdo.webp"
         },
         {
-          "clue": "Con John Candy",
-          "img": "/AdivinaQue/cinema/14/pjimhppoyjzmeucwngkx.jpg"
+          "clue": "De HBO",
+          "img": "/AdivinaQue/series/14/e8bivmafiu4bfm2maikg.webp"
         },
         {
-          "clue": "Una comedia de Disney",
-          "img": "/AdivinaQue/cinema/14/tvjgkyssaj2zl9gbe9hx.jpg"
+          "clue": "Serie basada en un popular videojuego",
+          "img": "/AdivinaQue/series/14/udr2cg1jizxnhikvzpls.webp"
         }
       ]
     },
@@ -424,29 +424,29 @@
       "id": 15,
       "publishDay": "15/4/2023",
       "answer": {
-        "title": "Jumanji",
-        "answerImg": "/AdivinaQue/cinema/15/usnfqhlidz1fjvgbeyjk.jpg"
+        "title": "The Queen's Gambit",
+        "answerImg": "/AdivinaQue/series/15/mk1k2odqy1zttg9ksfuw.webp"
       },
       "clues": [
         {
           "clue": null,
-          "img": "/AdivinaQue/cinema/15/whqgwuk5chqrgou1wbqp.jpg"
+          "img": "/AdivinaQue/series/15/tz7kysyrdjziccbewgvw.webp"
         },
         {
-          "clue": "Estrenada en 1995",
-          "img": "/AdivinaQue/cinema/15/i0dyoceqagaqphjgmmgc.jpg"
+          "clue": "Estrenada en 2020",
+          "img": "/AdivinaQue/series/15/axwd3yrkntjfj0k9tpoe.webp"
         },
         {
-          "clue": "Con una muy joven Kirsten Dunst",
-          "img": "/AdivinaQue/cinema/15/wsoqcrpu0evpua4jm8ku.jpg"
+          "clue": "Con solo 1 temporada",
+          "img": "/AdivinaQue/series/15/dtauci0zme2v51iigl4v.webp"
         },
         {
-          "clue": "Con Robin williams",
-          "img": "/AdivinaQue/cinema/15/t1qo3lp5wfb3k7vva3xq.jpg"
+          "clue": "Serie de Netflix",
+          "img": "/AdivinaQue/series/15/a4af41lv7desen6oe2zh.webp"
         },
         {
-          "clue": "Un juego de mesa muy salvaje",
-          "img": "/AdivinaQue/cinema/15/ihxedplikbie0sodeia6.jpg"
+          "clue": "Con Anya Taylor-Joy",
+          "img": "/AdivinaQue/series/15/sk3qzgbirlzg0ojpzxsl.webp"
         }
       ]
     },
@@ -464,7 +464,7 @@
         },
         {
           "clue": "Se estrena en 1982",
-          "img": "/AdivinaQue/cinema/16/imfkemja2uqwm3md39km.jpg"
+          "img": "/AdivinaQue/cinema/16/fb7id1mt9mxip3oppskz.jpg"
         },
         {
           "clue": "Ganadora de 4 Óscar",
@@ -485,7 +485,7 @@
       "publishDay": "17/4/2023",
       "answer": {
         "title": "The Road to El Dorado",
-        "answerImg": ""
+        "answerImg": "/AdivinaQue/cinema/17/tysjnsxtmr1rn2momeuo.jpg"
       },
       "clues": [
         {
@@ -597,6 +597,306 @@
         {
           "clue": "Greetings. I am Archer, emissary or the Gorgonites.",
           "img": "/AdivinaQue/cinema/20/enpdujpd5oldjpb7cgid.jpg"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "publishDay": "21/4/2023",
+      "answer": {
+        "title": "Forrest Gump",
+        "answerImg": "/AdivinaQue/cinema/21/suwdjig7wldebspxsd3l.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/21/stapynduc4bf04o2lfqh.webp"
+        },
+        {
+          "clue": "Estrenada en 1994",
+          "img": "/AdivinaQue/cinema/21/ee2lrko2rtpcb8gzgfef.webp"
+        },
+        {
+          "clue": "Entre el reparto figura Sally Field",
+          "img": "/AdivinaQue/cinema/21/bwfjucj6plldzmly3rta.webp"
+        },
+        {
+          "clue": "Ganadora de 6 Òscars",
+          "img": "/AdivinaQue/cinema/21/kcrq4yd8rdxovfgwjmt2.webp"
+        },
+        {
+          "clue": "La vida es como una caja de bombones",
+          "img": "/AdivinaQue/cinema/21/sedhhdv4joifqk8lujqt.webp"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "publishDay": "22/4/2023",
+      "answer": {
+        "title": "La vita è bella",
+        "answerImg": "/AdivinaQue/cinema/22/zh7sjo1a9vmsvyoq2ojf.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/22/efyjfr21nwlh26gu4dcd.webp"
+        },
+        {
+          "clue": "Estrenada en 1997",
+          "img": "/AdivinaQue/cinema/22/jm6rbf70cxmig6vy1kmn.webp"
+        },
+        {
+          "clue": "La historia se desarrolla durante la Segunda Guerra Mundial",
+          "img": "/AdivinaQue/cinema/22/zd1furxdjvvsya6qcect.webp"
+        },
+        {
+          "clue": "Dirigida y protagonizada por Roberto Benigni",
+          "img": "/AdivinaQue/cinema/22/krhljdnwjeayu4wjmlqh.webp"
+        },
+        {
+          "clue": "Buon giorno, Principessa!",
+          "img": "/AdivinaQue/cinema/22/wlxgzg2h64o2aiedabe8.webp"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "publishDay": "23/4/2023",
+      "answer": {
+        "title": "Alien",
+        "answerImg": "/AdivinaQue/cinema/23/uny9xwukblp9qe6bk583.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/23/f64fokactlxbv3ht4bt2.webp"
+        },
+        {
+          "clue": "Estrenada en 1979",
+          "img": "/AdivinaQue/cinema/23/bpoyqksnhj084rkm2lmt.webp"
+        },
+        {
+          "clue": "Pelicula de terror",
+          "img": "/AdivinaQue/cinema/23/ajbg6bb5qroigiwxrirg.webp"
+        },
+        {
+          "clue": "Pelicula de Riddley Scott",
+          "img": "/AdivinaQue/cinema/23/ft48xw3ygn5npzvq08sj.webp"
+        },
+        {
+          "clue": "En el espacio nadie escuchara tus gritos",
+          "img": "/AdivinaQue/cinema/23/k8xd0sl9jcwpqfri6b5g.webp"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "publishDay": "24/4/2023",
+      "answer": {
+        "title": "Spaceballs",
+        "answerImg": "/AdivinaQue/cinema/24/smnjs0jma7avxhzznyp0.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/24/k5oj8aojgxtupjfl22dw.webp"
+        },
+        {
+          "clue": "Estrenada en 1987",
+          "img": "/AdivinaQue/cinema/24/q6x28uysjxf69p6fil5w.webp"
+        },
+        {
+          "clue": "Con Rick Moranis",
+          "img": "/AdivinaQue/cinema/24/ujtcbfde9tq1dqnhyvwi.webp"
+        },
+        {
+          "clue": "Pelicula de Mel Brooks",
+          "img": "/AdivinaQue/cinema/24/ypdtbsvqajp4pwtok9ie.webp"
+        },
+        {
+          "clue": "Parodia de Star Wars",
+          "img": "/AdivinaQue/cinema/24/owpfho3jrf0cdcu1cx7l.webp"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "publishDay": "25/4/2023",
+      "answer": {
+        "title": "The Breakfast Club",
+        "answerImg": "/AdivinaQue/cinema/25/e0rfafhzsitpgchdv50u.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/25/z4lfyjg7jvuucnpgutu5.webp"
+        },
+        {
+          "clue": "Estrenada en 1985",
+          "img": "/AdivinaQue/cinema/25/ntcfpolz5is4ssiaot3j.webp"
+        },
+        {
+          "clue": "Pelicula de John Hughes",
+          "img": "/AdivinaQue/cinema/25/mcy9mim5bc4upq3tzcox.webp"
+        },
+        {
+          "clue": "Unos alumnos castigados en el colegio durante el Sabado",
+          "img": "/AdivinaQue/cinema/25/qehwm66mwqxeb2xbxkoc.webp"
+        },
+        {
+          "clue": "Con Emilio Estevez",
+          "img": "/AdivinaQue/cinema/25/u0ulsrprlssebjbwo1pm.webp"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "publishDay": "26/4/2023",
+      "answer": {
+        "title": "Stargate",
+        "answerImg": "/AdivinaQue/cinema/26/sfh2jyfncprcahjpgcgq.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/26/lo7fgxw5jc0w6btbypoe.webp"
+        },
+        {
+          "clue": "Estrenada en 1994",
+          "img": "/AdivinaQue/cinema/26/uw2yg494dmjxjsqh1qvw.webp"
+        },
+        {
+          "clue": "Pelicula de Roland Emmerich",
+          "img": "/AdivinaQue/cinema/26/a2lrbzr1yauqmpua0lwk.webp"
+        },
+        {
+          "clue": "Con Kurt Russell y James Spader",
+          "img": "/AdivinaQue/cinema/26/cuxwgugowe3hmliomous.webp"
+        },
+        {
+          "clue": "Fue una base para varias series",
+          "img": "/AdivinaQue/cinema/26/hzy9z1ox2ismu4kq9eil.webp"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "publishDay": "27/4/2023",
+      "answer": {
+        "title": "The Terminator",
+        "answerImg": "/AdivinaQue/cinema/27/rvqlpzhrthfy1vstqwlt.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/27/zqvqttt0tlo7ifyrk0ks.webp"
+        },
+        {
+          "clue": "Estrenada en 1984",
+          "img": "/AdivinaQue/cinema/27/xczokoyllggfdiwubpgn.webp"
+        },
+        {
+          "clue": "La primera de una saga",
+          "img": "/AdivinaQue/cinema/27/pin9nxdpdgcv2w8ecnvv.webp"
+        },
+        {
+          "clue": "Pelicula de James Cameron",
+          "img": "/AdivinaQue/cinema/27/mk9nao44vb5tom62o5cg.webp"
+        },
+        {
+          "clue": "Volvere!",
+          "img": "/AdivinaQue/cinema/27/t6jt6lwoenrextwa1nkh.webp"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "publishDay": "28/4/2023",
+      "answer": {
+        "title": "Matrix",
+        "answerImg": "/AdivinaQue/cinema/28/lzyp4dwu5mbgpslaibjs.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/28/irxuuy7gtkcrazzpra1x.webp"
+        },
+        {
+          "clue": "Estrenada en 1999",
+          "img": "/AdivinaQue/cinema/28/n0h59v5ytcrfhfkdenjj.webp"
+        },
+        {
+          "clue": "Will Smith era el favorito para el papel protagonista",
+          "img": "/AdivinaQue/cinema/28/yqvaqlegmumdnu3falwq.webp"
+        },
+        {
+          "clue": "Revoluciono el cine de acción",
+          "img": "/AdivinaQue/cinema/28/u6ruutu6i20wu0kspis6.webp"
+        },
+        {
+          "clue": "Ya se Kung Fu",
+          "img": "/AdivinaQue/cinema/28/oz5lorb406kckoo1wufd.webp"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "publishDay": "29/4/2023",
+      "answer": {
+        "title": "The Shawshank Redemption",
+        "answerImg": "/AdivinaQue/cinema/29/y9bedsvu2lm9zxvpzxle.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/29/a3z1lgfmjhdjw9jvawen.webp"
+        },
+        {
+          "clue": "Estrenada en 1994",
+          "img": "/AdivinaQue/cinema/29/msfljikve4eqfl2vud1s.webp"
+        },
+        {
+          "clue": "Nominada a 7 premios Óscars",
+          "img": "/AdivinaQue/cinema/29/tzqcmgmumafh78adudgy.webp"
+        },
+        {
+          "clue": "Pelicula de Frank Darabont",
+          "img": "/AdivinaQue/cinema/29/rvuuusgijb6gr65fabwe.webp"
+        },
+        {
+          "clue": "Basada en un libro de Stepehn King",
+          "img": "/AdivinaQue/cinema/29/jsz0ffhwvy9wuznsa9gg.webp"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "publishDay": "30/4/2023",
+      "answer": {
+        "title": "Interstellar",
+        "answerImg": "/AdivinaQue/cinema/30/njtqhykfnbd7n2gptbry.webp"
+      },
+      "clues": [
+        {
+          "clue": null,
+          "img": "/AdivinaQue/cinema/30/prq50cozri0lmspk7xww.webp"
+        },
+        {
+          "clue": "Estrenada en 2014",
+          "img": "/AdivinaQue/cinema/30/fxvivyjlx3rlfenhwbb9.webp"
+        },
+        {
+          "clue": "Con John Lithgow",
+          "img": "/AdivinaQue/cinema/30/fe5ntttuedn6u69b8t5r.webp"
+        },
+        {
+          "clue": "De Ciencia Ficción",
+          "img": "/AdivinaQue/cinema/30/bpxaz95mte103ak6vz8q.webp"
+        },
+        {
+          "clue": "Pelicula de Christopher Nolan",
+          "img": "/AdivinaQue/cinema/30/ahotkoply0xiq9zfyuax.webp"
         }
       ]
     }
