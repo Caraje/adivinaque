@@ -14,21 +14,21 @@ export const useUpdateScoreUser = (categoryDB, scoreUser, userPosition, level) =
   const pointsUser = {
     cinema: {
       corrects: (category === 'cinema') ? cinema?.corrects + corrects : cinema?.corrects,
-      // corrects: 0,
       errors: (category === 'cinema') ? cinema?.errors + errorsCount : cinema?.errors,
-      // errors: 0,
       levels_completed: (category === 'cinema') ? cinema?.levels_completed.concat(idLevel) : cinema?.levels_completed,
-      // levels_completed: [],
       positionRank: (category === 'cinema') ? userPosition + 1 : cinema?.positionRank,
       totalPoints: (category === 'cinema') ? cinema?.totalPoints + totalPoints : cinema?.totalPoints
-      // totalPoints: 0
     },
     series: {
       corrects: (category === 'series') ? series?.corrects + corrects : series?.corrects,
+      // corrects: 0,
       errors: (category === 'series') ? series?.errors + errorsCount : series?.errors,
+      // errors: 0,
       levels_completed: (category === 'series') ? series?.levels_completed.concat(idLevel) : series?.levels_completed,
+      // levels_completed: [],
       positionRank: (category === 'series') ? userPosition + 1 : series?.positionRank,
       totalPoints: (category === 'series') ? series?.totalPoints + totalPoints : series?.totalPoints
+      // totalPoints: 0
     },
     videogames: {
       corrects: (category === 'videogames') ? videogames?.corrects + corrects : videogames?.corrects,
