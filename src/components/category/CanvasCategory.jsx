@@ -16,18 +16,16 @@ const CanvasCategory = ({ level, isCorrect, isError, turn }) => {
         ? (<Loader />)
         : (
           <div className='relative w-4/5 bg-slate-500 rounded-2xl overflow-hidden border border-adivinaGreen/50 '>
-            {isCorrect
+            {isCorrect || isError
               ? (
                 <>
-                  <CorrectAnswer />
+                  {isCorrect ? <CorrectAnswer /> : <ErrorAnswer />}
                   <img src={`https://res.cloudinary.com/caraje/image/upload/c_fill,g_auto,h_562,w_1000/f_webp/q_auto:eco//v1679936239${level.answer.answerImg}`} alt='imagen de parque jurasico' width={650} height={400} />
                 </>
                 )
               : (
                 <>
-                  {
-              isError && <ErrorAnswer />
-            }
+
                   <img src={`https://res.cloudinary.com/caraje/image/upload/c_fill,g_auto,h_562,w_1000/f_webp/q_auto:eco//v1679936239${level.clues[turn].img}`} alt='imagen de parque jurasico' width={650} height={400} />
                 </>
                 )}
