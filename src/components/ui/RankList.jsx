@@ -1,11 +1,18 @@
+import { getUserList } from '@/services/supabase'
 import { getOrderedRank } from '@/utils/users'
 import Link from 'next/link'
+import { list } from 'postcss'
 import React from 'react'
 
 const RankList = ({ categoryDB, usersList }) => {
   const orderList = getOrderedRank(categoryDB, usersList)
 
-  // console.log({ categoryDB })
+  const listUsers = async () => {
+    const listUsers = await getUserList()
+    console.log({ listUsers })
+  }
+  listUsers()
+  // console.log(listUsers)
   return (
     <div className='h-60 overflow-x-hidden scrollbar scrollbar-track-rounded-xl scrollbar-w-[3px] scrollbar-thumb-[#03fea4] scrollbar-track-[#333] '>
       {orderList.slice(0, 10).map((user, idx) => {
