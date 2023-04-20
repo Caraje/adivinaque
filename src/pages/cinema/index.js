@@ -55,10 +55,9 @@ export default function CinemaPage ({ usersList }) {
   const handleAnswer = (event) => {
     event.preventDefault()
     const answerForm = event.target.answer.value.toLowerCase()
-    const CorrectTitle = level.answer.title.toLowerCase()
-
+    const CorrectTitle = level.answer.title.map(aws => aws.toLowerCase())
     if (answerForm.length < 2) return
-    if (answerForm === CorrectTitle) {
+    if (CorrectTitle.includes(answerForm)) {
       isAnswerCorrect(setTotalPoints, setCorrects, corrects)
       setIsCorrect(true)
       return
