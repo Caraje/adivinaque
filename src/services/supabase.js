@@ -75,12 +75,12 @@ export async function createUserWithEmail (userName, email, password) {
 }
 
 export const loginWithEmail = async (email, password) => {
-  console.log('test')
   const data = await supabase.auth.signInWithPassword({
     email,
     password
   })
-  window.location.replace('/')
+
+  !data.error && window.location.replace('/')
   return (data)
 }
 export const getUser = async () => {
