@@ -133,9 +133,8 @@ export default function VideogamesPage ({ usersList }) {
   )
 }
 
-export const getStaticProps = async (ctx) => {
+export async function getServerSideProps () {
   const usersList = await getUserList()
-
   return {
     props: {
       usersList

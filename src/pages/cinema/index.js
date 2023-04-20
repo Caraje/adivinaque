@@ -140,12 +140,3 @@ export async function getServerSideProps () {
     }
   }
 }
-// export const getStaticProps = async (ctx) => {
-//   const usersList = await getUserList()
-
-//   return {
-//     props: {
-//       usersList
-//     }
-//   }
-// }
