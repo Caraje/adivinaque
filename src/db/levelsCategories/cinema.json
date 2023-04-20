@@ -4,7 +4,11 @@
       "id": 1,
       "publishDay": "1/4/2023",
       "answer": {
-        "title": "The Goonies",
+        "title": [
+          "Los goonies",
+          "The Goonies",
+          "Goonies"
+        ],
         "answerImg": "/AdivinaQue/cinema/01/jgmjxxgeae1b0xg8euv3.webp"
       },
       "clues": [
@@ -34,7 +38,12 @@
       "id": 2,
       "publishDay": "2/4/2023",
       "answer": {
-        "title": "Sister Act",
+        "title": [
+          "Sister Act",
+          "Cambio de hábito",
+          "Sister Act (Una monja de cuidado)",
+          "Una monja de cuidado"
+        ],
         "answerImg": "/AdivinaQue/cinema/02/cpf0dg4twadfcfo2yuot.webp"
       },
       "clues": [
@@ -64,7 +73,10 @@
       "id": 3,
       "publishDay": "3/4/2023",
       "answer": {
-        "title": "Dirty Dancing",
+        "title": [
+          "Dirty Dancing",
+          "Dirty Dancing: Baile caliente"
+        ],
         "answerImg": "/AdivinaQue/cinema/03/rpi8buqfmi7eazphuoue.webp"
       },
       "clues": [
@@ -94,7 +106,12 @@
       "id": 4,
       "publishDay": "4/4/2023",
       "answer": {
-        "title": "Independence Day",
+        "title": [
+          "Independence Day",
+          "Día de la Independencia",
+          "dia de la independencia",
+          "ID4"
+        ],
         "answerImg": "/AdivinaQue/cinema/04/w0twlgmot0pjchkoddmx.webp"
       },
       "clues": [
@@ -124,7 +141,16 @@
       "id": 5,
       "publishDay": "5/4/2023",
       "answer": {
-        "title": "Spider-Man: No Way Home",
+        "title": [
+          "Spider-Man: No Way Home",
+          "Spider-Man: Sin camino a casa",
+          "spiderman: sin camino a casa",
+          "spiderman: No Way Home",
+          "Spider-Man No Way Home",
+          "Spider-Man Sin camino a casa",
+          "spiderman sin camino a casa",
+          "spiderman No Way Home"
+        ],
         "answerImg": "/AdivinaQue/cinema/05/sykoo0ybkibdkye0h2nf.webp"
       },
       "clues": [
@@ -154,7 +180,14 @@
       "id": 6,
       "publishDay": "6/4/2023",
       "answer": {
-        "title": "The Lost Boys",
+        "title": [
+          "The Lost Boys",
+          "Jóvenes ocultos",
+          "Que no se entere mamá",
+          "La generación perdida",
+          "Los irremediables",
+          "Los muchachos perdidos"
+        ],
         "answerImg": "/AdivinaQue/cinema/06/s0iw295yaqhhwiylxffc.webp"
       },
       "clues": [
@@ -184,7 +217,14 @@
       "id": 7,
       "publishDay": "7/4/2023",
       "answer": {
-        "title": "Who Framed Roger Rabbit",
+        "title": [
+          "Who Framed Roger Rabbit",
+          "¿Quién engañó a Roger Rabbit?",
+          "¿Quién engaño a Roger Rabbit?",
+          "Quién engaño a Roger Rabbit",
+          "¿Quién engañó a Roger Rabbit?",
+          "Roger Rabbit"
+        ],
         "answerImg": "/AdivinaQue/cinema/07/rgreamvaf5bbcucsc15k.webp"
       },
       "clues": [
@@ -214,7 +254,15 @@
       "id": 8,
       "publishDay": "8/4/2023",
       "answer": {
-        "title": "The Naked Gun",
+        "title": [
+          "The Naked Gun",
+          "The Naked Gun: From the Files of Police Squad",
+          "La pistola desnuda",
+          "¿Y dónde está el policía?",
+          "¿Y donde esta el policia?",
+          "Agárralo como puedas",
+          "Agarralo como puedas"
+        ],
         "answerImg": "/AdivinaQue/cinema/08/ruhrbnluxhhkg7omfoz4.webp"
       },
       "clues": [
@@ -244,7 +292,12 @@
       "id": 9,
       "publishDay": "9/4/2023",
       "answer": {
-        "title": "Dead Poets Society",
+        "title": [
+          "Dead Poets Society",
+          "La sociedad de los poetas muertos",
+          "Sociedad de los poetas muertos",
+          "El club de los poetas muertos"
+        ],
         "answerImg": "/AdivinaQue/cinema/09/z8dkiowbxtiudb7fjxkt.webp"
       },
       "clues": [
@@ -274,7 +327,11 @@
       "id": 10,
       "publishDay": "10/4/2023",
       "answer": {
-        "title": "Back to the Future",
+        "title": [
+          "Back to the Future",
+          "Volver al futuro",
+          "Regreso al futuro"
+        ],
         "answerImg": "/AdivinaQue/cinema/10/krnpoqjzdreeik7utpky.webp"
       },
       "clues": [
@@ -304,7 +361,13 @@
       "id": 11,
       "publishDay": "11/4/2023",
       "answer": {
-        "title": "The Princess Bride",
+        "title": [
+          "The Princess Bride",
+          "La princesa prometida",
+          "El rapto de la princesa",
+          "El pirata y la princesa",
+          "La prometida"
+        ],
         "answerImg": "/AdivinaQue/cinema/11/oisvpprderp6f4bfuwz6.webp"
       },
       "clues": [
@@ -334,7 +397,11 @@
       "id": 12,
       "publishDay": "12/4/2023",
       "answer": {
-        "title": "The Land Before Time",
+        "title": [
+          "The Land Before Time",
+          "Pie pequeño en busca del valle encantado",
+          "En busca del valle encantado"
+        ],
         "answerImg": "/AdivinaQue/cinema/12/ticpa1de7pk6amlzn69o.webp"
       },
       "clues": [
@@ -364,7 +431,11 @@
       "id": 13,
       "publishDay": "13/4/2023",
       "answer": {
-        "title": "Super Mario Bros",
+        "title": [
+          "Super Mario Bros",
+          "Super Mario Brothers",
+          "Mario Bros"
+        ],
         "answerImg": "/AdivinaQue/cinema/13/cvfgqzjnyzywijomsdp8.webp"
       },
       "clues": [
@@ -394,7 +465,11 @@
       "id": 14,
       "publishDay": "14/4/2023",
       "answer": {
-        "title": "Cool Runnings",
+        "title": [
+          "Cool Runnings",
+          "Jamaica bajo cero",
+          "Elegidos para el triunfo"
+        ],
         "answerImg": "/AdivinaQue/cinema/14/tvjgkyssaj2zl9gbe9hx.jpg"
       },
       "clues": [
@@ -424,7 +499,9 @@
       "id": 15,
       "publishDay": "15/4/2023",
       "answer": {
-        "title": "Jumanji",
+        "title": [
+          "Jumanji"
+        ],
         "answerImg": "/AdivinaQue/cinema/15/usnfqhlidz1fjvgbeyjk.jpg"
       },
       "clues": [
@@ -454,7 +531,15 @@
       "id": 16,
       "publishDay": "16/4/2023",
       "answer": {
-        "title": "E.T. the Extra-Terrestrial",
+        "title": [
+          "E.T. the Extra-Terrestrial",
+          "E.T. El ExtraTerrestre",
+          "E.T.",
+          "El extraterrestre",
+          "ET El extraterrestre",
+          "ET",
+          "E T"
+        ],
         "answerImg": "/AdivinaQue/cinema/16/v1cbrvrtoamqrnw94igr.jpg"
       },
       "clues": [
@@ -484,7 +569,11 @@
       "id": 17,
       "publishDay": "17/4/2023",
       "answer": {
-        "title": "The Road to El Dorado",
+        "title": [
+          "The Road to El Dorado",
+          "El camino hacia El Dorado",
+          "La ruta hacia El Dorado"
+        ],
         "answerImg": "/AdivinaQue/cinema/17/tysjnsxtmr1rn2momeuo.jpg"
       },
       "clues": [
@@ -514,7 +603,10 @@
       "id": 18,
       "publishDay": "18/4/2023",
       "answer": {
-        "title": "The Wizard of Oz",
+        "title": [
+          "The Wizard of Oz",
+          "El mago de Oz"
+        ],
         "answerImg": "/AdivinaQue/cinema/18/nsdyjagrofrmfwelz6oc.webp"
       },
       "clues": [
@@ -544,7 +636,13 @@
       "id": 19,
       "publishDay": "19/4/2023",
       "answer": {
-        "title": "The Dark Crystal",
+        "title": [
+          "The Dark Crystal",
+          "Dark Crystal",
+          "El cristal encantado",
+          "Cristal oscuro",
+          "El Cristal oscuro"
+        ],
         "answerImg": "/AdivinaQue/cinema/19/m3ka55gawgknati3hfby.jpg"
       },
       "clues": [
@@ -574,7 +672,10 @@
       "id": 20,
       "publishDay": "20/4/2023",
       "answer": {
-        "title": "Small Soldiers",
+        "title": [
+          "Pequeños guerreros",
+          "Small Soldiers"
+        ],
         "answerImg": "/AdivinaQue/cinema/20/phs0v42effvhkglixttu.jpg"
       },
       "clues": [
@@ -604,7 +705,10 @@
       "id": 21,
       "publishDay": "21/4/2023",
       "answer": {
-        "title": "Forrest Gump",
+        "title": [
+          "Forrest Gump",
+          "Forest gump"
+        ],
         "answerImg": "/AdivinaQue/cinema/21/suwdjig7wldebspxsd3l.webp"
       },
       "clues": [
@@ -634,7 +738,11 @@
       "id": 22,
       "publishDay": "22/4/2023",
       "answer": {
-        "title": "La vita è bella",
+        "title": [
+          "La vita è bella",
+          "La vida es bella",
+          "Life Is Beautifu"
+        ],
         "answerImg": "/AdivinaQue/cinema/22/zh7sjo1a9vmsvyoq2ojf.webp"
       },
       "clues": [
@@ -664,7 +772,17 @@
       "id": 23,
       "publishDay": "23/4/2023",
       "answer": {
-        "title": "Alien",
+        "title": [
+          "Alien",
+          "Alien - El octavo pasajero",
+          "Alien: El octavo pasajero",
+          "Alien El octavo pasajero",
+          "Alien El 8 pasajero",
+          "Alien: El 8 pasajero",
+          "Alien - El 8 pasajero",
+          "Alien, el octavo pasajero",
+          "Alien, el 8 pasajero"
+        ],
         "answerImg": "/AdivinaQue/cinema/23/uny9xwukblp9qe6bk583.webp"
       },
       "clues": [
@@ -694,7 +812,13 @@
       "id": 24,
       "publishDay": "24/4/2023",
       "answer": {
-        "title": "Spaceballs",
+        "title": [
+          "Spaceballs",
+          "S.O.S. Hay un loco en el espacio",
+          "SOS Hay un loco en el espacio",
+          "S O S Hay un loco en el espacio",
+          "La loca historia de las galaxias"
+        ],
         "answerImg": "/AdivinaQue/cinema/24/smnjs0jma7avxhzznyp0.webp"
       },
       "clues": [
@@ -724,7 +848,12 @@
       "id": 25,
       "publishDay": "25/4/2023",
       "answer": {
-        "title": "The Breakfast Club",
+        "title": [
+          "The Breakfast Club",
+          "El club de los cinco",
+          "Nosotros cinc5: The Breakfast Club",
+          "Nosotros cinco: The Breakfast Club"
+        ],
         "answerImg": "/AdivinaQue/cinema/25/e0rfafhzsitpgchdv50u.webp"
       },
       "clues": [
@@ -754,7 +883,13 @@
       "id": 26,
       "publishDay": "26/4/2023",
       "answer": {
-        "title": "Stargate",
+        "title": [
+          "Stargate",
+          "Stargate: La puerta del tiempo",
+          "Stargate La puerta del tiempo",
+          "Stargate: Puerta a las estrellas",
+          "Stargate Puerta a las estrellas"
+        ],
         "answerImg": "/AdivinaQue/cinema/26/sfh2jyfncprcahjpgcgq.webp"
       },
       "clues": [
@@ -784,7 +919,14 @@
       "id": 27,
       "publishDay": "27/4/2023",
       "answer": {
-        "title": "The Terminator",
+        "title": [
+          "The Terminator",
+          "Terminator",
+          "Terminator: El exterminador",
+          "Terminator El exterminador",
+          "El ejecutor",
+          "El exteminador"
+        ],
         "answerImg": "/AdivinaQue/cinema/27/rvqlpzhrthfy1vstqwlt.webp"
       },
       "clues": [
@@ -814,7 +956,10 @@
       "id": 28,
       "publishDay": "28/4/2023",
       "answer": {
-        "title": "Matrix",
+        "title": [
+          "Matrix",
+          "The Matrix"
+        ],
         "answerImg": "/AdivinaQue/cinema/28/lzyp4dwu5mbgpslaibjs.webp"
       },
       "clues": [
@@ -844,7 +989,12 @@
       "id": 29,
       "publishDay": "29/4/2023",
       "answer": {
-        "title": "The Shawshank Redemption",
+        "title": [
+          "The Shawshank Redemption",
+          "Sueño de Libertad",
+          "Sueños de fuga",
+          "Cadena perpetua"
+        ],
         "answerImg": "/AdivinaQue/cinema/29/y9bedsvu2lm9zxvpzxle.webp"
       },
       "clues": [
@@ -874,7 +1024,10 @@
       "id": 30,
       "publishDay": "30/4/2023",
       "answer": {
-        "title": "Interstellar",
+        "title": [
+          "Interstellar",
+          "Interestelar"
+        ],
         "answerImg": "/AdivinaQue/cinema/30/njtqhykfnbd7n2gptbry.webp"
       },
       "clues": [
