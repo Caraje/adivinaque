@@ -4,13 +4,21 @@ import Link from 'next/link'
 import { loginWithEmail } from '@/services/supabase'
 import { loginState } from '@/store/auth/thunks'
 import { backIcon } from '@/utils/icons'
+import { useState } from 'react'
 
 export default function LoginPage () {
   const { register, handleSubmit, formState: { errors } } = useForm()
+  const [isError, setisError] = useState(false)
   const dispatch = useDispatch()
   const handleLoginForm = async (data) => {
     const { email, password } = data
     const user = await loginWithEmail(email, password)
+
+    if (user.error) {
+      setisError(true)
+      return
+    }
+    setisError(false)
     dispatch(loginState(user.data.user))
   }
 
@@ -78,6 +86,7 @@ export default function LoginPage () {
           >
             Enviar
           </button>
+          {isError && <p className='bg-red-600 rounded-xl px-4 py-1' role='alert'>El correo o el password es erroneo</p>}
         </form>
         <nav className='absolute bottom-4 flex flex-col items-center justify-center'>
           <p>¿Aun no tienes cuenta?</p>
