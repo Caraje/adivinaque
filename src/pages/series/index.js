@@ -113,7 +113,6 @@ export default function SeriesPage ({ usersList }) {
                     )
                   : <NoLevels />
                   }
-              <p className=' absolute bottom-1 w-4/5 font-thin '>* Se debe introducir el titulo en su version original</p>
             </section>
             <aside className='w-80 flex flex-col gap-10  '>
               {status && <UserCard />}
