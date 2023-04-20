@@ -8,10 +8,12 @@ import { backIcon } from '@/utils/icons'
 
 export default function RegisterPage ({ usersList }) {
   const dispatch = useDispatch()
-  const { register, handleSubmit, formState: { errors } } = useForm()
+  const { register, handleSubmit, formState } = useForm()
 
+  const errors = formState
   const [nameError, setNameError] = useState(false)
   const [emailError, setEmailError] = useState(false)
+  const [passError, setPassError] = useState(false)
 
   const namesUserList = usersList.map(user => user.user_metadata.userName)
   const emailUserList = usersList.map(user => user.email
@@ -19,12 +21,18 @@ export default function RegisterPage ({ usersList }) {
 
   const handleForm = async (data) => {
     const { name, email, password } = data
+    console.log(password)
     if (namesUserList.includes(name)) {
       setNameError(true)
       return
     }
     if (emailUserList.includes(email)) {
       setEmailError(true)
+      return
+    }
+    if (password.length < 6) {
+      setPassError(true)
+      console.log({ passError })
       return
     }
     await createUserWithEmail(name, email, password)
@@ -90,7 +98,8 @@ export default function RegisterPage ({ usersList }) {
                 minLength: { value: 6, message: 'Minimo debe contener 6 caracteres' }
               })}
             />
-            {(errors.pass?.type === 'required' || errors.pass?.type === 'minLength') && <p role='alert'>Debe contener al menos 6 caracteres</p>}
+
+            {passError && <h2>Minimo debe contener 6 caracteres</h2>}
           </label>
 
           <button
