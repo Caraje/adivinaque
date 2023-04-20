@@ -6,6 +6,7 @@ specifiers:
   '@heroicons/react': ^2.0.17
   '@reduxjs/toolkit': 1.9.3
   '@supabase/supabase-js': 2.13.0
+  '@vercel/analytics': ^1.0.0
   atropos: 1.0.2
   autoprefixer: 10.4.14
   eslint: 8.37.0
@@ -26,6 +27,7 @@ dependencies:
   '@heroicons/react': 2.0.17_react@18.2.0
   '@reduxjs/toolkit': 1.9.3_k4ae6lp43ej6mezo3ztvx6pykq
   '@supabase/supabase-js': 2.13.0
+  '@vercel/analytics': 1.0.0_react@18.2.0
   atropos: 1.0.2
   eslint: 8.37.0
   eslint-config-next: 13.2.4_eslint@8.37.0
@@ -506,6 +508,14 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.57.0
       eslint-visitor-keys: 3.4.0
+    dev: false
+
+  /@vercel/analytics/1.0.0_react@18.2.0:
+    resolution: {integrity: sha512-RQmj7pv82JwGDHrnKeRc6TtSw2U7rWNubc2IH0ernTzWTj02yr9zvIYiYJeztsBzrJtWv7m8Nz6vxxb+cdEtJw==}
+    peerDependencies:
+      react: ^16.8||^17||^18
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /acorn-jsx/5.3.2_acorn@8.8.2:
