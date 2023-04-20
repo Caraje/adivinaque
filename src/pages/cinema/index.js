@@ -132,13 +132,20 @@ export default function CinemaPage ({ usersList }) {
     </>
   )
 }
-
-export const getStaticProps = async (ctx) => {
+export async function getServerSideProps () {
   const usersList = await getUserList()
-
   return {
     props: {
       usersList
     }
   }
 }
+// export const getStaticProps = async (ctx) => {
+//   const usersList = await getUserList()
+
+//   return {
+//     props: {
+//       usersList
+//     }
+//   }
+// }
