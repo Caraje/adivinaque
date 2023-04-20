@@ -23,7 +23,6 @@ const AnswerForm = ({
   const dispatch = useDispatch()
   const handleResetLevel = async () => {
     if (status !== 'authenticated') {
-      console.log('No esta autenticado')
       setIsAutenticated(true)
       return
     }
