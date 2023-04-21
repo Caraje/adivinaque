@@ -15,7 +15,7 @@ export default function RegisterPage ({ usersList }) {
   const [nameError, setNameError] = useState(false)
   const [emailError, setEmailError] = useState(false)
   const [passError, setPassError] = useState(false)
-  const [isRegister, setIsRegister] = useState(true)
+  const [isRegister, setIsRegister] = useState(false)
 
   const namesUserList = usersList.map(user => user.user_metadata.userName)
   const emailUserList = usersList.map(user => user.email
