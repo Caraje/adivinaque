@@ -1,18 +1,21 @@
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
-import { createUserWithEmail, getUserList } from '@/services/supabase'
+import { createUserWithEmail, getUserList, loginWithEmail } from '@/services/supabase'
+import { useDispatch } from 'react-redux'
+import { loginState } from '@/store/auth/thunks'
 import { useState } from 'react'
 import { backIcon } from '@/utils/icons'
 import RegisterConfirmation from '@/components/user/RegisterConfirmation'
 
 export default function RegisterPage ({ usersList }) {
+  const dispatch = useDispatch()
   const { register, handleSubmit, formState } = useForm()
 
   const errors = formState
   const [nameError, setNameError] = useState(false)
   const [emailError, setEmailError] = useState(false)
   const [passError, setPassError] = useState(false)
-  const [isRegister, setIsRegister] = useState(false)
+  const [isRegister, setIsRegister] = useState(true)
 
   const namesUserList = usersList.map(user => user.user_metadata.userName)
   const emailUserList = usersList.map(user => user.email
@@ -20,24 +23,24 @@ export default function RegisterPage ({ usersList }) {
 
   const handleForm = async (data) => {
     const { name, email, password } = data
-    try {
-      if (namesUserList.includes(name)) {
-        setNameError(true)
-        return
-      }
-      if (emailUserList.includes(email)) {
-        setEmailError(true)
-        return
-      }
-      if (password.length < 6) {
-        setPassError(true)
-        return
-      }
-      await createUserWithEmail(name, email, password)
-      setIsRegister(true)
-    } catch (error) {
-      console.log(error)
+    // console.log(password)
+    if (namesUserList.includes(name)) {
+      setNameError(true)
+      return
     }
+    if (emailUserList.includes(email)) {
+      setEmailError(true)
+      return
+    }
+    if (password.length < 6) {
+      setPassError(true)
+      // console.log({ passError })
+      return
+    }
+    await createUserWithEmail(name, email, password)
+    const user = await loginWithEmail(email, password)
+    dispatch(loginState(user.data.user))
+    setIsRegister(true)
   }
 
   return (
@@ -105,7 +108,11 @@ export default function RegisterPage ({ usersList }) {
             </label>
 
             <button
-              className='rounded-lg bg-adivinaGreen py-2 text-[#333] font-bold hover:scale-105 hover:brightness-110 hover:shadow-adivinaGreen hover:shadow-2xl'
+              className='
+          rounded-lg bg-adivinaGreen py-2
+          text-[#333] font-bold
+          hover:scale-105 hover:brightness-110 hover:shadow-adivinaGreen hover:shadow-2xl
+          '
             >
               Enviar
             </button>
