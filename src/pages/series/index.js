@@ -79,7 +79,7 @@ export default function SeriesPage ({ usersList }) {
           <main className='w-full flex flex-col items-center sm:items-stretch sm:flex-row gap-10 p-4 max-w-6xl'>
             <section className='relative w-full flex flex-col gap-8  border border-adivinaGreen/50 rounded-xl p-4 bg-adivinaBlack/25'>
               <h1 className='font-black text-3xl text-adivinaGreen ml-8 mt-8'>
-                Cine
+                {!level ? 'Cine' : 'Adivina La serie de la imagen'}
               </h1>
               {
                 (level)
