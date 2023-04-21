@@ -15,7 +15,7 @@ export default function RegisterPage ({ usersList }) {
   const [nameError, setNameError] = useState(false)
   const [emailError, setEmailError] = useState(false)
   const [passError, setPassError] = useState(false)
-  const [isRegister, setIsRegister] = useState(false)
+  // const [isRegister, setIsRegister] = useState(false)
 
   const namesUserList = usersList.map(user => user.user_metadata.userName)
   const emailUserList = usersList.map(user => user.email
@@ -49,7 +49,7 @@ export default function RegisterPage ({ usersList }) {
 
   return (
     <>
-      {isRegister && <RegisterConfirmation />}
+      {/* {isRegister && <RegisterConfirmation />} */}
       <main className='w-screen h-screen flex flex-col-reverse sm:flex-row justify-end gap-4 sm:justify-center items-center bg-adivinaDark text-white font-montserrat'>
         <Link
           className='absolute top-4 right-4 text-adivinaGreen hover:scale-125 transition-all '
