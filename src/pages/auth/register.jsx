@@ -5,7 +5,7 @@ import { createUserWithEmail, getUserList } from '@/services/supabase'
 // import { loginState } from '@/store/auth/thunks'
 import { useState } from 'react'
 import { backIcon } from '@/utils/icons'
-import RegisterConfirmation from '@/components/user/RegisterConfirmation'
+// import RegisterConfirmation from '@/components/user/RegisterConfirmation'
 
 export default function RegisterPage ({ usersList }) {
   // const dispatch = useDispatch()
