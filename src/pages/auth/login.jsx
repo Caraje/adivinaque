@@ -54,7 +54,7 @@ export default function LoginPage () {
               border-2 border-[#03fea4] rounded-lg bg-transparent
               text-white text-base font-normal'
               type='email'
-              placeholder='carlos@carlos.com'
+              placeholder='user@advinaque.com'
               {...register('email', {
                 required: 'Introduce un email Valido'
               })}
