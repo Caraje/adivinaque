@@ -1,14 +1,14 @@
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
-import { createUserWithEmail, getUserList, loginWithEmail } from '@/services/supabase'
-import { useDispatch } from 'react-redux'
-import { loginState } from '@/store/auth/thunks'
+import { createUserWithEmail, getUserList } from '@/services/supabase'
+// import { useDispatch } from 'react-redux'
+// import { loginState } from '@/store/auth/thunks'
 import { useState } from 'react'
 import { backIcon } from '@/utils/icons'
 import RegisterConfirmation from '@/components/user/RegisterConfirmation'
 
 export default function RegisterPage ({ usersList }) {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   const { register, handleSubmit, formState } = useForm()
 
   const errors = formState
@@ -23,24 +23,28 @@ export default function RegisterPage ({ usersList }) {
 
   const handleForm = async (data) => {
     const { name, email, password } = data
-    // console.log(password)
-    if (namesUserList.includes(name)) {
-      setNameError(true)
-      return
+    try {
+      if (namesUserList.includes(name)) {
+        setNameError(true)
+        return
+      }
+      if (emailUserList.includes(email)) {
+        setEmailError(true)
+        return
+      }
+      if (password.length < 6) {
+        setPassError(true)
+        return
+      }
+      await createUserWithEmail(name, email, password)
+
+      // const user = await loginWithEmail(email, password)
+      // user && dispatch(loginState(user.data.user))
+    } catch (error) {
+      console.log(error)
     }
-    if (emailUserList.includes(email)) {
-      setEmailError(true)
-      return
-    }
-    if (password.length < 6) {
-      setPassError(true)
-      // console.log({ passError })
-      return
-    }
-    await createUserWithEmail(name, email, password)
-    const user = await loginWithEmail(email, password)
-    dispatch(loginState(user.data.user))
-    setIsRegister(true)
+
+    // setIsRegister(true)
   }
 
   return (
