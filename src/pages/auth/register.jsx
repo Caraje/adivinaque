@@ -34,10 +34,9 @@ export default function RegisterPage ({ usersList }) {
         return
       }
       await createUserWithEmail(name, email, password)
+      setIsRegister(true)
     } catch (error) {
       console.log(error)
-    } finally {
-      setIsRegister(true)
     }
   }
 
