@@ -37,9 +37,6 @@ export default function RegisterPage ({ usersList }) {
         return
       }
       await createUserWithEmail(name, email, password)
-
-      // const user = await loginWithEmail(email, password)
-      // user && dispatch(loginState(user.data.user))
     } catch (error) {
       console.log(error)
     }
