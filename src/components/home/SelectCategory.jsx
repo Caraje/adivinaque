@@ -1,6 +1,6 @@
 
 import CategoryCard from '../ui/CategoryCard'
-import CategoryCardMobile from '../ui/categoryCardMobile'
+import CategoryCardMobile from '../ui/CategoryCardMobile'
 
 const SelectCategory = ({ isMobile }) => {
   return (
