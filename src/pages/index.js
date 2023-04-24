@@ -18,7 +18,6 @@ export default function Home ({ usersList }) {
     }
   }, [])
 
-  console.log({ isMobile })
   return (
     <>
       <div className='w-screen min-h-screen   flex flex-col  items-center justify-between text-white font-montserrat  bg-slate-950'>
