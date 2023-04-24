@@ -12,22 +12,24 @@ const SelectCategory = ({ isMobile }) => {
 
         <div className='flex justify-center max-w-2xl w-full'>
 
-          {!isMobile
-            ? <CategoryCard
-                category='cinema'
-                name='Cine'
-                image='./imgs/cinema.webp'
-                wide
-              />
-            : <CategoryCardMobile
-                category='cinema'
-                name='Cine'
-                image='./imgs/cinema.webp'
-                wide={false}
-              />}
+          {!isMobile &&
+            <CategoryCard
+              category='cinema'
+              name='Cine'
+              image='./imgs/cinema.webp'
+              wide
+            />}
         </div>
 
         <div className='flex flex-col sm:flex-row gap-8 justify-center sm:justify-between max-w-2xl w-full'>
+          {
+            isMobile && <CategoryCardMobile
+              category='cinema'
+              name='Cine'
+              image='./imgs/cinema.webp'
+              wide={false}
+                        />
+          }
           {!isMobile
             ? <CategoryCard
                 category='series'
