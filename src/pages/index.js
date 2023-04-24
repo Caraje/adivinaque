@@ -5,11 +5,20 @@ import MainLayout from '@/components/layout/MainLayout'
 import Footer from '@/components/ui/Footer'
 import UserCard from '@/components/ui/UserCard'
 import { getUserList } from '@/services/supabase'
+import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 export default function Home ({ usersList }) {
   const { status } = useSelector(store => store.auth)
+  const [isMobile, setIsMobile] = useState(false)
 
+  useEffect(() => {
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      setIsMobile(true)
+    }
+  }, [])
+
+  console.log({ isMobile })
   return (
     <>
       <div className='w-screen min-h-screen   flex flex-col  items-center justify-between text-white font-montserrat  bg-slate-950'>
@@ -18,7 +27,7 @@ export default function Home ({ usersList }) {
 
           {/* CONTENIDO */}
           <main className='w-full flex flex-col sm:flex-row justify-center items-center sm:items-stretch gap-10 p-4 max-w-6xl'>
-            <SelectCategory />
+            <SelectCategory isMobile={isMobile} />
             <aside className='w-80 flex flex-col gap-10  '>
               {/* USER CARD */}
               {
