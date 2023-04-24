@@ -64,6 +64,7 @@ export default function SeriesPage ({ usersList }) {
     }
     if (turn < 4) {
       isAnswerIncorrect(setErrorsCount, errorsCount)
+      setFormAnswer('')
       return
     }
     isAnswerFail(setErrorsCount, errorsCount)
