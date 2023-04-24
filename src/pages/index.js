@@ -26,7 +26,7 @@ export default function Home ({ usersList }) {
         <MainLayout>
 
           {/* CONTENIDO */}
-          <main className='w-full flex flex-col sm:flex-row justify-center items-center sm:items-stretch gap-10 p-4 max-w-6xl'>
+          <main className='w-full flex flex-col sm:flex-row justify-center items-center sm:items-stretch gap-10 p-8 max-w-6xl'>
             <SelectCategory isMobile={isMobile} />
             <aside className='w-80 flex flex-col gap-10  '>
               {/* USER CARD */}
