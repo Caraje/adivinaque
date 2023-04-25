@@ -27,7 +27,7 @@ const SelectCategory = ({ isMobile }) => {
               category='cinema'
               name='Cine'
               image='./imgs/cinema.webp'
-              wide={false}
+              wide
                         />
           }
           {!isMobile
@@ -35,15 +35,15 @@ const SelectCategory = ({ isMobile }) => {
                 category='series'
                 name='Series'
                 image='./imgs/series.webp'
-                wide={false}
+                wide
               />
             : <CategoryCardMobile
                 category='series'
                 name='Series'
                 image='./imgs/series.webp'
-                wide={false}
+                wide
               />}
-          {!isMobile
+          {/* {!isMobile
             ? <CategoryCard
                 category='videogames'
                 name='Juegos'
@@ -55,7 +55,7 @@ const SelectCategory = ({ isMobile }) => {
                 name='Juegos'
                 image='./imgs/game.webp'
                 wide={false}
-              />}
+              />} */}
 
         </div>
       </div>
