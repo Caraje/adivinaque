@@ -1,0 +1,9 @@
+.article_body p{ 
+  margin:  1rem 0;
+  /* background-color: red; */
+}
+
+.article_body a {
+  font-weight: 700;
+  color: #03fea4;
+}
