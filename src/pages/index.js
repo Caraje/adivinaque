@@ -4,11 +4,12 @@ import SelectCategory from '@/components/home/SelectCategory'
 import MainLayout from '@/components/layout/MainLayout'
 import Footer from '@/components/ui/Footer'
 import UserCard from '@/components/ui/UserCard'
+import { getAllFilesMetadata } from '@/services/mdx'
 import { getUserList } from '@/services/supabase'
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
-export default function Home ({ usersList }) {
+export default function Home ({ usersList, posts }) {
   const { status } = useSelector(store => store.auth)
   const [isMobile, setIsMobile] = useState(false)
 
@@ -33,7 +34,7 @@ export default function Home ({ usersList }) {
                 status && <UserCard />
               }
               {/* NEWS CARD */}
-              <NewsCard />
+              <NewsCard posts={posts} />
             </aside>
 
           </main>
@@ -49,10 +50,11 @@ export default function Home ({ usersList }) {
 
 export const getStaticProps = async (ctx) => {
   const usersList = await getUserList()
-
+  const posts = await getAllFilesMetadata()
   return {
     props: {
-      usersList
+      usersList,
+      posts
     }
   }
 }
