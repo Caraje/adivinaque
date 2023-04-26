@@ -69,7 +69,6 @@ export default function VideogamesPage ({ usersList }) {
     }
     isAnswerFail(setErrorsCount, errorsCount)
   }
-  console.log({ level })
 
   return (
     <>
