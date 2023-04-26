@@ -64,7 +64,7 @@ const MainLayout = ({ children }) => {
             <nav className='hidden sm:flex gap-8 font-semibold px-20 py-1 rounded-full border border-adivinaGreen/40  text-2xl'>
               <Link className={`hover:scale-110 hover:text-adivinaGreen hover:shadow-adivinaGreen transition-all ${path === '/cinema' ? 'text-adivinaGreen' : ''}`} href='/cinema'>Cine</Link>
               <Link className={`hover:scale-110 hover:text-adivinaGreen hover:shadow-adivinaGreen transition-all ${path === '/series' ? 'text-adivinaGreen' : ''}`} href='/series'>series</Link>
-              <Link className={`hover:scale-110 hover:text-adivinaGreen hover:shadow-adivinaGreen transition-all ${path === '/videogames' ? 'text-adivinaGreen' : ''}`} href='/videogames'>Juegos</Link>
+              {/* <Link className={`hover:scale-110 hover:text-adivinaGreen hover:shadow-adivinaGreen transition-all ${path === '/videogames' ? 'text-adivinaGreen' : ''}`} href='/videogames'>Juegos</Link> */}
             </nav>
             {
               user.id
