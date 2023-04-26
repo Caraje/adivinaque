@@ -49,6 +49,7 @@ const UserPage = ({ user }) => {
               name='Juegos'
               image='/imgs/game.webp'
               score={actualUser.categories.videogames}
+              disabled
             />
 
           </article>
