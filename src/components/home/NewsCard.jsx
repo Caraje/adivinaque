@@ -2,7 +2,6 @@ import Link from 'next/link'
 import React from 'react'
 
 const NewsCard = ({ posts }) => {
-  console.log({ posts })
   return (
     <section className=' flex  flex-col gap-4 justify-center   overflow-hidden border border-adivinaGreen/50 rounded-xl p-4 bg-adivinaBlack/25'>
       <h2 className=' text-xl text-adivinaGreen font-semibold'>
