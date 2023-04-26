@@ -3,8 +3,11 @@ import SlugComponent from '@/components/news/SlugComponent'
 import Footer from '@/components/ui/Footer'
 import UserCard from '@/components/ui/UserCard'
 import { getAllFilesMetadata, getFileBySlug, getFiles } from '@/services/mdx'
+import { useSelector } from 'react-redux'
 
 const UserPage = ({ source, frontmatter, posts }) => {
+  const { status } = useSelector(store => store.auth)
+  console.log({ status })
   return (
     <MainLayout>
       <main className='w-full flex flex-col items-center sm:items-stretch sm:flex-row gap-10 p-4 max-w-6xl'>
@@ -12,7 +15,9 @@ const UserPage = ({ source, frontmatter, posts }) => {
           <SlugComponent frontmatter={frontmatter} source={source} posts={posts} />
         </section>
         <aside className='w-80 flex flex-col gap-10  '>
-          <UserCard />
+          {
+            status && <UserCard />
+          }
         </aside>
       </main>
       <Footer />
