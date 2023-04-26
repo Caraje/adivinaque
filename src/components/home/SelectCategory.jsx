@@ -43,19 +43,21 @@ const SelectCategory = ({ isMobile }) => {
                 image='./imgs/series.webp'
                 wide
               />}
-          {/* {!isMobile
+          {!isMobile
             ? <CategoryCard
                 category='videogames'
                 name='Juegos'
                 image='./imgs/game.webp'
                 wide={false}
+                disabled
               />
             : <CategoryCardMobile
                 category='videogames'
                 name='Juegos'
                 image='./imgs/game.webp'
                 wide={false}
-              />} */}
+                disabled
+              />}
 
         </div>
       </div>
