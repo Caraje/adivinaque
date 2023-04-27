@@ -35,24 +35,24 @@ const MainLayout = ({ children }) => {
         <link rel='icon' href='/img_static/favicon.ico' />
         <meta name='keywords' content='HTML, CSS, JavaScript' />
         <title>AdivinaQue</title>
-        <meta name='description' content='Aqui hay que poner descripción' />
+        <meta name='description' content='Todos los dias un nuevo nivel en cada una de nuestras categorias para que adivines si eres capaz, la pelicula o serie y asi demostrar que eres el que mas sabe' />
 
         {/* Facebook Meta Tags */}
-        <meta property='og:url' content='Url del seo' />
+        <meta property='og:url' content='https://adivinaque.vercel.app/' />
         <meta property='og:type' content='website' />
-        <meta property='og:title' content='titulo del seo' />
-        <meta property='og:description' content='Descripcion Seo' />
-        <meta property='og:image' content='Imagen Seo' />
+        <meta property='og:title' content='AdivinaQue: adivina la pelicula o la serie del dia' />
+        <meta property='og:description' content='Todos los dias un nuevo nivel en cada una de nuestras categorias para que adivines si eres capaz, la pelicula o serie y asi demostrar que eres el que mas sabe' />
+        <meta property='og:image' content='https://res.cloudinary.com/caraje/image/upload/v1681721021/AdivinaQue/hkjhddrltoboan0procv.webp' />
 
         {/* Twitter Meta Tags */}
         <meta name='twitter:card' content='summary' />
-        <meta property='twitter:domain' content='www.carlosajenjo.es' />
-        <meta name='twitter:site' content='@caraje_' />
+        <meta property='twitter:domain' content='@caraje_' />
+        <meta name='twitter:site' content='https://adivinaque.vercel.app/' />
         <meta name='twitter:creator' content='Autor SEO' />
-        <meta property='twitter:url' content='Url del seo' />
-        <meta name='twitter:title' content='titulo del seo' />
-        <meta name='twitter:description' content='Descripcion Seo' />
-        <meta name='twitter:image' content='Imagen Seo' />
+        <meta property='twitter:url' content='https://adivinaque.vercel.app/' />
+        <meta name='twitter:title' content='AdivinaQue: adivina la pelicula o la serie del dia' />
+        <meta name='twitter:description' content='Todos los dias un nuevo nivel en cada una de nuestras categorias para que adivines si eres capaz, la pelicula o serie y asi demostrar que eres el que mas sabe' />
+        <meta name='twitter:image' content='https://res.cloudinary.com/caraje/image/upload/v1681721021/AdivinaQue/hkjhddrltoboan0procv.webp' />
       </Head>
       <div className='w-screen min-h-screen  flex flex-col items-center justify-betwee text-white font-montserrat  bg-slate-950'>
         <div className='w-full  max-w-6xl'>
@@ -75,7 +75,6 @@ const MainLayout = ({ children }) => {
         </div>
         {children}
       </div>
-
     </>
   )
 }
