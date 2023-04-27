@@ -1,4 +1,3 @@
-import { instagramIcon, twitterIcon } from '@/utils/icons'
 import Link from 'next/link'
 import React from 'react'
 
@@ -16,20 +15,10 @@ const Footer = () => {
         </div>
         <div className='flex flex-col items-center gap-2'>
           <h2 className='font-extrabold text-lg text-adivinaGreen'>
-            Puedes seguirnos en:
+            Si ves errores o tienes sugerencias manda un correo a:
           </h2>
-          <div className='flex justify-center items-center gap-4'>
-
-            <Link href='https://twitter.com/Adivina_Que_' className=' hover:scale-110 hover:brightness-110 hover:text-adivinaGreen transition-all '>
-              {twitterIcon}
-            </Link>
-            <Link
-              href='https://www.instagram.com/adivina_que_/'
-              className=' hover:scale-110 hover:brightness-110 hover:text-adivinaGreen transition-all '
-            >
-              {instagramIcon}
-            </Link>
-          </div>
+          <a className='font-montserrat font-semibold text-lg hover:text-adivinaGreen hover:scale-110 transition-all' href='mailto:info.adivinaque@gmail.com'>info.adivinaque@gmail.com</a>
+          <div className='flex justify-center items-center gap-4' />
         </div>
       </div>
     </footer>
