@@ -3,8 +3,8 @@ import React from 'react'
 
 const NoUserAutenticated = () => {
   return (
-    <div className=' absolute z-40 w-screen h-screen  flex items-center justify-center backdrop-blur-xl backdrop-brightness-50 '>
-      <div className='w-1/2 h-1/2  flex items-center justify-center  '>
+    <div className=' absolute z-40 w-screen h-screen  flex  items-center justify-center backdrop-blur-xl backdrop-brightness-50 '>
+      <div className='w-full sm:w-1/2  flex flex-col sm:flex-row items-center justify-center  '>
         <img className='object-cover w-1/3' src='https://res.cloudinary.com/caraje/image/upload/v1682073684/AdivinaQue/wq9zrs4vjekqdj2pxomz.webp' alt='Illustration popcorn' width gap-8={250} height={300} />
         <div className='w-1/2 flex flex-col  items-center justify-center font-montserrat'>
           <h2 className='font-extrabold text-5xl text-center text-adivinaGreen mb-4'>Oh, no estas registrado</h2>
