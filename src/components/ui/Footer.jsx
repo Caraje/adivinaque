@@ -14,7 +14,7 @@ const Footer = () => {
           </Link>
         </div>
         <div className='flex flex-col items-center gap-2'>
-          <h2 className='font-extrabold text-lg text-adivinaGreen'>
+          <h2 className='font-extrabold text-lg text-adivinaGreen max-w-xs sm:max-w-xl'>
             Si ves errores o tienes sugerencias manda un correo a:
           </h2>
           <a className='font-montserrat font-semibold text-lg hover:text-adivinaGreen hover:scale-110 transition-all' href='mailto:info.adivinaque@gmail.com'>info.adivinaque@gmail.com</a>
